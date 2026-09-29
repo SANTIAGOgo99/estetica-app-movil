@@ -58,6 +58,27 @@ Las modificaciones se desarrollan en ramas independientes antes de integrarse a 
 
 La planeación y seguimiento de historias de usuario, tareas, prioridades y Sprints se realiza mediante GitHub Projects.
 
+## Validación continua
+
+Los push y Pull Requests ejecutan GitHub Actions con Node.js 22.13.1,
+`npm ci`, `npx tsc --noEmit` y `npm run lint`. No se ejecutan pruebas
+automatizadas hasta que existan casos y un comando real en el proyecto.
+
+Para validar cambios localmente:
+
+```bash
+npm ci
+npm run typecheck
+npm run lint
+```
+
+La planeación está en [GitHub Projects](https://github.com/users/SANTIAGOgo99/projects/1).
+HU00–HU17 son Issues padre; las actividades específicas son sub-issues.
+Las pruebas compartidas indican las historias cubiertas en su descripción.
+Los títulos de pruebas están en mayúsculas y usan el label violeta `PRUEBA`.
+El cierre de una tarea requiere evidencia; un Issue calendarizado no implica
+que la funcionalidad o la prueba ya se haya ejecutado.
+
 ## Responsable
 
 Héctor Santiago Hernández.
