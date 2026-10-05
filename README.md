@@ -107,3 +107,21 @@ para pruebas web se usa sessionStorage de la pestaña. No se guarda la contrase�
 El catálogo tiene diseño inicial; productos, citas y carrito son pantallas provisionales.
 Consulta [el avance y la explicación de cada archivo](docs/avance-2026-10-05.md)
 para ver qué se comprobó y qué falta probar con servidor real.
+
+## Probar el acceso conectado
+
+La configuración local usa el mismo backend publicado que la web:
+`https://esteticaa-backend-five.vercel.app/api`.
+Es el entorno publicado, no uno aislado de pruebas. `.env` permanece fuera de Git.
+
+Los comandos `npm start` y `npm run web` usan el puerto **5173**, permitido
+por el backend para el navegador. Abre `http://localhost:5173/sign-in`.
+Introduce una cuenta de **cliente** existente; las cuentas administrativas siguen en la web.
+
+En Windows puedes abrir la prueba con instrucciones:
+
+```powershell
+.\scripts\probar-acceso.cmd
+```
+
+Consulta [las comprobaciones de conexión y los pasos de prueba](docs/conexion-backend.md).
