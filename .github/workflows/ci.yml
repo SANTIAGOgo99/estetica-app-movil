@@ -30,3 +30,5 @@ jobs:
         run: npx tsc --noEmit
       - name: Analizar código estático
         run: npm run lint
+      - name: Probar autenticación
+        run: npm test

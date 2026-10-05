@@ -1,4 +1,4 @@
-﻿# Estética App Móvil
+# Estética App Móvil
 
 Aplicación móvil orientada a los clientes de **Ezequiel Castillo Ángeles Hair Designer**.
 
@@ -61,8 +61,7 @@ La planeación y seguimiento de historias de usuario, tareas, prioridades y Spri
 ## Validación continua
 
 Los push y Pull Requests ejecutan GitHub Actions con Node.js 22.13.1,
-`npm ci`, `npx tsc --noEmit` y `npm run lint`. No se ejecutan pruebas
-automatizadas hasta que existan casos y un comando real en el proyecto.
+`npm ci`, `npx tsc --noEmit`, `npm run lint` y `npm test` (16 casos de autenticación).
 
 Para validar cambios localmente:
 
@@ -70,6 +69,7 @@ Para validar cambios localmente:
 npm ci
 npm run typecheck
 npm run lint
+npm test
 ```
 
 La planeación está en [GitHub Projects](https://github.com/users/SANTIAGOgo99/projects/1).
@@ -82,3 +82,28 @@ que la funcionalidad o la prueba ya se haya ejecutado.
 ## Responsable
 
 Héctor Santiago Hernández.
+
+
+## Acceso y navegación
+
+Las pantallas están en `src/app/` y la lógica de sesión en `src/features/auth/`.
+La app utiliza Expo Router; `App.tsx` e `index.js` se sustituyeron por su entrada.
+
+Para configurar el acceso, copia `.env.example` a `.env` y completa
+`EXPO_PUBLIC_API_URL` con la URL de pruebas del backend, incluyendo `/api`.
+Desde un teléfono, usa una dirección accesible en la red; `localhost` apunta al teléfono.
+Esta variable es pública: no pongas contraseñas ni secretos en ella.
+Reinicia Expo después de configurarla.
+
+```bash
+npm start
+```
+
+Sin URL configurada, el formulario muestra un aviso y no concede acceso.
+El backend debe devolver un token vigente y `role: client`. Las cuentas administrativas
+continúan en el sistema web. SecureStore guarda el token en el teléfono;
+para pruebas web se usa sessionStorage de la pestaña. No se guarda la contraseña.
+
+El catálogo tiene diseño inicial; productos, citas y carrito son pantallas provisionales.
+Consulta [el avance y la explicación de cada archivo](docs/avance-2026-10-05.md)
+para ver qué se comprobó y qué falta probar con servidor real.

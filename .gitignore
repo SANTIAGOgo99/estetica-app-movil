@@ -42,3 +42,5 @@ yarn-error.*
 
 # Local planning snapshots and resumable scripts
 .planning/
+.env
+/dist-android/
