@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { router, useLocalSearchParams } from "expo-router";
+import { useRemote } from "../api/useRemote";
+import { decodeItem } from "./model";
+import { useEffect, useState } from "react";
 import {
   ActivityIndicator,
   FlatList,
@@ -135,10 +138,16 @@ export function CatalogScreen({ kind }: { kind: "services" | "products" }) {
               onPress={() => {
                 if (services) {
                   flow.selectService(item);
-                  flow.go("service-detail");
+                  router.push({
+                    pathname: "/service-detail",
+                    params: { id: String(item.id) },
+                  });
                 } else {
                   flow.selectProduct(item);
-                  flow.go("product-detail");
+                  router.push({
+                    pathname: "/product-detail",
+                    params: { id: String(item.id) },
+                  });
                 }
               }}
             >
@@ -190,9 +199,47 @@ export function CatalogScreen({ kind }: { kind: "services" | "products" }) {
 export function DetailScreen({ kind }: { kind: "services" | "products" }) {
   const flow = useFlow();
   const services = kind === "services";
-  const item = services ? flow.service : flow.product;
+  const { id } = useLocalSearchParams<{ id?: string }>();
+  const selected = services ? flow.service : flow.product;
+  const itemId =
+    id !== undefined
+      ? /^\d+$/.test(id)
+        ? Number(id)
+        : undefined
+      : selected?.id;
+  const resource = useRemote(
+    itemId && itemId > 0 ? "/" + kind + "/" + itemId : null,
+    null,
+    decodeItem,
+  );
+  const item = resource.data;
+  const select = services ? flow.selectService : flow.selectProduct;
+  useEffect(() => {
+    if (item) select(item);
+  }, [item, select]);
   const [quantity, setQuantity] = useState(1);
   const [added, setAdded] = useState(false);
+  if (resource.loading || resource.error)
+    return (
+      <Page
+        title={services ? "Detalle de servicio" : "Detalle de producto"}
+        back={kind}
+      >
+        {resource.loading ? (
+          <ActivityIndicator
+            accessibilityLabel="Cargando detalle"
+            color={colors.roseDeep}
+          />
+        ) : (
+          <Card>
+            <Text accessibilityRole="alert" style={s.error}>
+              {resource.error}
+            </Text>
+            <Button label="Intentar nuevamente" onPress={resource.refresh} />
+          </Card>
+        )}
+      </Page>
+    );
   if (!item)
     return (
       <Page title="Selecciona una opción" back={kind}>
@@ -217,13 +264,12 @@ export function DetailScreen({ kind }: { kind: "services" | "products" }) {
                 ? "Ver carrito"
                 : "Agregar al carrito"
           }
-          disabled={!flow.demo || (!services && stock === 0)}
+          disabled={!services && stock === 0}
           onPress={() => {
             if (services) flow.go("booking");
             else if (added) flow.go("cart");
             else {
-              flow.add(item, quantity);
-              setAdded(true);
+              if (flow.add(item, quantity)) setAdded(true);
             }
           }}
         />
@@ -232,6 +278,7 @@ export function DetailScreen({ kind }: { kind: "services" | "products" }) {
       <ItemImage item={item} large />
       {!!item.brand && <Body muted>{item.brand}</Body>}
       <Row label="Precio" value={money(item.price)} />
+      {!!item.size && <Row label="Presentación" value={item.size} />}
       {services && (
         <Row
           label="Duración"
@@ -282,14 +329,7 @@ export function DetailScreen({ kind }: { kind: "services" | "products" }) {
           </View>
         </>
       )}
-      {added && <Body>Se agregó al carrito de demostración.</Body>}
-      {!flow.demo && (
-        <Body muted>
-          {services
-            ? "La reservación desde la app está en preparación."
-            : "La compra desde la app está en preparación."}
-        </Body>
-      )}
+      {added && <Body>Se agregó al carrito.</Body>}
     </Page>
   );
 }

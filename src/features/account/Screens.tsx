@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { Image, Pressable, Text, View } from "react-native";
+import { ActivityIndicator, Image, Pressable, Text, View } from "react-native";
 import {
   Body,
   Brand,
   Button,
   Card,
   Empty,
-  Field,
   Icon,
   Page,
   Row,
@@ -14,10 +13,26 @@ import {
   s,
 } from "../../components/ui";
 import { useAuth } from "../auth/AuthProvider";
-import { colors } from "../../theme";
 import { useFlow } from "../interfaces/Flow";
+import { useRemote } from "../api/useRemote";
+import { decodeProfile } from "./model";
+import { colors } from "../../theme";
+import {
+  useAppointments,
+  displayedStatus,
+  isUpcoming,
+  appointmentDate,
+} from "../appointments/data";
 export function HomeScreen() {
-  const flow = useFlow();
+  const flow = useFlow(),
+    auth = useAuth();
+  const profile = useRemote(
+    auth.token ? "/users/profile" : null,
+    auth.token,
+    decodeProfile,
+  );
+  const appointments = useAppointments();
+  const upcoming = appointments.data?.find(isUpcoming);
   return (
     <Page screen="home">
       <View style={s.row}>
@@ -25,7 +40,11 @@ export function HomeScreen() {
           <Text style={[s.label, { color: colors.roseDeep }]}>
             EZEQUIEL CASTILLO
           </Text>
-          <Text style={s.heading}>¿Qué deseas hoy?</Text>
+          <Text style={s.heading}>
+            {profile.data
+              ? "Hola, " + profile.data.name.split(" ")[0]
+              : "Bienvenido a tu espacio"}
+          </Text>
         </View>
         <Pressable
           accessibilityRole="button"
@@ -53,30 +72,47 @@ export function HomeScreen() {
       >
         <Image
           source={require("../../../assets/brand/emblema.png")}
-          accessibilityLabel="Emblema original de Ezequiel Castillo"
+          accessibilityLabel="Logo original de Ezequiel Castillo Hair Designer"
           resizeMode="contain"
-          style={{ width: 64, height: 68 }}
+          style={{ width: 72, height: 76 }}
         />
         <Text style={s.heading}>Belleza que inspira</Text>
-        <Body>Encuentra el cuidado que te hace sentir tú.</Body>
+        <Body>
+          Conoce nuestros servicios y productos. Encuentra el cuidado que te
+          hace sentir tú.
+        </Body>
         <Button
-          label="Agendar una cita"
-          icon="calendar"
+          label="Ver nuestros servicios"
+          icon="scissors"
           onPress={() => flow.go("services")}
         />
       </View>
-      <Text style={s.subheading}>Explora</Text>
+      {!auth.token && (
+        <Card>
+          <Text style={s.subheading}>Explora libremente</Text>
+          <Body>
+            Puedes consultar el catálogo sin cuenta. Para agendar una cita o
+            usar el carrito, inicia sesión o regístrate.
+          </Body>
+          <Button label="Iniciar sesión" onPress={() => flow.go("sign-in")} />
+          <TextAction
+            label="Crear una cuenta de cliente"
+            onPress={() => flow.go("register")}
+          />
+        </Card>
+      )}
+      <Text style={s.subheading}>Descubre tu próximo favorito</Text>
       <View style={{ flexDirection: "row", gap: 12 }}>
         {[
           {
             title: "Servicios",
-            description: "Tu próximo cuidado",
+            description: "Cortes, color y cuidados",
             icon: "scissors" as const,
             screen: "services" as const,
           },
           {
             title: "Productos",
-            description: "Tus favoritos",
+            description: "Tu rutina profesional",
             icon: "shopping-bag" as const,
             screen: "products" as const,
           },
@@ -84,7 +120,7 @@ export function HomeScreen() {
           <Pressable
             key={item.title}
             accessibilityRole="button"
-            accessibilityLabel={item.title}
+            accessibilityLabel={"Explorar " + item.title.toLowerCase()}
             style={{ flex: 1 }}
             onPress={() => flow.go(item.screen)}
           >
@@ -97,123 +133,113 @@ export function HomeScreen() {
           </Pressable>
         ))}
       </View>
-      <Text style={s.subheading}>Próxima cita</Text>
-      {flow.demo && flow.booking ? (
-        <Card>
-          <Text style={s.subheading}>{flow.booking.service.name}</Text>
-          <Row label={flow.booking.date} value={flow.booking.time} />
-          <TextAction
-            label="Consultar mi cita"
-            onPress={() => flow.go("appointments")}
+      {!!auth.token && (
+        <>
+          <Text style={s.subheading}>Tu próxima cita</Text>
+          {appointments.loading ? (
+            <ActivityIndicator
+              accessibilityLabel="Cargando tus citas"
+              color={colors.roseDeep}
+            />
+          ) : appointments.error ? (
+            <Card>
+              <Body>{appointments.error}</Body>
+              <Button label="Actualizar citas" onPress={appointments.refresh} />
+            </Card>
+          ) : upcoming ? (
+            <Card>
+              <Text style={s.subheading}>{upcoming.service}</Text>
+              <Row label="Fecha" value={appointmentDate(upcoming.date)} />
+              <Row label="Estado" value={displayedStatus(upcoming)} />
+              <Button
+                label="Ver mis citas"
+                secondary
+                onPress={() => flow.go("appointments")}
+              />
+            </Card>
+          ) : (
+            <Empty
+              title="Aún no tienes citas pendientes"
+              description="Consulta los servicios y elige tu próximo cuidado."
+              icon="calendar"
+            />
+          )}
+          <Button
+            label="Consultar mi perfil"
+            secondary
+            onPress={() => flow.go("profile")}
           />
-        </Card>
-      ) : (
-        <Empty
-          title="Tu agenda, en un solo lugar"
-          description="Próximamente podrás consultar aquí tu siguiente cita."
-          icon="calendar"
-        />
+        </>
       )}
-      <TextAction label="Ver mis compras" onPress={() => flow.go("orders")} />
     </Page>
   );
 }
 export function ProfileScreen() {
-  const flow = useFlow();
-  const auth = useAuth();
-  const [edit, setEdit] = useState(false);
-  const [name, setName] = useState("Cliente de ejemplo");
-  const [phone, setPhone] = useState("");
-  const [error, setError] = useState("");
-  const [leaving, setLeaving] = useState(false);
+  const flow = useFlow(),
+    auth = useAuth();
+  const profile = useRemote(
+    auth.token ? "/users/profile" : null,
+    auth.token,
+    decodeProfile,
+  );
+  const [leaving, setLeaving] = useState(false),
+    [error, setError] = useState<string | null>(null);
   async function leave() {
-    if (flow.demo) {
-      flow.go("sign-in");
-      return;
-    }
     setLeaving(true);
     try {
       await auth.signOut();
     } catch {
-      setError("No pudimos cerrar la sesión. Inténtalo nuevamente.");
+      setError("No pudimos cerrar tu sesión. Inténtalo nuevamente.");
     } finally {
       setLeaving(false);
     }
   }
-  function save() {
-    if (name.trim().length < 3 || !/^[0-9]{10}$/.test(phone)) {
-      setError("Escribe un nombre válido y un teléfono de 10 dígitos.");
-      return;
-    }
-    setError("");
-    setEdit(false);
-  }
   return (
-    <Page
-      title="Mi perfil"
-      subtitle="Tu espacio personal de cuidado."
-      screen="profile"
-    >
+    <Page title="Mi perfil" subtitle="Tus datos de cliente." screen="profile">
       <Brand />
-      <View style={{ alignItems: "center", gap: 8 }}>
-        <View
-          style={{
-            width: 72,
-            height: 72,
-            borderRadius: 36,
-            backgroundColor: colors.cream,
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Icon name="user" size={32} color={colors.roseDeep} />
-        </View>
-        <Text style={s.subheading}>
-          {flow.demo ? name : "Mi cuenta de cliente"}
-        </Text>
-        <Body muted>
-          {flow.demo ? "cliente@example.com" : "Sesión de cliente activa"}
-        </Body>
-      </View>
-      {flow.demo ? (
-        <Card>
-          {edit ? (
-            <>
-              <Field
-                label="Nombre completo"
-                value={name}
-                onChangeText={setName}
-              />
-              <Field
-                label="Teléfono"
-                value={phone}
-                onChangeText={setPhone}
-                keyboardType="phone-pad"
-                maxLength={10}
-              />
-              <Button label="Guardar cambios de demostración" onPress={save} />
-            </>
-          ) : (
-            <>
-              <Row label="Nombre" value={name} />
-              <Row label="Correo" value="cliente@example.com" />
-              <Row label="Teléfono" value={phone || "Sin agregar"} />
-              <Button label="Editar perfil" onPress={() => setEdit(true)} />
-            </>
-          )}
-        </Card>
-      ) : (
-        <Empty
-          title="Tus datos, próximamente"
-          description="La consulta y edición de tus datos se conectará al perfil de la estética."
-          icon="user"
+      {profile.loading ? (
+        <ActivityIndicator
+          accessibilityLabel="Cargando perfil"
+          color={colors.roseDeep}
         />
-      )}
+      ) : profile.error ? (
+        <Card>
+          <Text accessibilityRole="alert" style={s.error}>
+            {profile.error}
+          </Text>
+          <Button label="Actualizar perfil" onPress={profile.refresh} />
+        </Card>
+      ) : profile.data ? (
+        <>
+          <View style={{ alignItems: "center", gap: 8 }}>
+            <Icon name="user" size={42} color={colors.roseDeep} />
+            <Text style={s.subheading}>{profile.data.name}</Text>
+            <Body muted>{profile.data.email}</Body>
+          </View>
+          <Card>
+            <Row label="Nombre" value={profile.data.name} />
+            <Row label="Correo" value={profile.data.email} />
+            <Row
+              label="Teléfono"
+              value={profile.data.phone || "Sin registrar"}
+            />
+            <Body muted>
+              Si necesitas corregir tus datos, contacta a la estética.
+            </Body>
+          </Card>
+        </>
+      ) : null}
       <Button
-        label="Mis compras"
+        label="Mis citas"
+        secondary
+        icon="calendar"
+        onPress={() => flow.go("appointments")}
+      />
+      <Button
+        label="Mi carrito"
         secondary
         icon="shopping-bag"
-        onPress={() => flow.go("orders")}
+        onPress={() => flow.go("cart")}
       />
       {!!error && (
         <Text accessibilityRole="alert" style={s.error}>

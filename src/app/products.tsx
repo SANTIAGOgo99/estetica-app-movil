@@ -1,4 +1,4 @@
-import { CatalogScreen } from "../../features/catalog/Screens";
+import { CatalogScreen } from "../features/catalog/Screens";
 export default function Screen() {
   return <CatalogScreen kind="products" />;
 }

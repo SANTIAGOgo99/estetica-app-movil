@@ -1,1 +1,4 @@
-export { WelcomeScreen as default } from "../features/auth/AuthScreens";
+import { Redirect } from "expo-router";
+export default function Welcome() {
+  return <Redirect href="/" />;
+}

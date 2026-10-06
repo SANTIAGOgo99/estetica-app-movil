@@ -1,4 +1,4 @@
-import { DetailScreen } from "../../features/catalog/Screens";
+import { DetailScreen } from "../features/catalog/Screens";
 export default function Screen() {
   return <DetailScreen kind="services" />;
 }

@@ -15,13 +15,14 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 import { colors, fonts } from "../theme";
-import { screens, useFlow, type Screen } from "../features/interfaces/Flow";
+import { useFlow, type Screen } from "../features/interfaces/Flow";
 export type IconName = ComponentProps<typeof Feather>["name"];
 export const money = (value: number) =>
   new Intl.NumberFormat("es-MX", {
     style: "currency",
     currency: "MXN",
-    maximumFractionDigits: 0,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
   }).format(value);
 export function Icon({
   name,
@@ -209,7 +210,9 @@ export function Row({ label, value }: { label: string; value: string }) {
   return (
     <View style={s.row}>
       <Text style={s.body}>{label}</Text>
-      <Text style={s.label}>{value}</Text>
+      <Text style={[s.label, { flexShrink: 1, textAlign: "right" }]}>
+        {value}
+      </Text>
     </View>
   );
 }
@@ -283,28 +286,6 @@ export function Page({
         style={{ flex: 1 }}
         behavior={Platform.OS === "ios" ? "padding" : undefined}
       >
-        {flow.demo && (
-          <View style={s.demoBar}>
-            <Text style={s.demoText}>PROTOTIPO · DATOS DE EJEMPLO</Text>
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={{ gap: 10 }}
-            >
-              {screens.map((item) => (
-                <Pressable
-                  accessibilityRole="button"
-                  accessibilityLabel={"Ver " + item.title}
-                  key={item.screen}
-                  onPress={() => flow.go(item.screen)}
-                  style={s.demoChip}
-                >
-                  <Text style={s.demoText}>{item.title}</Text>
-                </Pressable>
-              ))}
-            </ScrollView>
-          </View>
-        )}
         {scroll ? (
           <ScrollView
             keyboardShouldPersistTaps="handled"
@@ -509,19 +490,4 @@ export const s = StyleSheet.create({
     minHeight: 48,
   },
   navLabel: { fontFamily: fonts.medium, fontSize: 11, color: colors.muted },
-  demoBar: {
-    backgroundColor: colors.cream,
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    gap: 6,
-  },
-  demoText: { fontFamily: fonts.medium, fontSize: 11, color: colors.roseDeep },
-  demoChip: {
-    minHeight: 32,
-    paddingHorizontal: 12,
-    borderRadius: 20,
-    borderWidth: 1,
-    borderColor: colors.roseDeep,
-    justifyContent: "center",
-  },
 });

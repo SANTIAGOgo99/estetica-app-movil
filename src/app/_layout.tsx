@@ -31,8 +31,13 @@ function Navigator() {
     );
   return (
     <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="index" />
+      <Stack.Screen name="welcome" />
+      <Stack.Screen name="services" />
+      <Stack.Screen name="products" />
+      <Stack.Screen name="service-detail" />
+      <Stack.Screen name="product-detail" />
       <Stack.Protected guard={!token}>
-        <Stack.Screen name="welcome" />
         <Stack.Screen name="sign-in" />
         <Stack.Screen name="register" />
       </Stack.Protected>

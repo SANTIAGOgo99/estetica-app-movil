@@ -1,6 +1,7 @@
-import { router } from "expo-router";
+import { registerClient } from "./registration";
+
 import { useRef, useState } from "react";
-import { Alert, ImageBackground, Pressable, Text, View } from "react-native";
+import { Alert, Pressable, Text } from "react-native";
 import { useAuth } from "./AuthProvider";
 import { validateCredentials, type LoginErrors } from "./validation";
 import { useFlow } from "../interfaces/Flow";
@@ -16,54 +17,7 @@ import {
   TextAction,
   s,
 } from "../../components/ui";
-import { colors } from "../../theme";
-export function WelcomeScreen() {
-  const flow = useFlow();
-  return (
-    <Page>
-      <Brand large />
-      <ImageBackground
-        source={require("../../../assets/brand/fondo-login.jpg")}
-        resizeMode="cover"
-        imageStyle={{ borderRadius: 22 }}
-        style={{
-          minHeight: 240,
-          justifyContent: "flex-end",
-          borderRadius: 22,
-          overflow: "hidden",
-        }}
-      >
-        <View
-          style={{
-            backgroundColor: "rgba(46,26,14,0.78)",
-            padding: 24,
-            gap: 10,
-          }}
-        >
-          <Text style={[s.heading, { color: colors.background }]}>
-            Tu estilo, en tus manos
-          </Text>
-          <Text style={[s.body, { color: colors.background }]}>
-            Reserva tu momento y encuentra tu próximo favorito. Todo en un solo
-            lugar.
-          </Text>
-        </View>
-      </ImageBackground>
-      <View style={{ flex: 1, minHeight: 20 }} />
-      <Button label="Comenzar" onPress={() => flow.go("register")} />
-      <TextAction
-        label="Ya tengo cuenta · Iniciar sesión"
-        onPress={() => flow.go("sign-in")}
-      />
-      {__DEV__ && !flow.demo && (
-        <TextAction
-          label="Recorrer las interfaces de demostración"
-          onPress={() => router.push("/preview/welcome")}
-        />
-      )}
-    </Page>
-  );
-}
+
 export function SignInScreen() {
   const flow = useFlow();
   const auth = useAuth();
@@ -73,16 +27,13 @@ export function SignInScreen() {
   const [message, setMessage] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const pending = useRef(false);
+
   async function submit() {
     if (pending.current) return;
     const next = validateCredentials({ email, password });
     setErrors(next);
     setMessage(null);
     if (Object.keys(next).length) return;
-    if (flow.demo) {
-      flow.go("home");
-      return;
-    }
     pending.current = true;
     setLoading(true);
     try {
@@ -98,12 +49,21 @@ export function SignInScreen() {
     }
   }
   return (
-    <Page back="welcome">
+    <Page back="home">
       <Brand />
       <Heading>Bienvenido de nuevo</Heading>
       <Body muted>
         Inicia sesión para reservar tu próximo momento de cuidado.
       </Body>
+      {!!flow.pending && (
+        <Card>
+          <Body>{flow.pending.reason}</Body>
+          <TextAction
+            label="Crear una cuenta de cliente"
+            onPress={() => flow.go("register")}
+          />
+        </Card>
+      )}
       <Card>
         <Field
           label="Correo electrónico"
@@ -150,7 +110,7 @@ export function SignInScreen() {
             )
           }
         />
-        {(message || (!flow.demo && auth.notice)) && (
+        {(message || auth.notice) && (
           <Text accessibilityRole="alert" style={s.error}>
             {message || auth.notice}
           </Text>
@@ -165,12 +125,6 @@ export function SignInScreen() {
         label="¿No tienes cuenta? · Crear cuenta"
         onPress={() => flow.go("register")}
       />
-      {__DEV__ && !flow.demo && (
-        <TextAction
-          label="Ver las interfaces de demostración"
-          onPress={() => router.push("/preview/home")}
-        />
-      )}
     </Page>
   );
 }
@@ -182,8 +136,12 @@ export function RegisterScreen() {
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [terms, setTerms] = useState(false);
+  const [registered, setRegistered] = useState(false);
   const [error, setError] = useState("");
-  function submit() {
+  const [loading, setLoading] = useState(false);
+  const pending = useRef(false);
+  async function submit() {
+    if (pending.current) return;
     if (
       name.trim().length < 3 ||
       !/^[0-9]{10}$/.test(phone) ||
@@ -192,7 +150,7 @@ export function RegisterScreen() {
       !terms
     ) {
       setError(
-        "Revisa tu nombre, correo, teléfono de 10 dígitos, contraseñas y aceptación de términos.",
+        "Revisa tu nombre, correo, teléfono de 10 dígitos, contraseñas y confirmación de datos.",
       );
       return;
     }
@@ -203,13 +161,49 @@ export function RegisterScreen() {
       return;
     }
     setError("");
-    flow.go("sign-in");
+    pending.current = true;
+    setLoading(true);
+    try {
+      await registerClient({ name, email, phone, password });
+      setPassword("");
+      setConfirm("");
+      setRegistered(true);
+    } catch (value) {
+      setError(
+        value instanceof Error ? value.message : "No pudimos crear tu cuenta.",
+      );
+    } finally {
+      pending.current = false;
+      setLoading(false);
+    }
   }
+  if (registered)
+    return (
+      <Page back="home">
+        <Brand />
+        <Heading>Tu cuenta está lista</Heading>
+        <Card>
+          <Body>
+            El registro se completó correctamente. Ya puedes iniciar sesión con
+            tu correo y contraseña.
+          </Body>
+          <Button
+            label="Iniciar sesión con mi cuenta"
+            onPress={() => flow.go("sign-in")}
+          />
+        </Card>
+      </Page>
+    );
   return (
     <Page back="sign-in">
       <Brand />
       <Heading>Crea tu cuenta</Heading>
       <Body muted>Tu próximo momento de cuidado empieza aquí.</Body>
+      {!!flow.pending && (
+        <Card>
+          <Body>{flow.pending.reason}</Body>
+        </Card>
+      )}
       <Field
         label="Nombre completo"
         icon="user"
@@ -256,23 +250,17 @@ export function RegisterScreen() {
         style={[s.row, { justifyContent: "flex-start", minHeight: 48 }]}
       >
         <Icon name={terms ? "check-square" : "square"} />
-        <Body>Acepto términos y privacidad.</Body>
+        <Body>He revisado que mis datos son correctos.</Body>
       </Pressable>
       {!!error && (
         <Text accessibilityRole="alert" style={s.error}>
           {error}
         </Text>
       )}
-      {!flow.demo && (
-        <Body muted>
-          El registro móvil está en preparación. Por ahora utiliza tu cuenta de
-          cliente existente.
-        </Body>
-      )}
       <Button
-        label={flow.demo ? "Crear cuenta de demostración" : "Crear cuenta"}
-        disabled={!flow.demo}
-        onPress={submit}
+        label="Crear cuenta"
+        loading={loading}
+        onPress={() => void submit()}
       />
       <TextAction
         label="Ya tengo cuenta · Iniciar sesión"

@@ -1,19 +1,15 @@
-import { useState } from "react";
-import { Pressable, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import {
   Body,
   Button,
   Card,
   Empty,
-  Field,
-  Icon,
   Page,
   Row,
   TextAction,
   money,
   s,
 } from "../../components/ui";
-import { colors } from "../../theme";
 import { useFlow } from "../interfaces/Flow";
 import { ItemImage } from "../catalog/Screens";
 export function CartScreen() {
@@ -30,7 +26,7 @@ export function CartScreen() {
       footer={
         <Button
           label="Continuar compra"
-          disabled={!flow.demo || !flow.cart.length}
+          disabled={!flow.cart.length}
           onPress={() => flow.go("checkout")}
         />
       }
@@ -89,12 +85,10 @@ export function CartScreen() {
         <Row label="Entrega" value="Por confirmar" />
         <Row label="Total de productos" value={money(total)} />
       </Card>
-      {!flow.demo && (
-        <Body muted>
-          La compra móvil está en preparación. Puedes consultar el catálogo real
-          de productos.
-        </Body>
-      )}
+      <Body muted>
+        Tu carrito se conserva mientras usas la app y se vacía al cerrar sesión.
+        Los precios y existencias se confirmarán al habilitar los pedidos.
+      </Body>
       <TextAction
         label="Seguir explorando"
         onPress={() => flow.go("products")}
@@ -104,168 +98,63 @@ export function CartScreen() {
 }
 export function CheckoutScreen() {
   const flow = useFlow();
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
-  const [payment, setPayment] = useState("");
-  const [error, setError] = useState("");
   const total = flow.cart.reduce(
     (n, line) => n + line.item.price * line.quantity,
     0,
   );
-  function submit() {
-    if (
-      name.trim().length < 3 ||
-      !/^[0-9]{10}$/.test(phone) ||
-      address.trim().length < 6 ||
-      !payment
-    ) {
-      setError(
-        "Completa tu nombre, teléfono de 10 dígitos, dirección y método de pago.",
-      );
-      return;
-    }
-    setError("");
-    flow.finishOrder();
-  }
   return (
     <Page
-      title="Finalizar compra"
-      subtitle="Un último paso para tus favoritos."
+      title="Tu selección"
+      subtitle="Revisa los productos que te interesan."
       back="cart"
     >
-      <Field
-        label="Nombre completo"
-        icon="user"
-        value={name}
-        onChangeText={setName}
-      />
-      <Field
-        label="Teléfono"
-        icon="phone"
-        value={phone}
-        onChangeText={setPhone}
-        keyboardType="phone-pad"
-        maxLength={10}
-      />
-      <Field
-        label="Dirección de entrega"
-        icon="map-pin"
-        value={address}
-        onChangeText={setAddress}
-        multiline
-      />
-      <Text style={s.label}>Método de pago</Text>
-      {["Pago en salón", "Transferencia"].map((method) => (
-        <Pressable
-          key={method}
-          accessibilityRole="radio"
-          accessibilityState={{ checked: payment === method }}
-          onPress={() => setPayment(method)}
-        >
-          <Card>
-            <View style={[s.row, { justifyContent: "flex-start" }]}>
-              <Icon
-                name={payment === method ? "check-circle" : "circle"}
-                color={colors.roseDeep}
-              />
-              <Body>{method}</Body>
-            </View>
-          </Card>
-        </Pressable>
-      ))}
       <Card>
+        <Text style={s.subheading}>Resumen</Text>
+        {flow.cart.map((line) => (
+          <Row
+            key={line.item.id}
+            label={line.quantity + " × " + line.item.name}
+            value={money(line.item.price * line.quantity)}
+          />
+        ))}
         <Row label="Total de productos" value={money(total)} />
-        <Body muted>
-          La entrega y el pago definitivos se confirmarán con la estética.
-        </Body>
       </Card>
-      {!!error && (
-        <Text accessibilityRole="alert" style={s.error}>
-          {error}
-        </Text>
-      )}
-      {!flow.demo && (
-        <Body muted>Esta compra aún no está conectada al servidor.</Body>
-      )}
-      <Button
-        label={
-          flow.demo ? "Confirmar compra de demostración" : "Confirmar compra"
-        }
-        disabled={!flow.demo || !flow.cart.length}
-        onPress={submit}
+      <Empty
+        title="Pedido en preparación"
+        description="Por ahora puedes elegir productos en el carrito. La estética todavía no permite registrar pedidos desde la app; no se realizará un cobro ni se confirmará una compra."
+        icon="shopping-bag"
+      />
+      <Button label="Volver al carrito" onPress={() => flow.go("cart")} />
+      <TextAction
+        label="Continuar viendo productos"
+        onPress={() => flow.go("products")}
       />
     </Page>
   );
 }
 export function OrderConfirmedScreen() {
   const flow = useFlow();
-  if (!flow.demo || flow.orderTotal === null)
-    return (
-      <Page title="Compra confirmada" back="orders">
-        <Empty
-          title="Sin compra confirmada"
-          description="Aquí verás el resultado después de registrar una compra."
-          icon="shopping-bag"
-        />
-      </Page>
-    );
   return (
-    <Page>
-      <View style={{ alignItems: "center", gap: 16, paddingVertical: 24 }}>
-        <Icon name="check-circle" size={58} color={colors.roseDeep} />
-        <Text style={s.heading}>¡Compra realizada!</Text>
-        <Body muted>Así se verá el resumen de tu pedido.</Body>
-      </View>
-      <Card>
-        <Row label="Folio de ejemplo" value="DEMO-2026" />
-        <Row label="Total" value={money(flow.orderTotal)} />
-        <Row label="Entrega" value="Por confirmar" />
-        <Row label="Estado" value="Pendiente" />
-      </Card>
-      <Body muted>
-        No se creó un pedido ni se realizó un cobro. Estás viendo una
-        demostración.
-      </Body>
-      <Button label="Ver mis compras" onPress={() => flow.go("orders")} />
-      <TextAction label="Volver al inicio" onPress={() => flow.go("home")} />
+    <Page title="Mis compras" back="cart">
+      <Empty
+        title="No hay una compra confirmada"
+        description="La creación de pedidos todavía está en preparación."
+        icon="shopping-bag"
+      />
+      <Button label="Ver mi carrito" onPress={() => flow.go("cart")} />
     </Page>
   );
 }
 export function OrdersScreen() {
   const flow = useFlow();
   return (
-    <Page
-      title="Mis compras"
-      subtitle="El seguimiento de tus favoritos."
-      back="profile"
-      screen="profile"
-    >
-      {flow.demo && flow.orderTotal !== null ? (
-        <Card>
-          <View style={s.row}>
-            <Text style={s.subheading}>Pedido DEMO-2026</Text>
-            <Text style={[s.label, { color: colors.roseDeep }]}>Pendiente</Text>
-          </View>
-          <Row label="Total" value={money(flow.orderTotal)} />
-          <Body muted>Entrega por confirmar.</Body>
-          <Button
-            label="Ver detalle"
-            secondary
-            onPress={() => flow.go("order-confirmed")}
-          />
-        </Card>
-      ) : (
-        <Empty
-          title={
-            flow.demo
-              ? "Todavía no hay compras"
-              : "Consulta de compras en preparación"
-          }
-          description="Tus pedidos y su seguimiento aparecerán en esta sección."
-          icon="shopping-bag"
-        />
-      )}
+    <Page title="Mis compras" back="profile">
+      <Empty
+        title="Pedidos en preparación"
+        description="Por ahora no se registran compras en la app. Puedes explorar productos y preparar tu carrito."
+        icon="shopping-bag"
+      />
+      <Button label="Ver productos" onPress={() => flow.go("products")} />
     </Page>
   );
 }
