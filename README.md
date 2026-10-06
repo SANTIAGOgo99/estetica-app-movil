@@ -104,7 +104,7 @@ El backend debe devolver un token vigente y `role: client`. Las cuentas administ
 continúan en el sistema web. SecureStore guarda el token en el teléfono;
 para pruebas web se usa sessionStorage de la pestaña. No se guarda la contraseña.
 
-El catálogo tiene diseño inicial; productos, citas y carrito son pantallas provisionales.
+Las interfaces móviles incluyen los módulos del documento de prototipos. El modo de demostración permite recorrerlas con datos de ejemplo; las operaciones reales pendientes están identificadas en pantalla.
 Consulta [el avance y la explicación de cada archivo](docs/avance-2026-10-05.md)
 para ver qué se comprobó y qué falta probar con servidor real.
 
@@ -125,3 +125,13 @@ En Windows puedes abrir la prueba con instrucciones:
 ```
 
 Consulta [las comprobaciones de conexión y los pasos de prueba](docs/conexion-backend.md).
+
+
+## Probar las interfaces de los módulos
+
+Con `npm start` o `npm run web`, abre http://localhost:5173/preview/welcome.
+La demostración solo está disponible durante desarrollo. No requiere iniciar sesión y no crea cuentas, citas ni pedidos reales. La barra superior permite elegir cualquiera de las 16 interfaces.
+
+El acceso real continúa en http://localhost:5173/sign-in, con una cuenta de cliente existente.
+
+Lee [la guía de interfaces, archivos y pruebas](docs/interfaces-2026-10-06.md).

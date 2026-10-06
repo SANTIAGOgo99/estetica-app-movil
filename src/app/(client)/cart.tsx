@@ -1,2 +1,1 @@
-import { UpcomingScreen } from '../../components/UpcomingScreen';
-export default function Cart() { return <UpcomingScreen title="Mi carrito" />; }
+export { CartScreen as default } from "../../features/commerce/Screens";

@@ -1,18 +1,81 @@
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import { ActivityIndicator, View } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { AuthProvider, useAuth } from '../features/auth/AuthProvider';
-import { colors } from '../theme';
-
+import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { ActivityIndicator, View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { useFonts } from "expo-font";
+import { Feather } from "@expo/vector-icons";
+import { CormorantGaramond_600SemiBold } from "@expo-google-fonts/cormorant-garamond/600SemiBold";
+import { Outfit_400Regular } from "@expo-google-fonts/outfit/400Regular";
+import { Outfit_500Medium } from "@expo-google-fonts/outfit/500Medium";
+import { Outfit_600SemiBold } from "@expo-google-fonts/outfit/600SemiBold";
+import { AuthProvider, useAuth } from "../features/auth/AuthProvider";
+import { FlowProvider } from "../features/interfaces/Flow";
+import { colors } from "../theme";
 function Navigator() {
   const { token, restoring } = useAuth();
-  if (restoring) return <View style={{ flex: 1, justifyContent: 'center', backgroundColor: colors.background }}><ActivityIndicator accessibilityLabel="Recuperando sesión" color={colors.accent} /></View>;
-  return <Stack screenOptions={{ headerStyle: { backgroundColor: colors.background }, headerTintColor: colors.ink }}>
-    <Stack.Protected guard={!token}><Stack.Screen name="sign-in" options={{ headerShown: false }} /></Stack.Protected>
-    <Stack.Protected guard={!!token}><Stack.Screen name="(client)" options={{ headerShown: false }} /></Stack.Protected>
-  </Stack>;
+  if (restoring)
+    return (
+      <View
+        style={{
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: colors.background,
+        }}
+      >
+        <ActivityIndicator
+          accessibilityLabel="Recuperando sesión"
+          color={colors.roseDeep}
+        />
+      </View>
+    );
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Protected guard={!token}>
+        <Stack.Screen name="welcome" />
+        <Stack.Screen name="sign-in" />
+        <Stack.Screen name="register" />
+      </Stack.Protected>
+      <Stack.Protected guard={!!token}>
+        <Stack.Screen name="(client)" />
+      </Stack.Protected>
+      <Stack.Protected guard={__DEV__}>
+        <Stack.Screen name="preview" />
+      </Stack.Protected>
+    </Stack>
+  );
 }
 export default function RootLayout() {
-  return <SafeAreaProvider><AuthProvider><StatusBar style="dark" /><Navigator /></AuthProvider></SafeAreaProvider>;
+  const [loaded, error] = useFonts({
+    CormorantGaramond_600SemiBold,
+    Outfit_400Regular,
+    Outfit_500Medium,
+    Outfit_600SemiBold,
+    ...Feather.font,
+  });
+  if (!loaded && !error)
+    return (
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: colors.background,
+          justifyContent: "center",
+        }}
+      >
+        <ActivityIndicator
+          accessibilityLabel="Preparando interfaz"
+          color={colors.roseDeep}
+        />
+      </View>
+    );
+  return (
+    <SafeAreaProvider>
+      <AuthProvider>
+        <FlowProvider>
+          <StatusBar style="dark" />
+          <Navigator />
+        </FlowProvider>
+      </AuthProvider>
+    </SafeAreaProvider>
+  );
 }

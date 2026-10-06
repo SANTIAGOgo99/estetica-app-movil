@@ -1,2 +1,4 @@
-import { UpcomingScreen } from '../../components/UpcomingScreen';
-export default function Products() { return <UpcomingScreen title="Productos" />; }
+import { CatalogScreen } from "../../features/catalog/Screens";
+export default function Screen() {
+  return <CatalogScreen kind="products" />;
+}
