@@ -1,4 +1,4 @@
-﻿# Estética App Móvil
+# Estética App Móvil
 
 Aplicación móvil orientada a los clientes de **Ezequiel Castillo Ángeles Hair Designer**.
 
@@ -58,6 +58,86 @@ Las modificaciones se desarrollan en ramas independientes antes de integrarse a 
 
 La planeación y seguimiento de historias de usuario, tareas, prioridades y Sprints se realiza mediante GitHub Projects.
 
+## Validación continua
+
+Los push y Pull Requests ejecutan GitHub Actions con Node.js 22.13.1,
+`npm ci`, `npx tsc --noEmit`, `npm run lint` y `npm test` (16 casos de autenticación).
+
+Para validar cambios localmente:
+
+```bash
+npm ci
+npm run typecheck
+npm run lint
+npm test
+```
+
+La planeación está en [GitHub Projects](https://github.com/users/SANTIAGOgo99/projects/1).
+HU00–HU17 son Issues padre; las actividades específicas son sub-issues.
+Las pruebas compartidas indican las historias cubiertas en su descripción.
+Los títulos de pruebas están en mayúsculas y usan el label violeta `PRUEBA`.
+El cierre de una tarea requiere evidencia; un Issue calendarizado no implica
+que la funcionalidad o la prueba ya se haya ejecutado.
+
 ## Responsable
 
 Héctor Santiago Hernández.
+
+
+## Acceso y navegación
+
+Las pantallas están en `src/app/` y la lógica de sesión en `src/features/auth/`.
+La app utiliza Expo Router; `App.tsx` e `index.js` se sustituyeron por su entrada.
+
+Para configurar el acceso, copia `.env.example` a `.env` y completa
+`EXPO_PUBLIC_API_URL` con la URL de pruebas del backend, incluyendo `/api`.
+Desde un teléfono, usa una dirección accesible en la red; `localhost` apunta al teléfono.
+Esta variable es pública: no pongas contraseñas ni secretos en ella.
+Reinicia Expo después de configurarla.
+
+```bash
+npm start
+```
+
+Sin URL configurada, el formulario muestra un aviso y no concede acceso.
+El backend debe devolver un token vigente y `role: client`. Las cuentas administrativas
+continúan en el sistema web. SecureStore guarda el token en el teléfono;
+para pruebas web se usa sessionStorage de la pestaña. No se guarda la contraseña.
+
+Las interfaces móviles incluyen los módulos del documento de diseño. Los catálogos son públicos y los datos de cuenta se consultan con una sesión de cliente; las funciones todavía pendientes están identificadas en pantalla.
+Consulta [el avance y la explicación de cada archivo](docs/avance-2026-10-05.md)
+para ver qué se comprobó y qué falta probar con servidor real.
+
+## Probar el acceso conectado
+
+La configuración local usa el mismo backend publicado que la web:
+`https://esteticaa-backend-five.vercel.app/api`.
+Es el entorno publicado, no uno aislado de pruebas. `.env` permanece fuera de Git.
+
+Los comandos `npm start` y `npm run web` usan el puerto **5173**, permitido
+por el backend para el navegador. Abre `http://localhost:5173/sign-in`.
+Introduce una cuenta de **cliente** existente; las cuentas administrativas siguen en la web.
+
+En Windows puedes abrir la prueba con instrucciones:
+
+```powershell
+.\scripts\probar-acceso.cmd
+```
+
+Consulta [las comprobaciones de conexión y los pasos de prueba](docs/conexion-backend.md).
+
+
+## Entrada pública y funciones conectadas
+
+Con `npm start` o `npm run web`, abre http://localhost:5173/.
+Los visitantes pueden consultar Servicios, Productos y sus detalles sin cuenta.
+Agendar, usar el carrito y consultar el perfil requieren iniciar sesión o registrarse.
+
+El acceso está en http://localhost:5173/sign-in. El registro, la consulta de perfil,
+los horarios y la agenda utilizan el backend existente. La confirmación de cita
+crea una reserva real. La creación de pedidos, la edición de perfil y las acciones
+para cambiar o cancelar citas aún necesitan trabajo en el backend.
+
+Lee [la guía actual de funciones, archivos y pruebas](docs/acceso-publico-2026-10-06.md).
+La [guía de interfaces anterior](docs/interfaces-2026-10-06.md) y sus capturas se
+conservan como evidencia histórica; sus datos de ejemplo ya se retiraron del flujo actual.

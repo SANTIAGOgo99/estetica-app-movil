@@ -1,0 +1,34 @@
+name: Validación móvil
+
+on:
+  push:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Obtener código
+        uses: actions/checkout@v7
+      - name: Configurar Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22.13.1'
+          cache: npm
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Validar TypeScript
+        run: npx tsc --noEmit
+      - name: Analizar código estático
+        run: npm run lint
+      - name: Probar autenticación
+        run: npm test
