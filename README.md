@@ -46,38 +46,17 @@ Backlog → Por hacer → En progreso → En revisión → Terminado.
 
 La aplicación utiliza una arquitectura cliente-servidor. La aplicación móvil funciona como cliente y consume mediante una API REST el backend desarrollado con Node.js y Express, el cual gestiona las reglas del negocio y el acceso a PostgreSQL.
 
-## Estrategia de ramas
+## Estrategia de ramas y pruebas
 
-- main: contiene versiones estables del proyecto.
-- eature/nombre-funcion: utilizada para nuevas funcionalidades.
-- ix/nombre-error: utilizada para correcciones.
+- main: entregas estables.
+- develop: integración de historias y ejecución de las seis verificaciones.
+- codex/huXX-descripcion: una rama por historia para sus correcciones y pruebas.
 
-Las modificaciones se desarrollan en ramas independientes antes de integrarse a main.
+Las ramas anteriores se conservan. La línea base de develop reúne los avances existentes, sin reconstruir el historial. En las ramas HU se ejecutan análisis estático, unitarias, integración y regresión. Al integrar a develop se agregan aceptación y rendimiento. Esfuerzo queda como procedimiento manual por historia.
 
-## Gestión del proyecto
+La [planeación de pruebas](docs/testing/README.md) contiene siete tareas por HU, los alcances de requerimiento/módulo/sprint, comandos y límites de la cobertura actual. [GitHub Projects](https://github.com/users/SANTIAGOgo99/projects/1) conserva las tareas de desarrollo y las nuevas pruebas como sub-issues.
 
-La planeación y seguimiento de historias de usuario, tareas, prioridades y Sprints se realiza mediante GitHub Projects.
-
-## Validación continua
-
-Los push y Pull Requests ejecutan GitHub Actions con Node.js 22.13.1,
-`npm ci`, `npx tsc --noEmit`, `npm run lint` y `npm test` (16 casos de autenticación).
-
-Para validar cambios localmente:
-
-```bash
-npm ci
-npm run typecheck
-npm run lint
-npm test
-```
-
-La planeación está en [GitHub Projects](https://github.com/users/SANTIAGOgo99/projects/1).
-HU00–HU17 son Issues padre; las actividades específicas son sub-issues.
-Las pruebas compartidas indican las historias cubiertas en su descripción.
-Los títulos de pruebas están en mayúsculas y usan el label violeta `PRUEBA`.
-El cierre de una tarea requiere evidencia; un Issue calendarizado no implica
-que la funcionalidad o la prueba ya se haya ejecutado.
+Los reportes y trazas se guardan como artefactos de GitHub Actions. Las verificaciones actuales de interfaz usan web móvil con API simulada; Android/iOS y staging requieren evidencia adicional. Un job verde no completa automáticamente una historia.
 
 ## Responsable
 

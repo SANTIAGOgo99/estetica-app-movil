@@ -32,10 +32,17 @@
     "web": "expo start --web --port 5173",
     "lint": "expo lint",
     "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types --test tests/*.test.mjs"
+    "test": "node scripts/run-tests.mjs regression",
+    "test:unit": "node scripts/run-tests.mjs unit",
+    "test:integration": "node scripts/run-tests.mjs integration",
+    "test:regression": "node scripts/run-tests.mjs regression",
+    "test:acceptance": "playwright test acceptance.spec.ts",
+    "test:performance": "playwright test performance.spec.ts",
+    "test:export": "node scripts/export-test-web.mjs"
   },
   "private": true,
   "devDependencies": {
+    "@playwright/test": "^1.64.1",
     "eslint": "^9.39.5",
     "eslint-config-expo": "~57.0.2"
   }

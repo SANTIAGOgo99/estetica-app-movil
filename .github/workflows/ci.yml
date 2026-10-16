@@ -1,34 +1,150 @@
-name: Validación móvil
-
+# Flujo general: cuatro verificaciones por historia y las seis en develop.
+# Esfuerzo se registra manualmente en la sub-issue correspondiente.
+name: Pipeline de pruebas
 on:
   push:
+    branches: ['**']
   pull_request:
-    branches: [main]
-
+    branches: [develop, main]
 permissions:
   contents: read
-
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
+  group: pruebas-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-
+env:
+  CI: '1'
+  EXPO_NO_DOTENV: '1'
+  EXPO_PUBLIC_API_URL: https://api.example.test/api
 jobs:
-  validate:
+  analisis-estatico:
+    name: Análisis de código estático
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Obtener código
-        uses: actions/checkout@v7
-      - name: Configurar Node.js
-        uses: actions/setup-node@v7
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '22.13.1'
           cache: npm
-      - name: Instalar dependencias
-        run: npm ci
-      - name: Validar TypeScript
-        run: npx tsc --noEmit
-      - name: Analizar código estático
-        run: npm run lint
-      - name: Probar autenticación
-        run: npm test
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+  unitarias:
+    name: Pruebas unitarias
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.1'
+          cache: npm
+      - run: npm ci
+      - run: npm run test:unit
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: unitarias
+          path: reports/unit.xml
+          if-no-files-found: error
+  integracion:
+    name: Pruebas de integración
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.1'
+          cache: npm
+      - run: npm ci
+      - run: npm run test:integration
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: integracion-http-local
+          path: reports/integration.xml
+          if-no-files-found: error
+  regresion:
+    name: Pruebas de regresión y empaquetado
+    needs: [analisis-estatico, unitarias, integracion]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.1'
+          cache: npm
+      - run: npm ci
+      - run: npm run test:regression
+      - name: Empaquetar JavaScript Android (no genera APK)
+        run: npx expo export --platform android --output-dir dist-android
+      - name: Exportar interfaz para pruebas web
+        run: npm run test:export
+      - uses: actions/upload-artifact@v4
+        with:
+          name: interfaz-web-pruebas
+          path: dist-test/
+          include-hidden-files: true
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: regresion
+          path: reports/regression.xml
+          if-no-files-found: error
+  aceptacion:
+    name: Pruebas de aceptación (web móvil)
+    needs: regresion
+    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.1'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: interfaz-web-pruebas
+          path: dist-test/
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:acceptance
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: aceptacion-web-movil
+          path: |
+            reports/
+            test-results/
+          if-no-files-found: error
+  rendimiento:
+    name: Pruebas de rendimiento (web móvil)
+    needs: regresion
+    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.1'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: interfaz-web-pruebas
+          path: dist-test/
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:performance
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rendimiento-web-movil
+          path: |
+            reports/
+            test-results/
+          if-no-files-found: error

@@ -44,3 +44,8 @@ yarn-error.*
 .planning/
 .env
 /dist-android/
+
+# Generated test evidence
+/reports/
+/test-results/
+/dist-test/
