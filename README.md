@@ -50,7 +50,7 @@ La aplicación utiliza una arquitectura cliente-servidor. La aplicación móvil 
 
 - main: entregas estables.
 - develop: integración de historias y ejecución de las seis verificaciones.
-- codex/huXX-descripcion: una rama por historia para sus correcciones y pruebas.
+- feature/huXX-descripcion: crear la rama al iniciar la historia; actualmente solo HU00 y HU01.
 
 Las ramas anteriores se conservan. La línea base de develop reúne los avances existentes, sin reconstruir el historial. En las ramas HU se ejecutan análisis estático, unitarias, integración y regresión. Al integrar a develop se agregan aceptación y rendimiento. Esfuerzo queda como procedimiento manual por historia.
 

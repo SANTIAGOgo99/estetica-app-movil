@@ -6,216 +6,252 @@
       "title": "HU00 - Preparar repositorio y flujo DevOps de la aplicación móvil",
       "issueNumber": 3,
       "module": "devops",
-      "branch": "codex/hu00-pruebas-devops",
+      "branch": "feature/hu00-pruebas-devops",
       "sprint": 1,
       "unit": "Configuración y clasificación de suites, seis jobs y condiciones por rama",
       "integration": "Workflow, comandos y reportes JUnit",
       "acceptance": "En rama HU se ejecutan cuatro jobs; en develop seis; esfuerzo queda registrado manualmente",
-      "performance": "Duración de ejecución de CI y tamaño de artefactos"
+      "performance": "Duración de ejecución de CI y tamaño de artefactos",
+      "plannedBranch": "feature/hu00-pruebas-devops",
+      "branchStatus": "activa"
     },
     {
       "key": "HU01",
       "title": "HU01 - Iniciar sesión",
       "issueNumber": 10,
       "module": "acceso",
-      "branch": "codex/hu01-iniciar-sesion",
+      "branch": "feature/hu01-iniciar-sesion",
       "sprint": 1,
       "unit": "Correo obligatorio, formato, contraseña vacía y expiración de sesión",
       "integration": "Formulario, autenticación HTTP y almacenamiento de sesión",
       "acceptance": "Credenciales válidas permiten entrar y restaurar; inválidas muestran error sin revelar cuentas",
-      "performance": "Tiempo desde enviar credenciales hasta la pantalla de cliente"
+      "performance": "Tiempo desde enviar credenciales hasta la pantalla de cliente",
+      "plannedBranch": "feature/hu01-iniciar-sesion",
+      "branchStatus": "activa"
     },
     {
       "key": "HU02",
       "title": "HU02 - Consultar servicios",
       "issueNumber": 14,
       "module": "catalogo",
-      "branch": "codex/hu02-consultar-servicios",
+      "branch": null,
       "sprint": 1,
       "unit": "Respuesta vacía, servicios inactivos y precio válido",
       "integration": "Cliente HTTP, listado de servicios y decodificador",
       "acceptance": "Catálogo público muestra servicios; búsqueda filtra; fallo permite reintentar",
-      "performance": "Tiempo hasta mostrar catálogo de servicios utilizable"
+      "performance": "Tiempo hasta mostrar catálogo de servicios utilizable",
+      "plannedBranch": "feature/hu02-consultar-servicios",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU03",
       "title": "HU03 - Ver detalle de un servicio",
       "issueNumber": 15,
       "module": "catalogo",
-      "branch": "codex/hu03-detalle-servicio",
+      "branch": null,
       "sprint": 1,
       "unit": "ID válido, precio, descripción y duración del servicio",
       "integration": "Listado, detalle por ID y selección para agenda",
       "acceptance": "El servicio seleccionado conserva nombre, precio y duración; reservar solicita sesión",
-      "performance": "Tiempo hasta mostrar detalle del servicio"
+      "performance": "Tiempo hasta mostrar detalle del servicio",
+      "plannedBranch": "feature/hu03-detalle-servicio",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU04",
       "title": "HU04 - Consultar productos",
       "issueNumber": 16,
       "module": "catalogo",
-      "branch": "codex/hu04-consultar-productos",
+      "branch": null,
       "sprint": 1,
       "unit": "Precio, existencias, catálogo vacío e inactivos",
       "integration": "Cliente HTTP, listado de productos y decodificador",
       "acceptance": "Catálogo público permite buscar productos y abrir su detalle",
-      "performance": "Tiempo hasta mostrar catálogo de productos utilizable"
+      "performance": "Tiempo hasta mostrar catálogo de productos utilizable",
+      "plannedBranch": "feature/hu04-consultar-productos",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU05",
       "title": "HU05 - Ver detalle de un producto",
       "issueNumber": 17,
       "module": "catalogo",
-      "branch": "codex/hu05-detalle-producto",
+      "branch": null,
       "sprint": 1,
       "unit": "ID, descripción, precio y existencias del producto",
       "integration": "Listado, detalle por ID y selección para carrito",
       "acceptance": "Detalle corresponde al producto elegido; compra requiere sesión y disponibilidad",
-      "performance": "Tiempo hasta mostrar detalle del producto"
+      "performance": "Tiempo hasta mostrar detalle del producto",
+      "plannedBranch": "feature/hu05-detalle-producto",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU06",
       "title": "HU06 - Consultar fechas disponibles",
       "issueNumber": 18,
       "module": "agendamiento",
-      "branch": "codex/hu06-fechas-disponibles",
+      "branch": null,
       "sprint": 2,
       "unit": "Fechas pasadas, formato y días permitidos según backend",
       "integration": "Selector de fecha y consulta de disponibilidad por servicio",
       "acceptance": "Cliente selecciona fecha válida; una fecha no disponible no permite reservar",
-      "performance": "Tiempo desde seleccionar fecha hasta mostrar disponibilidad"
+      "performance": "Tiempo desde seleccionar fecha hasta mostrar disponibilidad",
+      "plannedBranch": "feature/hu06-fechas-disponibles",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU07",
       "title": "HU07 - Consultar horarios disponibles",
       "issueNumber": 19,
       "module": "agendamiento",
-      "branch": "codex/hu07-horarios-disponibles",
+      "branch": null,
       "sprint": 2,
       "unit": "Horario ocupado, formato y disponibilidad booleana",
       "integration": "Servicio, fecha, API de horarios y selector",
       "acceptance": "Cliente solo puede elegir horario disponible; ocupado se identifica claramente",
-      "performance": "Tiempo hasta mostrar horarios de la fecha seleccionada"
+      "performance": "Tiempo hasta mostrar horarios de la fecha seleccionada",
+      "plannedBranch": "feature/hu07-horarios-disponibles",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU08",
       "title": "HU08 - Agendar una cita",
       "issueNumber": 20,
       "module": "agendamiento",
-      "branch": "codex/hu08-agendar-cita",
+      "branch": null,
       "sprint": 2,
       "unit": "Datos obligatorios, servicio y horario seleccionado",
       "integration": "Reserva POST, token y respuesta de conflicto 409",
       "acceptance": "Reserva válida obtiene ID del servidor; conflicto no muestra confirmación falsa",
-      "performance": "Tiempo entre confirmar reserva y recibir resultado"
+      "performance": "Tiempo entre confirmar reserva y recibir resultado",
+      "plannedBranch": "feature/hu08-agendar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU09",
       "title": "HU09 - Confirmar información de la cita",
       "issueNumber": 21,
       "module": "agendamiento",
-      "branch": "codex/hu09-confirmar-cita",
+      "branch": null,
       "sprint": 2,
       "unit": "Totales y anticipo provenientes del servidor",
       "integration": "Respuesta de reserva, estado de flujo y comprobante",
       "acceptance": "Confirmación coincide con servicio, fecha e importe reales; sin ID no hay éxito",
-      "performance": "Tiempo hasta mostrar comprobante de cita"
+      "performance": "Tiempo hasta mostrar comprobante de cita",
+      "plannedBranch": "feature/hu09-confirmar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU10",
       "title": "HU10 - Consultar mis citas",
       "issueNumber": 22,
       "module": "citas",
-      "branch": "codex/hu10-consultar-citas",
+      "branch": null,
       "sprint": 3,
       "unit": "Agenda vacía, próxima/anterior y respuesta incompleta",
       "integration": "Token de cliente, API de citas y listado",
       "acceptance": "Solo se muestran citas del cliente; se distinguen próximas y anteriores",
-      "performance": "Tiempo hasta mostrar lista de citas"
+      "performance": "Tiempo hasta mostrar lista de citas",
+      "plannedBranch": "feature/hu10-consultar-citas",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU11",
       "title": "HU11 - Reagendar una cita",
       "issueNumber": 23,
       "module": "citas",
-      "branch": "codex/hu11-reagendar-cita",
+      "branch": null,
       "sprint": 3,
       "unit": "Estados y plazos de cambio definidos por backend",
       "integration": "Detalle de cita, nueva disponibilidad y actualización persistida",
       "acceptance": "Cambio permitido actualiza cita; horario ocupado conserva la cita original",
-      "performance": "Tiempo hasta confirmar nueva fecha y refrescar agenda"
+      "performance": "Tiempo hasta confirmar nueva fecha y refrescar agenda",
+      "plannedBranch": "feature/hu11-reagendar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU12",
       "title": "HU12 - Cancelar una cita",
       "issueNumber": 24,
       "module": "citas",
-      "branch": "codex/hu12-cancelar-cita",
+      "branch": null,
       "sprint": 3,
       "unit": "Condiciones y estados cancelables del backend",
       "integration": "Confirmación, API de cancelación y consulta posterior",
       "acceptance": "Cancelar requiere confirmación; éxito cambia estado; error conserva la cita",
-      "performance": "Tiempo entre confirmar cancelación y refrescar estado"
+      "performance": "Tiempo entre confirmar cancelación y refrescar estado",
+      "plannedBranch": "feature/hu12-cancelar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU13",
       "title": "HU13 - Consultar estado de una cita",
       "issueNumber": 25,
       "module": "citas",
-      "branch": "codex/hu13-estado-cita",
+      "branch": null,
       "sprint": 3,
       "unit": "Etiquetas de estado y pendiente de cierre",
       "integration": "Respuesta del servidor, estado mostrado y refresco",
       "acceptance": "Estado mostrado coincide con servidor después de reservar, modificar o cancelar",
-      "performance": "Tiempo de actualización visible de estado"
+      "performance": "Tiempo de actualización visible de estado",
+      "plannedBranch": "feature/hu13-estado-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU14",
       "title": "HU14 - Agregar productos al carrito",
       "issueNumber": 26,
       "module": "compras",
-      "branch": "codex/hu14-agregar-carrito",
+      "branch": null,
       "sprint": 4,
       "unit": "Cantidad positiva, límite de stock y acumulación",
       "integration": "Detalle de producto, sesión y estado del carrito",
       "acceptance": "Agregar conserva producto y cantidad; no supera stock; usuario anónimo debe entrar",
-      "performance": "Tiempo de respuesta al agregar producto"
+      "performance": "Tiempo de respuesta al agregar producto",
+      "plannedBranch": "feature/hu14-agregar-carrito",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU15",
       "title": "HU15 - Consultar y modificar el carrito",
       "issueNumber": 27,
       "module": "compras",
-      "branch": "codex/hu15-modificar-carrito",
+      "branch": null,
       "sprint": 4,
       "unit": "Cantidades, eliminación y precisión de totales",
       "integration": "Carrito, actualización de cantidad y resumen de compra",
       "acceptance": "Cambiar cantidad actualiza total; eliminar último producto muestra carrito vacío",
-      "performance": "Tiempo de recálculo y actualización del carrito"
+      "performance": "Tiempo de recálculo y actualización del carrito",
+      "plannedBranch": "feature/hu15-modificar-carrito",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU16",
       "title": "HU16 - Generar pedido o compra",
       "issueNumber": 28,
       "module": "compras",
-      "branch": "codex/hu16-generar-pedido",
+      "branch": null,
       "sprint": 4,
       "unit": "Carrito vacío, stock, total y prevención de doble envío",
       "integration": "Carrito, API de pedido y persistencia en staging",
       "acceptance": "Pedido válido recibe ID; error conserva carrito; doble envío no duplica",
-      "performance": "Tiempo desde enviar pedido hasta recibir confirmación"
+      "performance": "Tiempo desde enviar pedido hasta recibir confirmación",
+      "plannedBranch": "feature/hu16-generar-pedido",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU17",
       "title": "HU17 - Confirmar pedido",
       "issueNumber": 29,
       "module": "compras",
-      "branch": "codex/hu17-confirmar-pedido",
+      "branch": null,
       "sprint": 4,
       "unit": "Identificador, total y estado recibido del pedido",
       "integration": "Pedido persistido, comprobante y limpieza de carrito",
       "acceptance": "Solo después del éxito se muestra comprobante y vacía carrito; fallo no inventa pedido",
-      "performance": "Tiempo hasta mostrar comprobante de pedido"
+      "performance": "Tiempo hasta mostrar comprobante de pedido",
+      "plannedBranch": "feature/hu17-confirmar-pedido",
+      "branchStatus": "pendiente de crear"
     }
   ],
   "rows": [
@@ -1231,7 +1267,7 @@
       "end": "2026-10-02",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu00-pruebas-devops",
+      "branch": "feature/hu00-pruebas-devops",
       "module": "devops",
       "detail": "Probar: Configuración y clasificación de suites, seis jobs y condiciones por rama. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1239,7 +1275,9 @@
         "requirement": "HU00",
         "module": "devops",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu00-pruebas-devops",
+      "branchStatus": "activa"
     },
     {
       "key": "HU00-P02",
@@ -1252,7 +1290,7 @@
       "end": "2026-10-02",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu00-pruebas-devops",
+      "branch": "feature/hu00-pruebas-devops",
       "module": "devops",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1260,7 +1298,9 @@
         "requirement": "HU00",
         "module": "devops",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu00-pruebas-devops",
+      "branchStatus": "activa"
     },
     {
       "key": "HU00-P03",
@@ -1273,7 +1313,7 @@
       "end": "2026-10-02",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu00-pruebas-devops",
+      "branch": "feature/hu00-pruebas-devops",
       "module": "devops",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: En rama HU se ejecutan cuatro jobs; en develop seis; esfuerzo queda registrado manualmente. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1281,7 +1321,9 @@
         "requirement": "HU00",
         "module": "devops",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu00-pruebas-devops",
+      "branchStatus": "activa"
     },
     {
       "key": "HU00-P04",
@@ -1294,7 +1336,7 @@
       "end": "2026-10-02",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu00-pruebas-devops",
+      "branch": "feature/hu00-pruebas-devops",
       "module": "devops",
       "detail": "Verificar Workflow, comandos y reportes JUnit. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1302,7 +1344,9 @@
         "requirement": "HU00",
         "module": "devops",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu00-pruebas-devops",
+      "branchStatus": "activa"
     },
     {
       "key": "HU00-P05",
@@ -1315,7 +1359,7 @@
       "end": "2026-10-02",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu00-pruebas-devops",
+      "branch": "feature/hu00-pruebas-devops",
       "module": "devops",
       "detail": "Ejecutar npm run test:regression y volver a recorrer en rama hu se ejecutan cuatro jobs; en develop seis; esfuerzo queda registrado manualmente. Repetir el flujo completo del módulo devops con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1323,7 +1367,9 @@
         "requirement": "HU00",
         "module": "devops",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu00-pruebas-devops",
+      "branchStatus": "activa"
     },
     {
       "key": "HU00-P06",
@@ -1336,7 +1382,7 @@
       "end": "2026-10-02",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu00-pruebas-devops",
+      "branch": "feature/hu00-pruebas-devops",
       "module": "devops",
       "detail": "Medir: Duración de ejecución de CI y tamaño de artefactos. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1344,7 +1390,9 @@
         "requirement": "HU00",
         "module": "devops",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu00-pruebas-devops",
+      "branchStatus": "activa"
     },
     {
       "key": "HU00-P07",
@@ -1357,7 +1405,7 @@
       "end": "2026-10-02",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu00-pruebas-devops",
+      "branch": "feature/hu00-pruebas-devops",
       "module": "devops",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo devops. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1365,7 +1413,9 @@
         "requirement": "HU00",
         "module": "devops",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu00-pruebas-devops",
+      "branchStatus": "activa"
     },
     {
       "key": "HU01-P01",
@@ -1378,7 +1428,7 @@
       "end": "2026-10-06",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu01-iniciar-sesion",
+      "branch": "feature/hu01-iniciar-sesion",
       "module": "acceso",
       "detail": "Probar: Correo obligatorio, formato, contraseña vacía y expiración de sesión. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1386,7 +1436,9 @@
         "requirement": "HU01",
         "module": "acceso",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu01-iniciar-sesion",
+      "branchStatus": "activa"
     },
     {
       "key": "HU01-P02",
@@ -1399,7 +1451,7 @@
       "end": "2026-10-06",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu01-iniciar-sesion",
+      "branch": "feature/hu01-iniciar-sesion",
       "module": "acceso",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1407,7 +1459,9 @@
         "requirement": "HU01",
         "module": "acceso",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu01-iniciar-sesion",
+      "branchStatus": "activa"
     },
     {
       "key": "HU01-P03",
@@ -1420,7 +1474,7 @@
       "end": "2026-10-06",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu01-iniciar-sesion",
+      "branch": "feature/hu01-iniciar-sesion",
       "module": "acceso",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Credenciales válidas permiten entrar y restaurar; inválidas muestran error sin revelar cuentas. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1428,7 +1482,9 @@
         "requirement": "HU01",
         "module": "acceso",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu01-iniciar-sesion",
+      "branchStatus": "activa"
     },
     {
       "key": "HU01-P04",
@@ -1441,7 +1497,7 @@
       "end": "2026-10-06",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu01-iniciar-sesion",
+      "branch": "feature/hu01-iniciar-sesion",
       "module": "acceso",
       "detail": "Verificar Formulario, autenticación HTTP y almacenamiento de sesión. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1449,7 +1505,9 @@
         "requirement": "HU01",
         "module": "acceso",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu01-iniciar-sesion",
+      "branchStatus": "activa"
     },
     {
       "key": "HU01-P05",
@@ -1462,7 +1520,7 @@
       "end": "2026-10-06",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu01-iniciar-sesion",
+      "branch": "feature/hu01-iniciar-sesion",
       "module": "acceso",
       "detail": "Ejecutar npm run test:regression y volver a recorrer credenciales válidas permiten entrar y restaurar; inválidas muestran error sin revelar cuentas. Repetir el flujo completo del módulo acceso con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1470,7 +1528,9 @@
         "requirement": "HU01",
         "module": "acceso",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu01-iniciar-sesion",
+      "branchStatus": "activa"
     },
     {
       "key": "HU01-P06",
@@ -1483,7 +1543,7 @@
       "end": "2026-10-06",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu01-iniciar-sesion",
+      "branch": "feature/hu01-iniciar-sesion",
       "module": "acceso",
       "detail": "Medir: Tiempo desde enviar credenciales hasta la pantalla de cliente. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1491,7 +1551,9 @@
         "requirement": "HU01",
         "module": "acceso",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu01-iniciar-sesion",
+      "branchStatus": "activa"
     },
     {
       "key": "HU01-P07",
@@ -1504,7 +1566,7 @@
       "end": "2026-10-06",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu01-iniciar-sesion",
+      "branch": "feature/hu01-iniciar-sesion",
       "module": "acceso",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo acceso. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1512,7 +1574,9 @@
         "requirement": "HU01",
         "module": "acceso",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu01-iniciar-sesion",
+      "branchStatus": "activa"
     },
     {
       "key": "HU02-P01",
@@ -1525,7 +1589,7 @@
       "end": "2026-10-09",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu02-consultar-servicios",
+      "branch": null,
       "module": "catalogo",
       "detail": "Probar: Respuesta vacía, servicios inactivos y precio válido. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1533,7 +1597,9 @@
         "requirement": "HU02",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu02-consultar-servicios",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU02-P02",
@@ -1546,7 +1612,7 @@
       "end": "2026-10-09",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu02-consultar-servicios",
+      "branch": null,
       "module": "catalogo",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1554,7 +1620,9 @@
         "requirement": "HU02",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu02-consultar-servicios",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU02-P03",
@@ -1567,7 +1635,7 @@
       "end": "2026-10-09",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu02-consultar-servicios",
+      "branch": null,
       "module": "catalogo",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Catálogo público muestra servicios; búsqueda filtra; fallo permite reintentar. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1575,7 +1643,9 @@
         "requirement": "HU02",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu02-consultar-servicios",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU02-P04",
@@ -1588,7 +1658,7 @@
       "end": "2026-10-09",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu02-consultar-servicios",
+      "branch": null,
       "module": "catalogo",
       "detail": "Verificar Cliente HTTP, listado de servicios y decodificador. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1596,7 +1666,9 @@
         "requirement": "HU02",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu02-consultar-servicios",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU02-P05",
@@ -1609,7 +1681,7 @@
       "end": "2026-10-09",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu02-consultar-servicios",
+      "branch": null,
       "module": "catalogo",
       "detail": "Ejecutar npm run test:regression y volver a recorrer catálogo público muestra servicios; búsqueda filtra; fallo permite reintentar. Repetir el flujo completo del módulo catalogo con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1617,7 +1689,9 @@
         "requirement": "HU02",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu02-consultar-servicios",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU02-P06",
@@ -1630,7 +1704,7 @@
       "end": "2026-10-09",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu02-consultar-servicios",
+      "branch": null,
       "module": "catalogo",
       "detail": "Medir: Tiempo hasta mostrar catálogo de servicios utilizable. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1638,7 +1712,9 @@
         "requirement": "HU02",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu02-consultar-servicios",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU02-P07",
@@ -1651,7 +1727,7 @@
       "end": "2026-10-09",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu02-consultar-servicios",
+      "branch": null,
       "module": "catalogo",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo catalogo. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1659,7 +1735,9 @@
         "requirement": "HU02",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu02-consultar-servicios",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU03-P01",
@@ -1672,7 +1750,7 @@
       "end": "2026-10-12",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu03-detalle-servicio",
+      "branch": null,
       "module": "catalogo",
       "detail": "Probar: ID válido, precio, descripción y duración del servicio. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1680,7 +1758,9 @@
         "requirement": "HU03",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu03-detalle-servicio",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU03-P02",
@@ -1693,7 +1773,7 @@
       "end": "2026-10-12",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu03-detalle-servicio",
+      "branch": null,
       "module": "catalogo",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1701,7 +1781,9 @@
         "requirement": "HU03",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu03-detalle-servicio",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU03-P03",
@@ -1714,7 +1796,7 @@
       "end": "2026-10-12",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu03-detalle-servicio",
+      "branch": null,
       "module": "catalogo",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: El servicio seleccionado conserva nombre, precio y duración; reservar solicita sesión. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1722,7 +1804,9 @@
         "requirement": "HU03",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu03-detalle-servicio",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU03-P04",
@@ -1735,7 +1819,7 @@
       "end": "2026-10-12",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu03-detalle-servicio",
+      "branch": null,
       "module": "catalogo",
       "detail": "Verificar Listado, detalle por ID y selección para agenda. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1743,7 +1827,9 @@
         "requirement": "HU03",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu03-detalle-servicio",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU03-P05",
@@ -1756,7 +1842,7 @@
       "end": "2026-10-12",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu03-detalle-servicio",
+      "branch": null,
       "module": "catalogo",
       "detail": "Ejecutar npm run test:regression y volver a recorrer el servicio seleccionado conserva nombre, precio y duración; reservar solicita sesión. Repetir el flujo completo del módulo catalogo con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1764,7 +1850,9 @@
         "requirement": "HU03",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu03-detalle-servicio",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU03-P06",
@@ -1777,7 +1865,7 @@
       "end": "2026-10-12",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu03-detalle-servicio",
+      "branch": null,
       "module": "catalogo",
       "detail": "Medir: Tiempo hasta mostrar detalle del servicio. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1785,7 +1873,9 @@
         "requirement": "HU03",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu03-detalle-servicio",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU03-P07",
@@ -1798,7 +1888,7 @@
       "end": "2026-10-12",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu03-detalle-servicio",
+      "branch": null,
       "module": "catalogo",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo catalogo. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1806,7 +1896,9 @@
         "requirement": "HU03",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu03-detalle-servicio",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU04-P01",
@@ -1819,7 +1911,7 @@
       "end": "2026-10-14",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu04-consultar-productos",
+      "branch": null,
       "module": "catalogo",
       "detail": "Probar: Precio, existencias, catálogo vacío e inactivos. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1827,7 +1919,9 @@
         "requirement": "HU04",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu04-consultar-productos",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU04-P02",
@@ -1840,7 +1934,7 @@
       "end": "2026-10-14",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu04-consultar-productos",
+      "branch": null,
       "module": "catalogo",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1848,7 +1942,9 @@
         "requirement": "HU04",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu04-consultar-productos",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU04-P03",
@@ -1861,7 +1957,7 @@
       "end": "2026-10-14",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu04-consultar-productos",
+      "branch": null,
       "module": "catalogo",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Catálogo público permite buscar productos y abrir su detalle. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1869,7 +1965,9 @@
         "requirement": "HU04",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu04-consultar-productos",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU04-P04",
@@ -1882,7 +1980,7 @@
       "end": "2026-10-14",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu04-consultar-productos",
+      "branch": null,
       "module": "catalogo",
       "detail": "Verificar Cliente HTTP, listado de productos y decodificador. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1890,7 +1988,9 @@
         "requirement": "HU04",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu04-consultar-productos",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU04-P05",
@@ -1903,7 +2003,7 @@
       "end": "2026-10-14",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu04-consultar-productos",
+      "branch": null,
       "module": "catalogo",
       "detail": "Ejecutar npm run test:regression y volver a recorrer catálogo público permite buscar productos y abrir su detalle. Repetir el flujo completo del módulo catalogo con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1911,7 +2011,9 @@
         "requirement": "HU04",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu04-consultar-productos",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU04-P06",
@@ -1924,7 +2026,7 @@
       "end": "2026-10-14",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu04-consultar-productos",
+      "branch": null,
       "module": "catalogo",
       "detail": "Medir: Tiempo hasta mostrar catálogo de productos utilizable. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1932,7 +2034,9 @@
         "requirement": "HU04",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu04-consultar-productos",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU04-P07",
@@ -1945,7 +2049,7 @@
       "end": "2026-10-14",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu04-consultar-productos",
+      "branch": null,
       "module": "catalogo",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo catalogo. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1953,7 +2057,9 @@
         "requirement": "HU04",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu04-consultar-productos",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU05-P01",
@@ -1966,7 +2072,7 @@
       "end": "2026-10-16",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu05-detalle-producto",
+      "branch": null,
       "module": "catalogo",
       "detail": "Probar: ID, descripción, precio y existencias del producto. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1974,7 +2080,9 @@
         "requirement": "HU05",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu05-detalle-producto",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU05-P02",
@@ -1987,7 +2095,7 @@
       "end": "2026-10-16",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu05-detalle-producto",
+      "branch": null,
       "module": "catalogo",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -1995,7 +2103,9 @@
         "requirement": "HU05",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu05-detalle-producto",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU05-P03",
@@ -2008,7 +2118,7 @@
       "end": "2026-10-16",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu05-detalle-producto",
+      "branch": null,
       "module": "catalogo",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Detalle corresponde al producto elegido; compra requiere sesión y disponibilidad. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2016,7 +2126,9 @@
         "requirement": "HU05",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu05-detalle-producto",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU05-P04",
@@ -2029,7 +2141,7 @@
       "end": "2026-10-16",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu05-detalle-producto",
+      "branch": null,
       "module": "catalogo",
       "detail": "Verificar Listado, detalle por ID y selección para carrito. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2037,7 +2149,9 @@
         "requirement": "HU05",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu05-detalle-producto",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU05-P05",
@@ -2050,7 +2164,7 @@
       "end": "2026-10-16",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu05-detalle-producto",
+      "branch": null,
       "module": "catalogo",
       "detail": "Ejecutar npm run test:regression y volver a recorrer detalle corresponde al producto elegido; compra requiere sesión y disponibilidad. Repetir el flujo completo del módulo catalogo con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2058,7 +2172,9 @@
         "requirement": "HU05",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu05-detalle-producto",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU05-P06",
@@ -2071,7 +2187,7 @@
       "end": "2026-10-16",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu05-detalle-producto",
+      "branch": null,
       "module": "catalogo",
       "detail": "Medir: Tiempo hasta mostrar detalle del producto. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2079,7 +2195,9 @@
         "requirement": "HU05",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu05-detalle-producto",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU05-P07",
@@ -2092,7 +2210,7 @@
       "end": "2026-10-16",
       "priority": "Alta",
       "status": "Por hacer",
-      "branch": "codex/hu05-detalle-producto",
+      "branch": null,
       "module": "catalogo",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo catalogo. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2100,7 +2218,9 @@
         "requirement": "HU05",
         "module": "catalogo",
         "sprint": "Sprint 1"
-      }
+      },
+      "plannedBranch": "feature/hu05-detalle-producto",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU06-P01",
@@ -2113,7 +2233,7 @@
       "end": "2026-10-23",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu06-fechas-disponibles",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Probar: Fechas pasadas, formato y días permitidos según backend. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2121,7 +2241,9 @@
         "requirement": "HU06",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu06-fechas-disponibles",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU06-P02",
@@ -2134,7 +2256,7 @@
       "end": "2026-10-23",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu06-fechas-disponibles",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2142,7 +2264,9 @@
         "requirement": "HU06",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu06-fechas-disponibles",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU06-P03",
@@ -2155,7 +2279,7 @@
       "end": "2026-10-23",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu06-fechas-disponibles",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Cliente selecciona fecha válida; una fecha no disponible no permite reservar. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2163,7 +2287,9 @@
         "requirement": "HU06",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu06-fechas-disponibles",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU06-P04",
@@ -2176,7 +2302,7 @@
       "end": "2026-10-23",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu06-fechas-disponibles",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Verificar Selector de fecha y consulta de disponibilidad por servicio. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2184,7 +2310,9 @@
         "requirement": "HU06",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu06-fechas-disponibles",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU06-P05",
@@ -2197,7 +2325,7 @@
       "end": "2026-10-23",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu06-fechas-disponibles",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Ejecutar npm run test:regression y volver a recorrer cliente selecciona fecha válida; una fecha no disponible no permite reservar. Repetir el flujo completo del módulo agendamiento con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2205,7 +2333,9 @@
         "requirement": "HU06",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu06-fechas-disponibles",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU06-P06",
@@ -2218,7 +2348,7 @@
       "end": "2026-10-23",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu06-fechas-disponibles",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Medir: Tiempo desde seleccionar fecha hasta mostrar disponibilidad. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2226,7 +2356,9 @@
         "requirement": "HU06",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu06-fechas-disponibles",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU06-P07",
@@ -2239,7 +2371,7 @@
       "end": "2026-10-23",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu06-fechas-disponibles",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo agendamiento. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2247,7 +2379,9 @@
         "requirement": "HU06",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu06-fechas-disponibles",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU07-P01",
@@ -2260,7 +2394,7 @@
       "end": "2026-10-28",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu07-horarios-disponibles",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Probar: Horario ocupado, formato y disponibilidad booleana. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2268,7 +2402,9 @@
         "requirement": "HU07",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu07-horarios-disponibles",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU07-P02",
@@ -2281,7 +2417,7 @@
       "end": "2026-10-28",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu07-horarios-disponibles",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2289,7 +2425,9 @@
         "requirement": "HU07",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu07-horarios-disponibles",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU07-P03",
@@ -2302,7 +2440,7 @@
       "end": "2026-10-28",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu07-horarios-disponibles",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Cliente solo puede elegir horario disponible; ocupado se identifica claramente. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2310,7 +2448,9 @@
         "requirement": "HU07",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu07-horarios-disponibles",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU07-P04",
@@ -2323,7 +2463,7 @@
       "end": "2026-10-28",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu07-horarios-disponibles",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Verificar Servicio, fecha, API de horarios y selector. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2331,7 +2471,9 @@
         "requirement": "HU07",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu07-horarios-disponibles",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU07-P05",
@@ -2344,7 +2486,7 @@
       "end": "2026-10-28",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu07-horarios-disponibles",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Ejecutar npm run test:regression y volver a recorrer cliente solo puede elegir horario disponible; ocupado se identifica claramente. Repetir el flujo completo del módulo agendamiento con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2352,7 +2494,9 @@
         "requirement": "HU07",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu07-horarios-disponibles",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU07-P06",
@@ -2365,7 +2509,7 @@
       "end": "2026-10-28",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu07-horarios-disponibles",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Medir: Tiempo hasta mostrar horarios de la fecha seleccionada. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2373,7 +2517,9 @@
         "requirement": "HU07",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu07-horarios-disponibles",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU07-P07",
@@ -2386,7 +2532,7 @@
       "end": "2026-10-28",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu07-horarios-disponibles",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo agendamiento. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2394,7 +2540,9 @@
         "requirement": "HU07",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu07-horarios-disponibles",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU08-P01",
@@ -2407,7 +2555,7 @@
       "end": "2026-11-03",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu08-agendar-cita",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Probar: Datos obligatorios, servicio y horario seleccionado. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2415,7 +2563,9 @@
         "requirement": "HU08",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu08-agendar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU08-P02",
@@ -2428,7 +2578,7 @@
       "end": "2026-11-03",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu08-agendar-cita",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2436,7 +2586,9 @@
         "requirement": "HU08",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu08-agendar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU08-P03",
@@ -2449,7 +2601,7 @@
       "end": "2026-11-03",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu08-agendar-cita",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Reserva válida obtiene ID del servidor; conflicto no muestra confirmación falsa. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2457,7 +2609,9 @@
         "requirement": "HU08",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu08-agendar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU08-P04",
@@ -2470,7 +2624,7 @@
       "end": "2026-11-03",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu08-agendar-cita",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Verificar Reserva POST, token y respuesta de conflicto 409. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2478,7 +2632,9 @@
         "requirement": "HU08",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu08-agendar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU08-P05",
@@ -2491,7 +2647,7 @@
       "end": "2026-11-03",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu08-agendar-cita",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Ejecutar npm run test:regression y volver a recorrer reserva válida obtiene id del servidor; conflicto no muestra confirmación falsa. Repetir el flujo completo del módulo agendamiento con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2499,7 +2655,9 @@
         "requirement": "HU08",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu08-agendar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU08-P06",
@@ -2512,7 +2670,7 @@
       "end": "2026-11-03",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu08-agendar-cita",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Medir: Tiempo entre confirmar reserva y recibir resultado. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2520,7 +2678,9 @@
         "requirement": "HU08",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu08-agendar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU08-P07",
@@ -2533,7 +2693,7 @@
       "end": "2026-11-03",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu08-agendar-cita",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo agendamiento. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2541,7 +2701,9 @@
         "requirement": "HU08",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu08-agendar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU09-P01",
@@ -2554,7 +2716,7 @@
       "end": "2026-11-06",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu09-confirmar-cita",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Probar: Totales y anticipo provenientes del servidor. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2562,7 +2724,9 @@
         "requirement": "HU09",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu09-confirmar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU09-P02",
@@ -2575,7 +2739,7 @@
       "end": "2026-11-06",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu09-confirmar-cita",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2583,7 +2747,9 @@
         "requirement": "HU09",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu09-confirmar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU09-P03",
@@ -2596,7 +2762,7 @@
       "end": "2026-11-06",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu09-confirmar-cita",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Confirmación coincide con servicio, fecha e importe reales; sin ID no hay éxito. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2604,7 +2770,9 @@
         "requirement": "HU09",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu09-confirmar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU09-P04",
@@ -2617,7 +2785,7 @@
       "end": "2026-11-06",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu09-confirmar-cita",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Verificar Respuesta de reserva, estado de flujo y comprobante. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2625,7 +2793,9 @@
         "requirement": "HU09",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu09-confirmar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU09-P05",
@@ -2638,7 +2808,7 @@
       "end": "2026-11-06",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu09-confirmar-cita",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Ejecutar npm run test:regression y volver a recorrer confirmación coincide con servicio, fecha e importe reales; sin id no hay éxito. Repetir el flujo completo del módulo agendamiento con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2646,7 +2816,9 @@
         "requirement": "HU09",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu09-confirmar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU09-P06",
@@ -2659,7 +2831,7 @@
       "end": "2026-11-06",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu09-confirmar-cita",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Medir: Tiempo hasta mostrar comprobante de cita. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2667,7 +2839,9 @@
         "requirement": "HU09",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu09-confirmar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU09-P07",
@@ -2680,7 +2854,7 @@
       "end": "2026-11-06",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu09-confirmar-cita",
+      "branch": null,
       "module": "agendamiento",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo agendamiento. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2688,7 +2862,9 @@
         "requirement": "HU09",
         "module": "agendamiento",
         "sprint": "Sprint 2"
-      }
+      },
+      "plannedBranch": "feature/hu09-confirmar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU10-P01",
@@ -2701,7 +2877,7 @@
       "end": "2026-11-12",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu10-consultar-citas",
+      "branch": null,
       "module": "citas",
       "detail": "Probar: Agenda vacía, próxima/anterior y respuesta incompleta. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2709,7 +2885,9 @@
         "requirement": "HU10",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu10-consultar-citas",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU10-P02",
@@ -2722,7 +2900,7 @@
       "end": "2026-11-12",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu10-consultar-citas",
+      "branch": null,
       "module": "citas",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2730,7 +2908,9 @@
         "requirement": "HU10",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu10-consultar-citas",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU10-P03",
@@ -2743,7 +2923,7 @@
       "end": "2026-11-12",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu10-consultar-citas",
+      "branch": null,
       "module": "citas",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Solo se muestran citas del cliente; se distinguen próximas y anteriores. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2751,7 +2931,9 @@
         "requirement": "HU10",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu10-consultar-citas",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU10-P04",
@@ -2764,7 +2946,7 @@
       "end": "2026-11-12",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu10-consultar-citas",
+      "branch": null,
       "module": "citas",
       "detail": "Verificar Token de cliente, API de citas y listado. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2772,7 +2954,9 @@
         "requirement": "HU10",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu10-consultar-citas",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU10-P05",
@@ -2785,7 +2969,7 @@
       "end": "2026-11-12",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu10-consultar-citas",
+      "branch": null,
       "module": "citas",
       "detail": "Ejecutar npm run test:regression y volver a recorrer solo se muestran citas del cliente; se distinguen próximas y anteriores. Repetir el flujo completo del módulo citas con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2793,7 +2977,9 @@
         "requirement": "HU10",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu10-consultar-citas",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU10-P06",
@@ -2806,7 +2992,7 @@
       "end": "2026-11-12",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu10-consultar-citas",
+      "branch": null,
       "module": "citas",
       "detail": "Medir: Tiempo hasta mostrar lista de citas. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2814,7 +3000,9 @@
         "requirement": "HU10",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu10-consultar-citas",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU10-P07",
@@ -2827,7 +3015,7 @@
       "end": "2026-11-12",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu10-consultar-citas",
+      "branch": null,
       "module": "citas",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo citas. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2835,7 +3023,9 @@
         "requirement": "HU10",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu10-consultar-citas",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU11-P01",
@@ -2848,7 +3038,7 @@
       "end": "2026-11-17",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu11-reagendar-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Probar: Estados y plazos de cambio definidos por backend. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2856,7 +3046,9 @@
         "requirement": "HU11",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu11-reagendar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU11-P02",
@@ -2869,7 +3061,7 @@
       "end": "2026-11-17",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu11-reagendar-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2877,7 +3069,9 @@
         "requirement": "HU11",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu11-reagendar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU11-P03",
@@ -2890,7 +3084,7 @@
       "end": "2026-11-17",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu11-reagendar-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Cambio permitido actualiza cita; horario ocupado conserva la cita original. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2898,7 +3092,9 @@
         "requirement": "HU11",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu11-reagendar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU11-P04",
@@ -2911,7 +3107,7 @@
       "end": "2026-11-17",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu11-reagendar-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Verificar Detalle de cita, nueva disponibilidad y actualización persistida. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2919,7 +3115,9 @@
         "requirement": "HU11",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu11-reagendar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU11-P05",
@@ -2932,7 +3130,7 @@
       "end": "2026-11-17",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu11-reagendar-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Ejecutar npm run test:regression y volver a recorrer cambio permitido actualiza cita; horario ocupado conserva la cita original. Repetir el flujo completo del módulo citas con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2940,7 +3138,9 @@
         "requirement": "HU11",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu11-reagendar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU11-P06",
@@ -2953,7 +3153,7 @@
       "end": "2026-11-17",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu11-reagendar-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Medir: Tiempo hasta confirmar nueva fecha y refrescar agenda. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2961,7 +3161,9 @@
         "requirement": "HU11",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu11-reagendar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU11-P07",
@@ -2974,7 +3176,7 @@
       "end": "2026-11-17",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu11-reagendar-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo citas. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -2982,7 +3184,9 @@
         "requirement": "HU11",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu11-reagendar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU12-P01",
@@ -2995,7 +3199,7 @@
       "end": "2026-11-19",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu12-cancelar-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Probar: Condiciones y estados cancelables del backend. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3003,7 +3207,9 @@
         "requirement": "HU12",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu12-cancelar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU12-P02",
@@ -3016,7 +3222,7 @@
       "end": "2026-11-19",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu12-cancelar-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3024,7 +3230,9 @@
         "requirement": "HU12",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu12-cancelar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU12-P03",
@@ -3037,7 +3245,7 @@
       "end": "2026-11-19",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu12-cancelar-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Cancelar requiere confirmación; éxito cambia estado; error conserva la cita. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3045,7 +3253,9 @@
         "requirement": "HU12",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu12-cancelar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU12-P04",
@@ -3058,7 +3268,7 @@
       "end": "2026-11-19",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu12-cancelar-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Verificar Confirmación, API de cancelación y consulta posterior. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3066,7 +3276,9 @@
         "requirement": "HU12",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu12-cancelar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU12-P05",
@@ -3079,7 +3291,7 @@
       "end": "2026-11-19",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu12-cancelar-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Ejecutar npm run test:regression y volver a recorrer cancelar requiere confirmación; éxito cambia estado; error conserva la cita. Repetir el flujo completo del módulo citas con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3087,7 +3299,9 @@
         "requirement": "HU12",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu12-cancelar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU12-P06",
@@ -3100,7 +3314,7 @@
       "end": "2026-11-19",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu12-cancelar-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Medir: Tiempo entre confirmar cancelación y refrescar estado. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3108,7 +3322,9 @@
         "requirement": "HU12",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu12-cancelar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU12-P07",
@@ -3121,7 +3337,7 @@
       "end": "2026-11-19",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu12-cancelar-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo citas. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3129,7 +3345,9 @@
         "requirement": "HU12",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu12-cancelar-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU13-P01",
@@ -3142,7 +3360,7 @@
       "end": "2026-11-20",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu13-estado-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Probar: Etiquetas de estado y pendiente de cierre. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3150,7 +3368,9 @@
         "requirement": "HU13",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu13-estado-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU13-P02",
@@ -3163,7 +3383,7 @@
       "end": "2026-11-20",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu13-estado-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3171,7 +3391,9 @@
         "requirement": "HU13",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu13-estado-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU13-P03",
@@ -3184,7 +3406,7 @@
       "end": "2026-11-20",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu13-estado-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Estado mostrado coincide con servidor después de reservar, modificar o cancelar. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3192,7 +3414,9 @@
         "requirement": "HU13",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu13-estado-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU13-P04",
@@ -3205,7 +3429,7 @@
       "end": "2026-11-20",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu13-estado-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Verificar Respuesta del servidor, estado mostrado y refresco. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3213,7 +3437,9 @@
         "requirement": "HU13",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu13-estado-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU13-P05",
@@ -3226,7 +3452,7 @@
       "end": "2026-11-20",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu13-estado-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Ejecutar npm run test:regression y volver a recorrer estado mostrado coincide con servidor después de reservar, modificar o cancelar. Repetir el flujo completo del módulo citas con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3234,7 +3460,9 @@
         "requirement": "HU13",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu13-estado-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU13-P06",
@@ -3247,7 +3475,7 @@
       "end": "2026-11-20",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu13-estado-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Medir: Tiempo de actualización visible de estado. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3255,7 +3483,9 @@
         "requirement": "HU13",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu13-estado-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU13-P07",
@@ -3268,7 +3498,7 @@
       "end": "2026-11-20",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu13-estado-cita",
+      "branch": null,
       "module": "citas",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo citas. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3276,7 +3506,9 @@
         "requirement": "HU13",
         "module": "citas",
         "sprint": "Sprint 3"
-      }
+      },
+      "plannedBranch": "feature/hu13-estado-cita",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU14-P01",
@@ -3289,7 +3521,7 @@
       "end": "2026-11-27",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu14-agregar-carrito",
+      "branch": null,
       "module": "compras",
       "detail": "Probar: Cantidad positiva, límite de stock y acumulación. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3297,7 +3529,9 @@
         "requirement": "HU14",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu14-agregar-carrito",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU14-P02",
@@ -3310,7 +3544,7 @@
       "end": "2026-11-27",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu14-agregar-carrito",
+      "branch": null,
       "module": "compras",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3318,7 +3552,9 @@
         "requirement": "HU14",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu14-agregar-carrito",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU14-P03",
@@ -3331,7 +3567,7 @@
       "end": "2026-11-27",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu14-agregar-carrito",
+      "branch": null,
       "module": "compras",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Agregar conserva producto y cantidad; no supera stock; usuario anónimo debe entrar. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3339,7 +3575,9 @@
         "requirement": "HU14",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu14-agregar-carrito",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU14-P04",
@@ -3352,7 +3590,7 @@
       "end": "2026-11-27",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu14-agregar-carrito",
+      "branch": null,
       "module": "compras",
       "detail": "Verificar Detalle de producto, sesión y estado del carrito. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3360,7 +3598,9 @@
         "requirement": "HU14",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu14-agregar-carrito",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU14-P05",
@@ -3373,7 +3613,7 @@
       "end": "2026-11-27",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu14-agregar-carrito",
+      "branch": null,
       "module": "compras",
       "detail": "Ejecutar npm run test:regression y volver a recorrer agregar conserva producto y cantidad; no supera stock; usuario anónimo debe entrar. Repetir el flujo completo del módulo compras con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3381,7 +3621,9 @@
         "requirement": "HU14",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu14-agregar-carrito",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU14-P06",
@@ -3394,7 +3636,7 @@
       "end": "2026-11-27",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu14-agregar-carrito",
+      "branch": null,
       "module": "compras",
       "detail": "Medir: Tiempo de respuesta al agregar producto. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3402,7 +3644,9 @@
         "requirement": "HU14",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu14-agregar-carrito",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU14-P07",
@@ -3415,7 +3659,7 @@
       "end": "2026-11-27",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu14-agregar-carrito",
+      "branch": null,
       "module": "compras",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo compras. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3423,7 +3667,9 @@
         "requirement": "HU14",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu14-agregar-carrito",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU15-P01",
@@ -3436,7 +3682,7 @@
       "end": "2026-12-02",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu15-modificar-carrito",
+      "branch": null,
       "module": "compras",
       "detail": "Probar: Cantidades, eliminación y precisión de totales. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3444,7 +3690,9 @@
         "requirement": "HU15",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu15-modificar-carrito",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU15-P02",
@@ -3457,7 +3705,7 @@
       "end": "2026-12-02",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu15-modificar-carrito",
+      "branch": null,
       "module": "compras",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3465,7 +3713,9 @@
         "requirement": "HU15",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu15-modificar-carrito",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU15-P03",
@@ -3478,7 +3728,7 @@
       "end": "2026-12-02",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu15-modificar-carrito",
+      "branch": null,
       "module": "compras",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Cambiar cantidad actualiza total; eliminar último producto muestra carrito vacío. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3486,7 +3736,9 @@
         "requirement": "HU15",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu15-modificar-carrito",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU15-P04",
@@ -3499,7 +3751,7 @@
       "end": "2026-12-02",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu15-modificar-carrito",
+      "branch": null,
       "module": "compras",
       "detail": "Verificar Carrito, actualización de cantidad y resumen de compra. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3507,7 +3759,9 @@
         "requirement": "HU15",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu15-modificar-carrito",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU15-P05",
@@ -3520,7 +3774,7 @@
       "end": "2026-12-02",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu15-modificar-carrito",
+      "branch": null,
       "module": "compras",
       "detail": "Ejecutar npm run test:regression y volver a recorrer cambiar cantidad actualiza total; eliminar último producto muestra carrito vacío. Repetir el flujo completo del módulo compras con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3528,7 +3782,9 @@
         "requirement": "HU15",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu15-modificar-carrito",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU15-P06",
@@ -3541,7 +3797,7 @@
       "end": "2026-12-02",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu15-modificar-carrito",
+      "branch": null,
       "module": "compras",
       "detail": "Medir: Tiempo de recálculo y actualización del carrito. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3549,7 +3805,9 @@
         "requirement": "HU15",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu15-modificar-carrito",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU15-P07",
@@ -3562,7 +3820,7 @@
       "end": "2026-12-02",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu15-modificar-carrito",
+      "branch": null,
       "module": "compras",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo compras. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3570,7 +3828,9 @@
         "requirement": "HU15",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu15-modificar-carrito",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU16-P01",
@@ -3583,7 +3843,7 @@
       "end": "2026-12-07",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu16-generar-pedido",
+      "branch": null,
       "module": "compras",
       "detail": "Probar: Carrito vacío, stock, total y prevención de doble envío. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3591,7 +3851,9 @@
         "requirement": "HU16",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu16-generar-pedido",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU16-P02",
@@ -3604,7 +3866,7 @@
       "end": "2026-12-07",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu16-generar-pedido",
+      "branch": null,
       "module": "compras",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3612,7 +3874,9 @@
         "requirement": "HU16",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu16-generar-pedido",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU16-P03",
@@ -3625,7 +3889,7 @@
       "end": "2026-12-07",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu16-generar-pedido",
+      "branch": null,
       "module": "compras",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Pedido válido recibe ID; error conserva carrito; doble envío no duplica. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3633,7 +3897,9 @@
         "requirement": "HU16",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu16-generar-pedido",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU16-P04",
@@ -3646,7 +3912,7 @@
       "end": "2026-12-07",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu16-generar-pedido",
+      "branch": null,
       "module": "compras",
       "detail": "Verificar Carrito, API de pedido y persistencia en staging. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3654,7 +3920,9 @@
         "requirement": "HU16",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu16-generar-pedido",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU16-P05",
@@ -3667,7 +3935,7 @@
       "end": "2026-12-07",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu16-generar-pedido",
+      "branch": null,
       "module": "compras",
       "detail": "Ejecutar npm run test:regression y volver a recorrer pedido válido recibe id; error conserva carrito; doble envío no duplica. Repetir el flujo completo del módulo compras con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3675,7 +3943,9 @@
         "requirement": "HU16",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu16-generar-pedido",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU16-P06",
@@ -3688,7 +3958,7 @@
       "end": "2026-12-07",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu16-generar-pedido",
+      "branch": null,
       "module": "compras",
       "detail": "Medir: Tiempo desde enviar pedido hasta recibir confirmación. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3696,7 +3966,9 @@
         "requirement": "HU16",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu16-generar-pedido",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU16-P07",
@@ -3709,7 +3981,7 @@
       "end": "2026-12-07",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu16-generar-pedido",
+      "branch": null,
       "module": "compras",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo compras. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3717,7 +3989,9 @@
         "requirement": "HU16",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu16-generar-pedido",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU17-P01",
@@ -3730,7 +4004,7 @@
       "end": "2026-12-09",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu17-confirmar-pedido",
+      "branch": null,
       "module": "compras",
       "detail": "Probar: Identificador, total y estado recibido del pedido. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3738,7 +4012,9 @@
         "requirement": "HU17",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu17-confirmar-pedido",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU17-P02",
@@ -3751,7 +4027,7 @@
       "end": "2026-12-09",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu17-confirmar-pedido",
+      "branch": null,
       "module": "compras",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3759,7 +4035,9 @@
         "requirement": "HU17",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu17-confirmar-pedido",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU17-P03",
@@ -3772,7 +4050,7 @@
       "end": "2026-12-09",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu17-confirmar-pedido",
+      "branch": null,
       "module": "compras",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Solo después del éxito se muestra comprobante y vacía carrito; fallo no inventa pedido. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3780,7 +4058,9 @@
         "requirement": "HU17",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu17-confirmar-pedido",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU17-P04",
@@ -3793,7 +4073,7 @@
       "end": "2026-12-09",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu17-confirmar-pedido",
+      "branch": null,
       "module": "compras",
       "detail": "Verificar Pedido persistido, comprobante y limpieza de carrito. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3801,7 +4081,9 @@
         "requirement": "HU17",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu17-confirmar-pedido",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU17-P05",
@@ -3814,7 +4096,7 @@
       "end": "2026-12-09",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu17-confirmar-pedido",
+      "branch": null,
       "module": "compras",
       "detail": "Ejecutar npm run test:regression y volver a recorrer solo después del éxito se muestra comprobante y vacía carrito; fallo no inventa pedido. Repetir el flujo completo del módulo compras con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3822,7 +4104,9 @@
         "requirement": "HU17",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu17-confirmar-pedido",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU17-P06",
@@ -3835,7 +4119,7 @@
       "end": "2026-12-09",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu17-confirmar-pedido",
+      "branch": null,
       "module": "compras",
       "detail": "Medir: Tiempo hasta mostrar comprobante de pedido. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3843,7 +4127,9 @@
         "requirement": "HU17",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu17-confirmar-pedido",
+      "branchStatus": "pendiente de crear"
     },
     {
       "key": "HU17-P07",
@@ -3856,7 +4142,7 @@
       "end": "2026-12-09",
       "priority": "Alta",
       "status": "Backlog",
-      "branch": "codex/hu17-confirmar-pedido",
+      "branch": null,
       "module": "compras",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo compras. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
@@ -3864,7 +4150,9 @@
         "requirement": "HU17",
         "module": "compras",
         "sprint": "Sprint 4"
-      }
+      },
+      "plannedBranch": "feature/hu17-confirmar-pedido",
+      "branchStatus": "pendiente de crear"
     }
   ]
 }

@@ -28,7 +28,7 @@ Las cuatro pruebas de aceptación originales comprobaron validación de campos, 
 
 Los resultados anteriores validan el proceso y la cobertura existente. No aprueban automáticamente las 18 historias. Faltan pruebas en Android/iOS, integración con API + PostgreSQL de staging, esfuerzo manual y los casos de las funciones futuras. Cada sub-issue requiere evidencia de su propio alcance antes de cerrarse.
 
-Se conserva la línea base con los avances previos y todas las ramas anteriores. Las ramas nuevas por historia organizan el trabajo futuro y no reconstruyen el historial.
+Se conserva la línea base con los avances previos y todas las ramas anteriores. Tras ajustar el alcance, solo HU00 y HU01 conservan rama por historia. Las ramas adelantadas HU02–HU17 se retiraron después de verificar que no tenían commits propios fuera de develop. Las ejecuciones históricas se conservan.
 
 ## Referencias de herramientas
 
