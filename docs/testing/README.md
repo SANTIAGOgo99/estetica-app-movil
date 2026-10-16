@@ -10,7 +10,7 @@
 
 ## Flujo de ramas
 
-Cada HU tiene rama codex/huXX-descripcion desde develop. Los avances anteriores se conservan como línea base en develop; las ramas nuevas sirven para correcciones y pruebas futuras, sin reconstruir historial. HU00 configura el proceso.
+Las ramas se crean desde develop cuando se inicia el trabajo de una historia. Actualmente existen feature/hu00-pruebas-devops y feature/hu01-iniciar-sesion. HU02–HU17 conservan sus tareas y nombres de rama previstos, pero aún no tienen rama. Los avances anteriores se conservan en develop y en las ramas históricas. HU00 configura el proceso.
 
 1. Subir cambios a la rama HU: estático + unitarias + integración; después regresión y empaquetado.
 2. Abrir PR hacia develop y revisar las cuatro verificaciones.
@@ -73,3 +73,5 @@ Caso/HU/tipo, fecha real, commit, entorno/dispositivo, datos ficticios, pasos, e
 - [HU15 - Consultar y modificar el carrito](stories/HU15.md): compras; Sprint 4.
 - [HU16 - Generar pedido o compra](stories/HU16.md): compras; Sprint 4.
 - [HU17 - Confirmar pedido](stories/HU17.md): compras; Sprint 4.
+
+Para estudiar el proceso y el YAML: [guía explicada y preguntas de revisión](guia-pipeline.md).
