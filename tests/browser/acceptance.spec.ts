@@ -40,3 +40,13 @@ test('HU02: muestra fallo y permite reintentar el catálogo', async ({ page }) =
   await page.getByRole('button', { name: 'Intentar nuevamente' }).click();
   await expect(page.getByRole('button', { name: 'Ver Corte de prueba' })).toBeVisible();
 });
+
+test('HU01: credenciales rechazadas muestran error y no crean sesión', async ({ page }) => {
+  await page.route('https://api.example.test/api/auth/login', route => route.fulfill({ status: 401, json: { error: 'Usuario no encontrado' } }));
+  await page.goto('/sign-in');
+  await page.getByPlaceholder('nombre@correo.com').fill('cliente@example.com');
+  await page.getByPlaceholder('Tu contraseña').fill('incorrecta');
+  await page.getByRole('button', { name: 'Iniciar sesión', exact: true }).click();
+  await expect(page.getByText('Correo o contraseña incorrectos.', { exact: true })).toBeVisible();
+  expect(await page.evaluate(() => sessionStorage.getItem('estetica.client.session'))).toBeNull();
+});

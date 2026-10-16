@@ -18,13 +18,13 @@ function gh(args, input) {
 const api = (path, method='GET', body) => gh(['api', path, '--method', method, ...(body ? ['--input', '-'] : [])], body);
 const gql = query => api('graphql', 'POST', { query }).data;
 const save = (path, data) => fs.writeFileSync(path, JSON.stringify(data, null, 2)+'\n');
-function fieldsMutation(itemId, values, fields) {
+function fieldsMutation(itemId, values, fields, prefix='') {
   return Object.entries(values).map(([name,value],i) => {
     const field = fields.find(f => f.name === name);
     if (!field) throw Error(`Falta campo ${name}`);
     const option = field.options?.find(o => o.name === value);
     if (field.options && !option) throw Error(`Falta opción ${name}:${value}`);
-    return `f${i}:updateProjectV2ItemFieldValue(input:{projectId:${q(PROJECT)},itemId:${q(itemId)},fieldId:${q(field.id)},value:${option ? `{singleSelectOptionId:${q(option.id)}}` : `{date:${q(value)}}`}}){projectV2Item{id}}`;
+    return `f${prefix}${i}:updateProjectV2ItemFieldValue(input:{projectId:${q(PROJECT)},itemId:${q(itemId)},fieldId:${q(field.id)},value:${option ? `{singleSelectOptionId:${q(option.id)}}` : `{date:${q(value)}}`}}){projectV2Item{id}}`;
   });
 }
 async function main() {
@@ -64,11 +64,13 @@ async function main() {
       absent.forEach((t,i)=>items.push({id:added[`a${i}`].item.id,content:{number:t.issue.number}}));
       } catch(error) { if (!error.message.includes('Content already exists')) throw error; items=gh(['project','item-list','1','--owner','SANTIAGOgo99','--limit','500','--format','json']).items; if(tests.some(t=>!items.some(i=>i.content?.number===t.issue.number))) throw error; }
     }
-    for(const t of tests){
+    const fieldUpdates=[];
+    for(const [index,t] of tests.entries()){
       const item=items.find(i=>i.content?.number===t.issue.number);
-      gql('mutation{'+fieldsMutation(item.id,{'Status':item.status??t.status,'Prioridad':'Alta','Sprint':`Sprint ${t.sprint}`,'Tipo':'Prueba','Fecha inicio':t.start,'Fecha termino':t.end},fields).join('\n')+'}');
+      fieldUpdates.push(...fieldsMutation(item.id,{'Status':item.status??t.status,'Prioridad':'Alta','Sprint':`Sprint ${t.sprint}`,'Tipo':'Prueba','Fecha inicio':t.start,'Fecha termino':t.end},fields,index+'_'));
       result.push({key:t.key,number:t.issue.number,url:t.issue.html_url,itemId:item.id,parent:story.key});
     }
+    gql('mutation{'+fieldUpdates.join('\n')+'}');
     const marker='\n\n## Organización de pruebas — revisión 2026-10-16';
     const base=(parent.body??'').split(marker)[0];
     api(`${REPO}/issues/${parent.number}`,'PATCH',{body:base+marker+`\n\nRama: \`${story.branch}\`; integración hacia \`develop\`. Módulo: ${story.module}; Sprint ${story.sprint}.\n\n`+tests.map(t=>`- ${t.key}: #${t.issue.number} (${t.category}).`).join('\n')+'\n\nCuatro verificaciones en rama HU; seis en develop. Esfuerzo manual. Revisar evidencia por requerimiento, módulo y sprint; no cerrar sin criterios y validaciones pendientes. Ver docs/testing/README.md.\n'});
@@ -99,7 +101,7 @@ async function main() {
   gh(['project','edit','1','--owner','SANTIAGOgo99','--readme',(current.readme??'').split(heading)[0]+heading+'\nCada HU tiene siete sub-issues de pruebas (P01–P07). Cuatro verificaciones en su rama y seis en develop; esfuerzo se ejecuta manualmente. main conserva entregas estables. Las ramas anteriores se conservan como historial. El alcance se registra por requerimiento, módulo y sprint. Consultar docs/testing/README.md y las evidencias vinculadas. Las 26 pruebas dispersas anteriores están archivadas, no aprobadas.']);
   save('.planning/test-sync-result.json',{revision:'2026-10-16',tests:result,archived:old.map(i=>i.number)});
   const links=Object.fromEntries(result.map(r=>[r.key,r]));
-  save('docs/testing/github-links.json',links);
+  save('.planning/test-github-links.json',links);
   console.log('Verificado: 126 pruebas, 18 padres; 26 pruebas anteriores conservadas y archivadas.');
 }
 main().catch(error=>{console.error(error);process.exitCode=1;});

@@ -16,9 +16,8 @@ export async function mockApi(page: Page) {
       const claims = btoa(JSON.stringify({ role: 'client', exp: Math.floor(Date.now() / 1000) + 3600 })).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
       body = { role: 'client', token: `e30.${claims}.test` };
     } else if (path.endsWith('/users/profile')) body = { id: 1, full_name: 'Cliente de prueba', email: 'cliente@example.com', phone: '5550000000', role: 'client', is_active: true };
-    else if (path.endsWith('/appointments/my-appointments')) body = { appointments: [] };
+    else if (path.endsWith('/appointments/my')) body = { appointments: [] };
     else { status = 404; body = { message: `Ruta de prueba no configurada: ${path}` }; }
     await route.fulfill({ status, json: body });
   });
 }
-
