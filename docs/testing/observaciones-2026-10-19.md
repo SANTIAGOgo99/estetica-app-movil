@@ -60,3 +60,12 @@ Confirmar si existen cuentas en expo.dev y Play Console. Preparar backend y base
 [Checks vigentes del PR #236](https://github.com/SANTIAGOgo99/estetica-app-movil/pull/236/checks): consultar el último SHA, no usar la demostración roja como versión final. Después del merge se verifica el push a develop.
 
 Protección verificada en main/develop: los seis checks de la aplicación GitHub Actions son obligatorios, se exige PR y rama actualizada y se prohíbe force-push. El entorno android-release exige aprobación del propietario.
+
+
+## Evidencia positiva y planeación sincronizada
+
+El [push corregido](https://github.com/SANTIAGOgo99/estetica-app-movil/actions/runs/39307792131) y el [PR corregido](https://github.com/SANTIAGOgo99/estetica-app-movil/actions/runs/39307798285), commit 4c395ac, aprobaron los seis jobs. El PR produjo un único artefacto compartido interfaz-web-pruebas.
+
+GitHub Projects conserva las 126 pruebas y sus 18 padres, ahora con herramientas, datos, tipo, alcance y política por evento revisados. HU00 queda en revisión de pruebas automáticas; HU01 mantiene aceptación, integración y rendimiento en progreso porque falta dispositivo/staging. Esfuerzo continúa por hacer. No se cerraron pruebas por el verde general.
+
+Los PR #106 y #107 se cerraron como sustituidos después de comprobar que sus commits son ancestros de develop; no se fusionaron a main ni se eliminaron sus ramas históricas. #236 incorpora el estándar vigente. Las ejecuciones posteriores del merge y de HU01 deben verificarse en Actions por su SHA.
