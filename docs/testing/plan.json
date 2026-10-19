@@ -1,5 +1,5 @@
 {
-  "revision": "2026-10-16",
+  "revision": "2026-10-19",
   "stories": [
     {
       "key": "HU00",
@@ -1277,7 +1277,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu00-pruebas-devops",
-      "branchStatus": "activa"
+      "branchStatus": "activa",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU00-P02",
@@ -1300,7 +1303,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu00-pruebas-devops",
-      "branchStatus": "activa"
+      "branchStatus": "activa",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU00-P03",
@@ -1323,7 +1329,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu00-pruebas-devops",
-      "branchStatus": "activa"
+      "branchStatus": "activa",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU00-P04",
@@ -1346,7 +1355,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu00-pruebas-devops",
-      "branchStatus": "activa"
+      "branchStatus": "activa",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU00-P05",
@@ -1369,7 +1381,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu00-pruebas-devops",
-      "branchStatus": "activa"
+      "branchStatus": "activa",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU00-P06",
@@ -1392,7 +1407,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu00-pruebas-devops",
-      "branchStatus": "activa"
+      "branchStatus": "activa",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU00-P07",
@@ -1415,7 +1433,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu00-pruebas-devops",
-      "branchStatus": "activa"
+      "branchStatus": "activa",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU01-P01",
@@ -1438,7 +1459,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu01-iniciar-sesion",
-      "branchStatus": "activa"
+      "branchStatus": "activa",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU01-P02",
@@ -1461,7 +1485,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu01-iniciar-sesion",
-      "branchStatus": "activa"
+      "branchStatus": "activa",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU01-P03",
@@ -1484,7 +1511,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu01-iniciar-sesion",
-      "branchStatus": "activa"
+      "branchStatus": "activa",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU01-P04",
@@ -1507,7 +1537,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu01-iniciar-sesion",
-      "branchStatus": "activa"
+      "branchStatus": "activa",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU01-P05",
@@ -1530,7 +1563,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu01-iniciar-sesion",
-      "branchStatus": "activa"
+      "branchStatus": "activa",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU01-P06",
@@ -1553,7 +1589,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu01-iniciar-sesion",
-      "branchStatus": "activa"
+      "branchStatus": "activa",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU01-P07",
@@ -1576,7 +1615,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu01-iniciar-sesion",
-      "branchStatus": "activa"
+      "branchStatus": "activa",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU02-P01",
@@ -1599,7 +1641,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu02-consultar-servicios",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU02-P02",
@@ -1622,7 +1667,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu02-consultar-servicios",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU02-P03",
@@ -1645,7 +1693,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu02-consultar-servicios",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU02-P04",
@@ -1668,7 +1719,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu02-consultar-servicios",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU02-P05",
@@ -1691,7 +1745,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu02-consultar-servicios",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU02-P06",
@@ -1714,7 +1771,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu02-consultar-servicios",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU02-P07",
@@ -1737,7 +1797,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu02-consultar-servicios",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU03-P01",
@@ -1760,7 +1823,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu03-detalle-servicio",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU03-P02",
@@ -1783,7 +1849,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu03-detalle-servicio",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU03-P03",
@@ -1806,7 +1875,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu03-detalle-servicio",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU03-P04",
@@ -1829,7 +1901,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu03-detalle-servicio",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU03-P05",
@@ -1852,7 +1927,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu03-detalle-servicio",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU03-P06",
@@ -1875,7 +1953,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu03-detalle-servicio",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU03-P07",
@@ -1898,7 +1979,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu03-detalle-servicio",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU04-P01",
@@ -1921,7 +2005,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu04-consultar-productos",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU04-P02",
@@ -1944,7 +2031,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu04-consultar-productos",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU04-P03",
@@ -1967,7 +2057,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu04-consultar-productos",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU04-P04",
@@ -1990,7 +2083,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu04-consultar-productos",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU04-P05",
@@ -2013,7 +2109,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu04-consultar-productos",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU04-P06",
@@ -2036,7 +2135,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu04-consultar-productos",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU04-P07",
@@ -2059,7 +2161,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu04-consultar-productos",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU05-P01",
@@ -2082,7 +2187,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu05-detalle-producto",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU05-P02",
@@ -2105,7 +2213,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu05-detalle-producto",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU05-P03",
@@ -2128,7 +2239,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu05-detalle-producto",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU05-P04",
@@ -2151,7 +2265,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu05-detalle-producto",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU05-P05",
@@ -2174,7 +2291,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu05-detalle-producto",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU05-P06",
@@ -2197,7 +2317,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu05-detalle-producto",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU05-P07",
@@ -2220,7 +2343,10 @@
         "sprint": "Sprint 1"
       },
       "plannedBranch": "feature/hu05-detalle-producto",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU06-P01",
@@ -2232,7 +2358,7 @@
       "start": "2026-10-19",
       "end": "2026-10-23",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Probar: Fechas pasadas, formato y días permitidos según backend. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
@@ -2243,7 +2369,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu06-fechas-disponibles",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU06-P02",
@@ -2255,7 +2384,7 @@
       "start": "2026-10-19",
       "end": "2026-10-23",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
@@ -2266,7 +2395,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu06-fechas-disponibles",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU06-P03",
@@ -2278,7 +2410,7 @@
       "start": "2026-10-19",
       "end": "2026-10-23",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Cliente selecciona fecha válida; una fecha no disponible no permite reservar. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
@@ -2289,7 +2421,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu06-fechas-disponibles",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU06-P04",
@@ -2301,7 +2436,7 @@
       "start": "2026-10-19",
       "end": "2026-10-23",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Verificar Selector de fecha y consulta de disponibilidad por servicio. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
@@ -2312,7 +2447,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu06-fechas-disponibles",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU06-P05",
@@ -2324,7 +2462,7 @@
       "start": "2026-10-19",
       "end": "2026-10-23",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Ejecutar npm run test:regression y volver a recorrer cliente selecciona fecha válida; una fecha no disponible no permite reservar. Repetir el flujo completo del módulo agendamiento con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
@@ -2335,7 +2473,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu06-fechas-disponibles",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU06-P06",
@@ -2347,7 +2488,7 @@
       "start": "2026-10-19",
       "end": "2026-10-23",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Medir: Tiempo desde seleccionar fecha hasta mostrar disponibilidad. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
@@ -2358,7 +2499,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu06-fechas-disponibles",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU06-P07",
@@ -2370,7 +2514,7 @@
       "start": "2026-10-19",
       "end": "2026-10-23",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo agendamiento. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
@@ -2381,7 +2525,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu06-fechas-disponibles",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU07-P01",
@@ -2393,7 +2540,7 @@
       "start": "2026-10-22",
       "end": "2026-10-28",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Probar: Horario ocupado, formato y disponibilidad booleana. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
@@ -2404,7 +2551,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu07-horarios-disponibles",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU07-P02",
@@ -2416,7 +2566,7 @@
       "start": "2026-10-22",
       "end": "2026-10-28",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
@@ -2427,7 +2577,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu07-horarios-disponibles",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU07-P03",
@@ -2439,7 +2592,7 @@
       "start": "2026-10-22",
       "end": "2026-10-28",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Cliente solo puede elegir horario disponible; ocupado se identifica claramente. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
@@ -2450,7 +2603,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu07-horarios-disponibles",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU07-P04",
@@ -2473,7 +2629,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu07-horarios-disponibles",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU07-P05",
@@ -2485,7 +2644,7 @@
       "start": "2026-10-22",
       "end": "2026-10-28",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Ejecutar npm run test:regression y volver a recorrer cliente solo puede elegir horario disponible; ocupado se identifica claramente. Repetir el flujo completo del módulo agendamiento con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
@@ -2496,7 +2655,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu07-horarios-disponibles",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU07-P06",
@@ -2508,7 +2670,7 @@
       "start": "2026-10-22",
       "end": "2026-10-28",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Medir: Tiempo hasta mostrar horarios de la fecha seleccionada. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
@@ -2519,7 +2681,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu07-horarios-disponibles",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU07-P07",
@@ -2531,7 +2696,7 @@
       "start": "2026-10-22",
       "end": "2026-10-28",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo agendamiento. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
@@ -2542,7 +2707,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu07-horarios-disponibles",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU08-P01",
@@ -2554,7 +2722,7 @@
       "start": "2026-10-27",
       "end": "2026-11-03",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Probar: Datos obligatorios, servicio y horario seleccionado. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
@@ -2565,7 +2733,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu08-agendar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU08-P02",
@@ -2577,7 +2748,7 @@
       "start": "2026-10-27",
       "end": "2026-11-03",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
@@ -2588,7 +2759,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu08-agendar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU08-P03",
@@ -2600,7 +2774,7 @@
       "start": "2026-10-27",
       "end": "2026-11-03",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Reserva válida obtiene ID del servidor; conflicto no muestra confirmación falsa. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
@@ -2611,7 +2785,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu08-agendar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU08-P04",
@@ -2623,7 +2800,7 @@
       "start": "2026-10-27",
       "end": "2026-11-03",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Verificar Reserva POST, token y respuesta de conflicto 409. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
@@ -2634,7 +2811,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu08-agendar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU08-P05",
@@ -2646,7 +2826,7 @@
       "start": "2026-10-27",
       "end": "2026-11-03",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Ejecutar npm run test:regression y volver a recorrer reserva válida obtiene id del servidor; conflicto no muestra confirmación falsa. Repetir el flujo completo del módulo agendamiento con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
@@ -2657,7 +2837,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu08-agendar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU08-P06",
@@ -2669,7 +2852,7 @@
       "start": "2026-10-27",
       "end": "2026-11-03",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Medir: Tiempo entre confirmar reserva y recibir resultado. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
@@ -2680,7 +2863,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu08-agendar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU08-P07",
@@ -2692,7 +2878,7 @@
       "start": "2026-10-27",
       "end": "2026-11-03",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo agendamiento. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
@@ -2703,7 +2889,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu08-agendar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU09-P01",
@@ -2715,7 +2904,7 @@
       "start": "2026-11-02",
       "end": "2026-11-06",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Probar: Totales y anticipo provenientes del servidor. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
@@ -2726,7 +2915,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu09-confirmar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU09-P02",
@@ -2738,7 +2930,7 @@
       "start": "2026-11-02",
       "end": "2026-11-06",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
@@ -2749,7 +2941,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu09-confirmar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU09-P03",
@@ -2761,7 +2956,7 @@
       "start": "2026-11-02",
       "end": "2026-11-06",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Confirmación coincide con servicio, fecha e importe reales; sin ID no hay éxito. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
@@ -2772,7 +2967,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu09-confirmar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU09-P04",
@@ -2784,7 +2982,7 @@
       "start": "2026-11-02",
       "end": "2026-11-06",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Verificar Respuesta de reserva, estado de flujo y comprobante. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
@@ -2795,7 +2993,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu09-confirmar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU09-P05",
@@ -2807,7 +3008,7 @@
       "start": "2026-11-02",
       "end": "2026-11-06",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Ejecutar npm run test:regression y volver a recorrer confirmación coincide con servicio, fecha e importe reales; sin id no hay éxito. Repetir el flujo completo del módulo agendamiento con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
@@ -2818,7 +3019,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu09-confirmar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU09-P06",
@@ -2830,7 +3034,7 @@
       "start": "2026-11-02",
       "end": "2026-11-06",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Medir: Tiempo hasta mostrar comprobante de cita. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
@@ -2841,7 +3045,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu09-confirmar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU09-P07",
@@ -2853,7 +3060,7 @@
       "start": "2026-11-02",
       "end": "2026-11-06",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "agendamiento",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo agendamiento. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
@@ -2864,7 +3071,10 @@
         "sprint": "Sprint 2"
       },
       "plannedBranch": "feature/hu09-confirmar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU10-P01",
@@ -2876,7 +3086,7 @@
       "start": "2026-11-09",
       "end": "2026-11-12",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Probar: Agenda vacía, próxima/anterior y respuesta incompleta. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
@@ -2887,7 +3097,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu10-consultar-citas",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU10-P02",
@@ -2899,7 +3112,7 @@
       "start": "2026-11-09",
       "end": "2026-11-12",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
@@ -2910,7 +3123,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu10-consultar-citas",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU10-P03",
@@ -2922,7 +3138,7 @@
       "start": "2026-11-09",
       "end": "2026-11-12",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Solo se muestran citas del cliente; se distinguen próximas y anteriores. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
@@ -2933,7 +3149,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu10-consultar-citas",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU10-P04",
@@ -2945,7 +3164,7 @@
       "start": "2026-11-09",
       "end": "2026-11-12",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Verificar Token de cliente, API de citas y listado. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
@@ -2956,7 +3175,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu10-consultar-citas",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU10-P05",
@@ -2979,7 +3201,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu10-consultar-citas",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU10-P06",
@@ -3002,7 +3227,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu10-consultar-citas",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU10-P07",
@@ -3014,7 +3242,7 @@
       "start": "2026-11-09",
       "end": "2026-11-12",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo citas. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
@@ -3025,7 +3253,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu10-consultar-citas",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU11-P01",
@@ -3037,7 +3268,7 @@
       "start": "2026-11-11",
       "end": "2026-11-17",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Probar: Estados y plazos de cambio definidos por backend. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
@@ -3048,7 +3279,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu11-reagendar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU11-P02",
@@ -3060,7 +3294,7 @@
       "start": "2026-11-11",
       "end": "2026-11-17",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
@@ -3071,7 +3305,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu11-reagendar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU11-P03",
@@ -3083,7 +3320,7 @@
       "start": "2026-11-11",
       "end": "2026-11-17",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Cambio permitido actualiza cita; horario ocupado conserva la cita original. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
@@ -3094,7 +3331,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu11-reagendar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU11-P04",
@@ -3106,7 +3346,7 @@
       "start": "2026-11-11",
       "end": "2026-11-17",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Verificar Detalle de cita, nueva disponibilidad y actualización persistida. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
@@ -3117,7 +3357,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu11-reagendar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU11-P05",
@@ -3140,7 +3383,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu11-reagendar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU11-P06",
@@ -3152,7 +3398,7 @@
       "start": "2026-11-11",
       "end": "2026-11-17",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Medir: Tiempo hasta confirmar nueva fecha y refrescar agenda. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
@@ -3163,7 +3409,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu11-reagendar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU11-P07",
@@ -3175,7 +3424,7 @@
       "start": "2026-11-11",
       "end": "2026-11-17",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo citas. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
@@ -3186,7 +3435,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu11-reagendar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU12-P01",
@@ -3198,7 +3450,7 @@
       "start": "2026-11-16",
       "end": "2026-11-19",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Probar: Condiciones y estados cancelables del backend. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
@@ -3209,7 +3461,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu12-cancelar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU12-P02",
@@ -3221,7 +3476,7 @@
       "start": "2026-11-16",
       "end": "2026-11-19",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
@@ -3232,7 +3487,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu12-cancelar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU12-P03",
@@ -3255,7 +3513,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu12-cancelar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU12-P04",
@@ -3267,7 +3528,7 @@
       "start": "2026-11-16",
       "end": "2026-11-19",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Verificar Confirmación, API de cancelación y consulta posterior. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
@@ -3278,7 +3539,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu12-cancelar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU12-P05",
@@ -3290,7 +3554,7 @@
       "start": "2026-11-16",
       "end": "2026-11-19",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Ejecutar npm run test:regression y volver a recorrer cancelar requiere confirmación; éxito cambia estado; error conserva la cita. Repetir el flujo completo del módulo citas con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
@@ -3301,7 +3565,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu12-cancelar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU12-P06",
@@ -3313,7 +3580,7 @@
       "start": "2026-11-16",
       "end": "2026-11-19",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Medir: Tiempo entre confirmar cancelación y refrescar estado. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
@@ -3324,7 +3591,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu12-cancelar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU12-P07",
@@ -3347,7 +3617,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu12-cancelar-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU13-P01",
@@ -3359,7 +3632,7 @@
       "start": "2026-11-18",
       "end": "2026-11-20",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Probar: Etiquetas de estado y pendiente de cierre. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
@@ -3370,7 +3643,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu13-estado-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU13-P02",
@@ -3382,7 +3658,7 @@
       "start": "2026-11-18",
       "end": "2026-11-20",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
@@ -3393,7 +3669,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu13-estado-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU13-P03",
@@ -3405,7 +3684,7 @@
       "start": "2026-11-18",
       "end": "2026-11-20",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "citas",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Estado mostrado coincide con servidor después de reservar, modificar o cancelar. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
@@ -3416,7 +3695,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu13-estado-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU13-P04",
@@ -3439,7 +3721,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu13-estado-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU13-P05",
@@ -3462,7 +3747,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu13-estado-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU13-P06",
@@ -3485,7 +3773,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu13-estado-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU13-P07",
@@ -3508,7 +3799,10 @@
         "sprint": "Sprint 3"
       },
       "plannedBranch": "feature/hu13-estado-cita",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU14-P01",
@@ -3520,7 +3814,7 @@
       "start": "2026-11-23",
       "end": "2026-11-27",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Probar: Cantidad positiva, límite de stock y acumulación. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
@@ -3531,7 +3825,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu14-agregar-carrito",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU14-P02",
@@ -3543,7 +3840,7 @@
       "start": "2026-11-23",
       "end": "2026-11-27",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
@@ -3554,7 +3851,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu14-agregar-carrito",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU14-P03",
@@ -3566,7 +3866,7 @@
       "start": "2026-11-23",
       "end": "2026-11-27",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Agregar conserva producto y cantidad; no supera stock; usuario anónimo debe entrar. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
@@ -3577,7 +3877,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu14-agregar-carrito",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU14-P04",
@@ -3589,7 +3892,7 @@
       "start": "2026-11-23",
       "end": "2026-11-27",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Verificar Detalle de producto, sesión y estado del carrito. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
@@ -3600,7 +3903,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu14-agregar-carrito",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU14-P05",
@@ -3612,7 +3918,7 @@
       "start": "2026-11-23",
       "end": "2026-11-27",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Ejecutar npm run test:regression y volver a recorrer agregar conserva producto y cantidad; no supera stock; usuario anónimo debe entrar. Repetir el flujo completo del módulo compras con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
@@ -3623,7 +3929,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu14-agregar-carrito",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU14-P06",
@@ -3635,7 +3944,7 @@
       "start": "2026-11-23",
       "end": "2026-11-27",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Medir: Tiempo de respuesta al agregar producto. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
@@ -3646,7 +3955,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu14-agregar-carrito",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU14-P07",
@@ -3658,7 +3970,7 @@
       "start": "2026-11-23",
       "end": "2026-11-27",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo compras. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
@@ -3669,7 +3981,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu14-agregar-carrito",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU15-P01",
@@ -3681,7 +3996,7 @@
       "start": "2026-11-26",
       "end": "2026-12-02",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Probar: Cantidades, eliminación y precisión de totales. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
@@ -3692,7 +4007,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu15-modificar-carrito",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU15-P02",
@@ -3704,7 +4022,7 @@
       "start": "2026-11-26",
       "end": "2026-12-02",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
@@ -3715,7 +4033,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu15-modificar-carrito",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU15-P03",
@@ -3727,7 +4048,7 @@
       "start": "2026-11-26",
       "end": "2026-12-02",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Cambiar cantidad actualiza total; eliminar último producto muestra carrito vacío. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
@@ -3738,7 +4059,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu15-modificar-carrito",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU15-P04",
@@ -3750,7 +4074,7 @@
       "start": "2026-11-26",
       "end": "2026-12-02",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Verificar Carrito, actualización de cantidad y resumen de compra. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
@@ -3761,7 +4085,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu15-modificar-carrito",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU15-P05",
@@ -3773,7 +4100,7 @@
       "start": "2026-11-26",
       "end": "2026-12-02",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Ejecutar npm run test:regression y volver a recorrer cambiar cantidad actualiza total; eliminar último producto muestra carrito vacío. Repetir el flujo completo del módulo compras con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
@@ -3784,7 +4111,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu15-modificar-carrito",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU15-P06",
@@ -3796,7 +4126,7 @@
       "start": "2026-11-26",
       "end": "2026-12-02",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Medir: Tiempo de recálculo y actualización del carrito. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
@@ -3807,7 +4137,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu15-modificar-carrito",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU15-P07",
@@ -3819,7 +4152,7 @@
       "start": "2026-11-26",
       "end": "2026-12-02",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo compras. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
@@ -3830,7 +4163,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu15-modificar-carrito",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU16-P01",
@@ -3842,7 +4178,7 @@
       "start": "2026-12-01",
       "end": "2026-12-07",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Probar: Carrito vacío, stock, total y prevención de doble envío. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
@@ -3853,7 +4189,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu16-generar-pedido",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU16-P02",
@@ -3865,7 +4204,7 @@
       "start": "2026-12-01",
       "end": "2026-12-07",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Ejecutar npm run typecheck y npm run lint sobre todo el código integrado. Esperado: salida 0, sin errores; adjuntar ejecución y commit.",
@@ -3876,7 +4215,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu16-generar-pedido",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU16-P03",
@@ -3888,7 +4230,7 @@
       "start": "2026-12-01",
       "end": "2026-12-07",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: Pedido válido recibe ID; error conserva carrito; doble envío no duplica. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
@@ -3899,7 +4241,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu16-generar-pedido",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU16-P04",
@@ -3911,7 +4256,7 @@
       "start": "2026-12-01",
       "end": "2026-12-07",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Verificar Carrito, API de pedido y persistencia en staging. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
@@ -3922,7 +4267,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu16-generar-pedido",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU16-P05",
@@ -3934,7 +4282,7 @@
       "start": "2026-12-01",
       "end": "2026-12-07",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Ejecutar npm run test:regression y volver a recorrer pedido válido recibe id; error conserva carrito; doble envío no duplica. Repetir el flujo completo del módulo compras con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
@@ -3945,7 +4293,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu16-generar-pedido",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU16-P06",
@@ -3957,7 +4308,7 @@
       "start": "2026-12-01",
       "end": "2026-12-07",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Medir: Tiempo desde enviar pedido hasta recibir confirmación. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
@@ -3968,7 +4319,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu16-generar-pedido",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU16-P07",
@@ -3980,7 +4334,7 @@
       "start": "2026-12-01",
       "end": "2026-12-07",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo compras. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
@@ -3991,7 +4345,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu16-generar-pedido",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU17-P01",
@@ -4003,7 +4360,7 @@
       "start": "2026-12-07",
       "end": "2026-12-09",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Probar: Identificador, total y estado recibido del pedido. Incluir caso válido, límites e inválidos; comparar salida esperada con obtenida.",
@@ -4014,7 +4371,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu17-confirmar-pedido",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test y datos JSON versionados",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU17-P02",
@@ -4037,7 +4397,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu17-confirmar-pedido",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "TypeScript y ESLint Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU17-P03",
@@ -4060,7 +4423,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu17-confirmar-pedido",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright/Chromium en viewport Pixel 7",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU17-P04",
@@ -4072,7 +4438,7 @@
       "start": "2026-12-07",
       "end": "2026-12-09",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Verificar Pedido persistido, comprobante y limpieza de carrito. Cubrir éxito, permisos, error de red y respuesta inválida. Distinguir HTTP local de API + base de datos en staging.",
@@ -4083,7 +4449,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu17-confirmar-pedido",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test + HTTP local; staging optativo con variables/secretos",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU17-P05",
@@ -4095,7 +4464,7 @@
       "start": "2026-12-07",
       "end": "2026-12-09",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Ejecutar npm run test:regression y volver a recorrer solo después del éxito se muestra comprobante y vacía carrito; fallo no inventa pedido. Repetir el flujo completo del módulo compras con las historias ya integradas. Empaquetar Android; esto no sustituye la regresión.",
@@ -4106,7 +4475,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu17-confirmar-pedido",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "node:test: toda la suite acumulada y exportación adicional Expo",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU17-P06",
@@ -4118,7 +4490,7 @@
       "start": "2026-12-07",
       "end": "2026-12-09",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Medir: Tiempo hasta mostrar comprobante de pedido. Registrar 5 muestras, p95, dispositivo, red, volumen y commit. Presupuesto inicial de interfaz web: p95 < 5000 ms; para dispositivo/API establecer y registrar presupuesto antes de ejecutar. No extrapolar web simulada a Android/iOS.",
@@ -4129,7 +4501,10 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu17-confirmar-pedido",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Playwright: HU01/HU02/HU04, cinco muestras, p95 < 5000 ms",
+      "eventScope": "todos los push y PR vigentes",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     },
     {
       "key": "HU17-P07",
@@ -4141,7 +4516,7 @@
       "start": "2026-12-07",
       "end": "2026-12-09",
       "priority": "Alta",
-      "status": "Backlog",
+      "status": "Por hacer",
       "branch": null,
       "module": "compras",
       "detail": "Ejecución manual controlada en staging o entorno local del módulo compras. Definir carga inicial y aumentarla por etapas; registrar latencia, errores, recursos y recuperación. Detener si hay pérdida de datos o errores > 5%. No dirigir carga al backend productivo. Para HU00 evaluar concurrencia/cola de CI. No va en el YAML.",
@@ -4152,7 +4527,30 @@
         "sprint": "Sprint 4"
       },
       "plannedBranch": "feature/hu17-confirmar-pedido",
-      "branchStatus": "pendiente de crear"
+      "branchStatus": "pendiente de crear",
+      "tools": "Procedimiento manual controlado, fuera del YAML",
+      "eventScope": "manual",
+      "data": "tests/fixtures/mobile.json (casos actuales; ampliar al implementar la historia)"
     }
-  ]
+  ],
+  "automation": {
+    "workflow": ".github/workflows/ci.yml",
+    "events": [
+      "push (todas las ramas)",
+      "pull_request hacia develop/main",
+      "workflow_dispatch cuando esté registrado en la rama predeterminada"
+    ],
+    "categories": [
+      "estatico",
+      "unitarias",
+      "integracion",
+      "regresion",
+      "aceptacion",
+      "rendimiento"
+    ],
+    "manual": "esfuerzo",
+    "data": "tests/fixtures/mobile.json",
+    "currentScope": "web móvil/API simulada y HTTP local; staging/nativo pendientes de evidencia",
+    "deployment": ".github/workflows/android-release.yml: manual, exige misma rama/commit con seis checks aprobados; EAS pendiente de configuración"
+  }
 }

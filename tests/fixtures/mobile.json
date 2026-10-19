@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "scope": "Datos sintéticos para HU01 y catálogo. No son cuentas productivas.",
+  "credentials": [
+    {
+      "id": "HU01-U01",
+      "email": "cliente@example.com",
+      "password": "Clave-ficticia1!",
+      "valid": true
+    },
+    {
+      "id": "HU01-U02",
+      "email": " cliente@example.com ",
+      "password": "clave",
+      "valid": true
+    },
+    {
+      "id": "HU01-U03",
+      "email": "",
+      "password": "clave",
+      "valid": false
+    },
+    {
+      "id": "HU01-U04",
+      "email": "cliente",
+      "password": "clave",
+      "valid": true
+    },
+    {
+      "id": "HU01-U05",
+      "email": "cliente@",
+      "password": "clave",
+      "valid": false
+    },
+    {
+      "id": "HU01-U06",
+      "email": "cliente@example.com",
+      "password": "",
+      "valid": false
+    },
+    {
+      "id": "HU01-U07",
+      "email": "cliente @example.com",
+      "password": "clave",
+      "valid": false
+    }
+  ],
+  "login": {
+    "email": "cliente@example.com",
+    "password": "Clave-ficticia1!",
+    "invalidPassword": "incorrecta"
+  },
+  "profile": {
+    "id": 1,
+    "full_name": "Cliente de prueba",
+    "email": "cliente@example.com",
+    "phone": "5550000000",
+    "role": "client",
+    "is_active": true
+  },
+  "service": {
+    "id": 2,
+    "name": "Corte de prueba",
+    "price": "250.00",
+    "duration_minutes": 45,
+    "category": "Cabello",
+    "description": "Corte para cliente de pruebas",
+    "is_active": true
+  },
+  "product": {
+    "id": 3,
+    "name": "Shampoo de prueba",
+    "price": "120.50",
+    "stock": 5,
+    "category": "Cuidado",
+    "description": "Producto para pruebas",
+    "is_active": true
+  },
+  "performance": {
+    "samples": 5,
+    "budgetMs": 5000,
+    "percentile": 0.95
+  }
+}
