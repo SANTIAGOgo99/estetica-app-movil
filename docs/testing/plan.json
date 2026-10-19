@@ -10,7 +10,7 @@
       "sprint": 1,
       "unit": "Configuración y clasificación de suites, seis jobs y condiciones por rama",
       "integration": "Workflow, comandos y reportes JUnit",
-      "acceptance": "En rama HU se ejecutan cuatro jobs; en develop seis; esfuerzo queda registrado manualmente",
+      "acceptance": "En cada push y PR vigente se ejecutan las seis categorías; esfuerzo queda registrado manualmente",
       "performance": "Duración de ejecución de CI y tamaño de artefactos",
       "plannedBranch": "feature/hu00-pruebas-devops",
       "branchStatus": "activa"
@@ -1321,7 +1321,7 @@
       "status": "Por hacer",
       "branch": "feature/hu00-pruebas-devops",
       "module": "devops",
-      "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: En rama HU se ejecutan cuatro jobs; en develop seis; esfuerzo queda registrado manualmente. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
+      "detail": "Dado un cliente de pruebas y entorno controlado, comprobar: En cada push y PR vigente se ejecutan las seis categorías; esfuerzo queda registrado manualmente. Repetir en Android; registrar iOS como pendiente si no se dispone de dispositivo.",
       "evidence": "Pendiente de ejecución específica. Registrar caso, commit, entorno, entrada, esperado, obtenido, resultado, reporte/captura e incidencia. Una ejecución compartida puede enlazarse desde varias HU solo si cubre sus casos.",
       "scope": {
         "requirement": "HU00",

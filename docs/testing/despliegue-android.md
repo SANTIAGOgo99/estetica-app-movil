@@ -28,7 +28,7 @@ Revisar cambios antes de subirlos. Conservar los perfiles preview y production d
 
 Configurar EXPO_PUBLIC_API_URL real en el entorno preview/production de EAS. No usar api.example.test para un APK destinado a usuarios. La URL es pública dentro de la aplicación; nunca poner secretos en ella.
 
-La primera compilación puede requerir interacción para crear la firma y completar el proyecto. Ejecutarla con el propietario:
+Antes de compilar, comprobar los seis checks aprobados del commit que se construirá. La primera compilación puede requerir interacción para crear la firma y completar el proyecto. Ejecutarla con el propietario:
 
 ```bash
 npx eas-cli@latest build --platform android --profile preview

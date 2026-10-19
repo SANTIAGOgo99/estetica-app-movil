@@ -24,7 +24,7 @@
       "id": "HU01-U04",
       "email": "cliente",
       "password": "clave",
-      "valid": true
+      "valid": false
     },
     {
       "id": "HU01-U05",

@@ -24,7 +24,7 @@ Esta revisión atiende la lista docente del 16/10/2026. Es el estándar vigente;
 | #107 | Avances de acceso/catálogo, dirigido a main | No como evidencia del pipeline vigente; sus avances ya forman parte de develop |
 | #157 | Primera organización con seis categorías y separación cuatro/dos | Antecedente; no cumple la nueva regla de seis en cada evento |
 | #235 | Ajuste de ramas activas y guía anterior | Antecedente; todavía usaba cuatro/dos |
-| PR de esta revisión | Estándar seis por evento, datos, resúmenes, medición HU01 y distribución condicionada | Sí, una vez aprobadas sus verificaciones; consultar sus Checks y el push de merge |
+| [#236](https://github.com/SANTIAGOgo99/estetica-app-movil/pull/236) | Estándar seis por evento, datos, resúmenes, medición HU01 y distribución condicionada | Sí, una vez aprobadas sus verificaciones; consultar sus Checks y el push de merge |
 
 Un título que empieza por Merge pull request no determina la rama del run. Mirar Branch, evento, SHA y YAML de esa ejecución. No reejecutar commits antiguos para intentar que incorporen un archivo nuevo.
 
@@ -52,3 +52,11 @@ Un título que empieza por Merge pull request no determina la rama del run. Mira
 ## Condiciones para completar lo pendiente
 
 Confirmar si existen cuentas en expo.dev y Play Console. Preparar backend y base de datos de pruebas aislados; configurar variables/secretos sin publicarlos. Ejecutar aceptación en teléfono y esfuerzo manual, registrar el SHA comprobado y después autorizar la distribución. No sustituir este proceso por pruebas de carga en producción.
+
+## Evidencia de fallo detectado
+
+[Push negativo conservado](https://github.com/SANTIAGOgo99/estetica-app-movil/actions/runs/39307166215), commit 5b11b5d: HU01-U04 falla al declarar válido un correo sin @. Análisis estático e integración pasan; unitarias falla; regresión/aceptación/rendimiento quedan omitidos por dependencia fallida. No es una aprobación de la entrega ni un fallo ocultado. Se restaura valid=false en el commit posterior y se exige el resultado completo antes de integrar.
+
+[Checks vigentes del PR #236](https://github.com/SANTIAGOgo99/estetica-app-movil/pull/236/checks): consultar el último SHA, no usar la demostración roja como versión final. Después del merge se verifica el push a develop.
+
+Protección verificada en main/develop: los seis checks de la aplicación GitHub Actions son obligatorios, se exige PR y rama actualizada y se prohíbe force-push. El entorno android-release exige aprobación del propietario.
