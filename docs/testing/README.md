@@ -1,38 +1,57 @@
-# Plan de pruebas móvil
+# Plan y ejecución de pruebas móvil
 
-18 historias (HU00 técnica y HU01–HU17 funcionales), 59 tareas de desarrollo conservadas y 126 tareas de pruebas: siete por historia. [Matriz completa](plan.json). Las pruebas aún pendientes siguen abiertas.
+Estándar vigente desde el 19/10/2026: seis jobs en cada push y pull request hacia develop/main; mismo workflow general para todas las historias. Esfuerzo se registra manualmente en P07. Esto sustituye la separación anterior de cuatro jobs por rama y dos adicionales en develop.
 
-## Alcance
+18 historias, 59 tareas de desarrollo conservadas y siete tareas de pruebas por historia (126). [Matriz](plan.json). Tener tareas creadas o un workflow verde no aprueba automáticamente una historia.
 
-- Requerimiento: casos y criterios de cada HU.
-- Módulo: flujos de acceso, catálogo, agendamiento, citas y compras.
-- Sprint: repetir regresión sobre todas las historias integradas y revisar criterios de la entrega. No agregar pruebas dispersas: registrar esta evidencia en las sub-issues de las HU cubiertas.
+## Tipo, datos y alcance
 
-## Flujo de ramas
-
-Las ramas se crean desde develop cuando se inicia el trabajo de una historia. Actualmente existen feature/hu00-pruebas-devops y feature/hu01-iniciar-sesion. HU02–HU17 conservan sus tareas y nombres de rama previstos, pero aún no tienen rama. Los avances anteriores se conservan en develop y en las ramas históricas. HU00 configura el proceso.
-
-1. Subir cambios a la rama HU: estático + unitarias + integración; después regresión y empaquetado.
-2. Abrir PR hacia develop y revisar las cuatro verificaciones.
-3. Integrar solo si pasan. En el push a develop se repiten las cuatro y se agregan aceptación y rendimiento.
-4. Esfuerzo se ejecuta manualmente en entorno controlado y se registra en P07.
-5. Integrar a main únicamente una entrega validada. Las condiciones del workflow no bloquean por sí solas el botón de merge: requieren protección de ramas o disciplina de revisión.
-
-## Herramientas y límites de la automatización actual
-
-| Tipo | Herramienta / comando | Cobertura actual |
+| Categoría | Herramienta | Alcance actual |
 |---|---|---|
-| Estático | TypeScript + ESLint; npm run typecheck y npm run lint | Todo el código |
-| Unitarias | node:test; npm run test:unit | Validaciones, catálogo, horarios y acceso |
-| Integración | node:test + servidor HTTP local; npm run test:integration | Autenticación, catálogo y conflicto de reserva; falta staging + BD |
-| Regresión | node:test; npm run test:regression | Todos los archivos *.test.mjs; exportación Android adicional |
-| Aceptación | Playwright; npm run test:acceptance | HU01–HU05, interfaz web en viewport móvil, API simulada |
-| Rendimiento | Playwright; npm run test:performance | HU02/HU04: cinco cargas, p95 < 5 s, Chromium móvil y API simulada |
-| Esfuerzo | Procedimiento P07 manual | Pendiente en entorno controlado; fuera del YAML |
+| Estático | TypeScript + ESLint | Código, configuración y pruebas del repositorio |
+| Unitaria | node:test | Credenciales con datos JSON, vigencia/restauración, reglas de catálogo/horario y política de distribución |
+| Integración | node:test + HTTP local | Login, perfil, sesión, catálogo y conflicto de reserva; no acredita PostgreSQL real |
+| Regresión | node:test | Toda la suite acumulada; incluye casos anteriores, no sumar como ejecuciones diferentes |
+| Aceptación | Playwright + Chromium | HU01–HU05, interfaz web móvil con API simulada; incluye restauración/cierre y rechazo de credenciales |
+| Rendimiento | Playwright | HU01/HU02/HU04, cinco muestras por flujo, p95 < 5000 ms; interfaz web/API simulada |
+| Esfuerzo | Procedimiento P07 | Manual; pendiente en entorno controlado, nunca contra producción |
 
-Las funciones futuras (en particular reagendamiento, cancelación y pedidos) necesitan implementar sus casos al desarrollar cada historia. Se conservan las 126 tareas pendientes hasta reunir su evidencia. Web móvil no demuestra funcionamiento ni rendimiento nativo; Android/iOS y API/PostgreSQL requieren validación adicional.
+Datos: [tests/fixtures/mobile.json](../../tests/fixtures/mobile.json), casos identificados y ficticios. Los mocks representan respuestas controladas; no hay servidor detrás de api.example.test. [Alcance y uso de datos](../../tests/fixtures/README.md).
 
-## Ejecutar localmente
+Requerimiento: casos de cada HU. Módulo: ejecutar sus funciones relacionadas. Sprint: repetir la suite y revisar los criterios de todas las historias integradas. Una evidencia compartida se vincula a las HU que realmente cubre.
+
+## Ramas y eventos
+
+Solo HU00 y HU01 tienen ramas activas por historia: feature/hu00-pruebas-devops y feature/hu01-iniciar-sesion. HU02–HU17 conservan sus tareas y nombres previstos, sin crear ramas adelantadas. main conserva la entrega estable; develop integra los avances.
+
+- Push a cualquier rama con el YAML vigente: seis categorías.
+- Abrir/actualizar PR dirigido a develop o main: seis categorías sobre el resultado propuesto de integración.
+- Merge: produce un push a la rama destino y repite las seis categorías.
+- git pull en tu equipo descarga cambios: no es un evento de Actions. Cuando se dice pull en la revisión se interpreta como pull request.
+- Un fallo en las tres verificaciones iniciales bloquea regresión; aceptación/rendimiento dependen de regresión y quedan bloqueados. No hay continue-on-error.
+- Las ejecuciones históricas siguen utilizando el YAML de su propio commit. Reejecutarlas no les incorpora las pruebas actuales.
+
+## Evidencia y artefactos
+
+Cada job agrega resumen de alcance, commit y casos/resultados a Summary. Rendimiento incluye muestras, p95 y presupuesto. El estado del job y los logs son la fuente del resultado; un resumen escrito en always() no transforma un fallo en éxito.
+
+En ejecuciones correctas se genera un solo artefacto, interfaz-web-pruebas, necesario para compartir la exportación entre dos máquinas; caduca en tres días. Los fallos adjuntan JUnit, HTML/trazas disponibles por siete días. Conservar enlaces al run/commit y registrar los resultados en cada tarea. [Plantilla](evidence-template.md).
+
+## Integración real pendiente y configuración
+
+npm run test:staging consulta el backend de pruebas real: catálogos, login de cliente, perfil y agenda. No crea cuentas/citas/pedidos ni hace estrés. Se rechaza el servidor productivo conocido. Hace falta un entorno aislado y una cuenta CLIENTE de prueba.
+
+Variables de GitHub: STAGING_API_URL (incluye /api), STAGING_ENVIRONMENT_CONFIRMED=true. Secretos: STAGING_CLIENT_EMAIL y STAGING_CLIENT_PASSWORD. Nunca enviarlos por chat ni guardarlos en Git. [.env.test.example](../../.env.test.example) solo muestra nombres vacíos.
+
+El paso se ejecuta en push si está configurado; no se expone a PR. Si falta configuración, el resumen indica staging pendiente, no aprobado. Si se configura y falla, integración falla y bloquea lo dependiente. El verde sin staging solo acredita HTTP local. Las consultas a una API real no prueban directamente toda la persistencia de PostgreSQL.
+
+## Android y Google Play
+
+[eas.json](../../eas.json) define APK interno (preview) y AAB de tienda (production). [Distribución Android](../../.github/workflows/android-release.yml) es un workflow manual distinto al pipeline de pruebas. Exige un run aprobado con los seis jobs, push del mismo commit y rama. Nunca se dispara por cada push.
+
+Falta inicializar el proyecto EAS, android.package, firma y credenciales. El workflow falla en su puerta de configuración si faltan estos datos. Para Google Play también exige main y aprobación de staging/nativo asociada al SHA exacto. Envía solo a canal interno como borrador, no a producción. Ver [procedimiento de distribución](despliegue-android.md).
+
+## Comprobar localmente
 
 ```bash
 npm ci
@@ -45,33 +64,11 @@ npm run test:export
 npx playwright install chromium
 npm run test:acceptance
 npm run test:performance
+node scripts/test-summary.mjs performance
 ```
 
-La exportación de pruebas fuerza una URL ficticia y desactiva .env. No utiliza cuentas reales. Reportes en reports/ y trazas en test-results/; GitHub Actions los guarda como artefactos. El empaquetado JavaScript no genera APK: un APK Expo requiere EAS/configuración de firma y no acredita por sí solo aceptación.
+No cambiar type: module del proyecto solo para quitar advertencias del runner. Node 22.13.1 informa que la eliminación de tipos es experimental y detecta módulos TS sin type declarado; estas advertencias conocidas no son pruebas fallidas. Las acciones de GitHub se actualizaron a versiones actuales y Ubuntu se fija a 24.04 para evitar cambios de imagen durante la revisión.
 
-## Evidencia mínima por caso
+[Observaciones, evidencias y PR aplicables](observaciones-2026-10-19.md) · [Guía para explicar el YAML](guia-pipeline.md).
 
-Caso/HU/tipo, fecha real, commit, entorno/dispositivo, datos ficticios, pasos, esperado, obtenido, aprobado/fallido/bloqueado, enlace al reporte y defecto. Usar [plantilla](evidence-template.md). No cerrar una HU solo por seis jobs verdes: faltan las verificaciones manuales y los criterios no automatizados.
-
-## Historias
-
-- [HU00 - Preparar repositorio y flujo DevOps de la aplicación móvil](stories/HU00.md): devops; Sprint 1.
-- [HU01 - Iniciar sesión](stories/HU01.md): acceso; Sprint 1.
-- [HU02 - Consultar servicios](stories/HU02.md): catalogo; Sprint 1.
-- [HU03 - Ver detalle de un servicio](stories/HU03.md): catalogo; Sprint 1.
-- [HU04 - Consultar productos](stories/HU04.md): catalogo; Sprint 1.
-- [HU05 - Ver detalle de un producto](stories/HU05.md): catalogo; Sprint 1.
-- [HU06 - Consultar fechas disponibles](stories/HU06.md): agendamiento; Sprint 2.
-- [HU07 - Consultar horarios disponibles](stories/HU07.md): agendamiento; Sprint 2.
-- [HU08 - Agendar una cita](stories/HU08.md): agendamiento; Sprint 2.
-- [HU09 - Confirmar información de la cita](stories/HU09.md): agendamiento; Sprint 2.
-- [HU10 - Consultar mis citas](stories/HU10.md): citas; Sprint 3.
-- [HU11 - Reagendar una cita](stories/HU11.md): citas; Sprint 3.
-- [HU12 - Cancelar una cita](stories/HU12.md): citas; Sprint 3.
-- [HU13 - Consultar estado de una cita](stories/HU13.md): citas; Sprint 3.
-- [HU14 - Agregar productos al carrito](stories/HU14.md): compras; Sprint 4.
-- [HU15 - Consultar y modificar el carrito](stories/HU15.md): compras; Sprint 4.
-- [HU16 - Generar pedido o compra](stories/HU16.md): compras; Sprint 4.
-- [HU17 - Confirmar pedido](stories/HU17.md): compras; Sprint 4.
-
-Para estudiar el proceso y el YAML: [guía explicada y preguntas de revisión](guia-pipeline.md).
+Protección verificada: main y develop exigen los seis checks de GitHub Actions y PR. android-release exige aprobación manual del propietario.

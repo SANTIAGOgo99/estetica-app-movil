@@ -3,7 +3,7 @@ import { mkdirSync, readdirSync } from 'node:fs';
 
 const suite = process.argv[2] ?? 'regression';
 const files = {
-  unit: ['tests/unit.test.mjs'],
+  unit: ['tests/unit.test.mjs', ...readdirSync('tests').filter(name => name.endsWith('.unit.test.mjs')).map(name => `tests/${name}`)],
   integration: ['tests/integration.test.mjs'],
   regression: readdirSync('tests').filter(name => name.endsWith('.test.mjs')).map(name => `tests/${name}`),
 }[suite];

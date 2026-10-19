@@ -1,17 +1,21 @@
 import { test, expect } from '@playwright/test';
-import { mockApi } from './fixtures';
+import { mockApi, login } from './fixtures';
 
 test.beforeEach(async ({ page }) => mockApi(page));
 test('HU01: exige credenciales y permite iniciar/restaurar sesión de cliente', async ({ page }) => {
   await page.goto('/sign-in');
   await page.getByRole('button', { name: 'Iniciar sesión', exact: true }).click();
   await expect(page.getByText('Escribe tu correo electrónico.', { exact: true })).toBeVisible();
-  await page.getByPlaceholder('nombre@correo.com').fill('cliente@example.com');
-  await page.getByPlaceholder('Tu contraseña').fill('Clave-ficticia1!');
+  await page.getByPlaceholder('nombre@correo.com').fill(login.email);
+  await page.getByPlaceholder('Tu contraseña').fill(login.password);
   await page.getByRole('button', { name: 'Iniciar sesión', exact: true }).click();
   await expect.poll(() => page.evaluate(() => sessionStorage.getItem('estetica.client.session'))).toBeTruthy();
   await page.reload();
   await expect(page.getByText('Hola, Cliente', { exact: true })).toBeVisible();
+  await page.goto('/profile');
+  await page.getByRole('button', { name: 'Cerrar sesión', exact: true }).click();
+  await expect.poll(() => page.evaluate(() => sessionStorage.getItem('estetica.client.session'))).toBeNull();
+  await expect(page.getByRole('button', { name: 'Iniciar sesión', exact: true })).toBeVisible();
 });
 for (const [hu, path, name, detail] of [
   ['HU02/HU03', '/services', 'Corte de prueba', '/service-detail'],
@@ -44,8 +48,8 @@ test('HU02: muestra fallo y permite reintentar el catálogo', async ({ page }) =
 test('HU01: credenciales rechazadas muestran error y no crean sesión', async ({ page }) => {
   await page.route('https://api.example.test/api/auth/login', route => route.fulfill({ status: 401, json: { error: 'Usuario no encontrado' } }));
   await page.goto('/sign-in');
-  await page.getByPlaceholder('nombre@correo.com').fill('cliente@example.com');
-  await page.getByPlaceholder('Tu contraseña').fill('incorrecta');
+  await page.getByPlaceholder('nombre@correo.com').fill(login.email);
+  await page.getByPlaceholder('Tu contraseña').fill(login.invalidPassword);
   await page.getByRole('button', { name: 'Iniciar sesión', exact: true }).click();
   await expect(page.getByText('Correo o contraseña incorrectos.', { exact: true })).toBeVisible();
   expect(await page.evaluate(() => sessionStorage.getItem('estetica.client.session'))).toBeNull();

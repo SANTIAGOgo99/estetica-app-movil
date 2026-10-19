@@ -6,7 +6,7 @@ export default defineConfig({
   workers: 1,
   retries: 0,
   timeout: 30000,
-  reporter: [['list'], ['html', { outputFolder: 'reports/browser', open: 'never' }], ['junit', { outputFile: 'reports/browser.xml' }]],
+  reporter: [['list'], ['html', { outputFolder: 'reports/browser', open: 'never' }], ['junit', { outputFile: 'reports/browser.xml' }], ['json', { outputFile: 'reports/browser.json' }]],
   use: {
     ...devices['Pixel 7'],
     browserName: 'chromium',

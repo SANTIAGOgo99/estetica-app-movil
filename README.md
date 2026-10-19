@@ -52,11 +52,11 @@ La aplicación utiliza una arquitectura cliente-servidor. La aplicación móvil 
 - develop: integración de historias y ejecución de las seis verificaciones.
 - feature/huXX-descripcion: crear la rama al iniciar la historia; actualmente solo HU00 y HU01.
 
-Las ramas anteriores se conservan. La línea base de develop reúne los avances existentes, sin reconstruir el historial. En las ramas HU se ejecutan análisis estático, unitarias, integración y regresión. Al integrar a develop se agregan aceptación y rendimiento. Esfuerzo queda como procedimiento manual por historia.
+Las ramas anteriores se conservan. La línea base de develop reúne los avances existentes, sin reconstruir el historial. Desde la revisión del 19/10/2026, cada push y PR ejecuta las seis categorías: análisis estático, unitarias, integración, regresión, aceptación y rendimiento. Esfuerzo queda como procedimiento manual por historia.
 
 La [planeación de pruebas](docs/testing/README.md) contiene siete tareas por HU, los alcances de requerimiento/módulo/sprint, comandos y límites de la cobertura actual. [GitHub Projects](https://github.com/users/SANTIAGOgo99/projects/1) conserva las tareas de desarrollo y las nuevas pruebas como sub-issues.
 
-Los reportes y trazas se guardan como artefactos de GitHub Actions. Las verificaciones actuales de interfaz usan web móvil con API simulada; Android/iOS y staging requieren evidencia adicional. Un job verde no completa automáticamente una historia.
+Los resultados se resumen en GitHub Actions. En ejecuciones correctas solo se comparte la exportación web necesaria; reportes y trazas detallados se adjuntan si falla una verificación. Las verificaciones actuales de interfaz usan web móvil con API simulada; Android/iOS y staging requieren evidencia adicional. Un job verde no completa automáticamente una historia.
 
 ## Responsable
 

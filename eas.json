@@ -1,0 +1,10 @@
+{
+  "cli": {"appVersionSource":"remote"},
+  "build": {
+    "preview": {"distribution":"internal","environment":"preview","node":"22.13.1","android":{"buildType":"apk"}},
+    "production": {"distribution":"store","environment":"production","node":"22.13.1","autoIncrement":true,"android":{"buildType":"app-bundle"}}
+  },
+  "submit": {
+    "production": {"android":{"track":"internal","releaseStatus":"draft","serviceAccountKeyPath":"$GOOGLE_SERVICE_ACCOUNT_KEY_PATH"}}
+  }
+}

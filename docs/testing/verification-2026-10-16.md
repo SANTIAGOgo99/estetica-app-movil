@@ -1,3 +1,5 @@
+> Registro histórico del 16/10/2026. El estándar vigente y las nuevas evidencias se describen en observaciones-2026-10-19.md. Algunos runs antiguos fueron retirados con respaldo local; no usarlos como evidencia vigente.
+
 # Verificación de la corrección — 16 de octubre de 2026
 
 ## Resultados locales

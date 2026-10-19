@@ -1,11 +1,14 @@
-# Flujo general: cuatro verificaciones por historia y las seis en develop.
-# Esfuerzo se registra manualmente en la sub-issue correspondiente.
+# Estándar desde la revisión del 19/10/2026: seis categorías en cada push y PR.
+# Los casos crecen por HU; el workflow se reutiliza para requerimiento, módulo y sprint.
+# Esfuerzo queda manual. Un job verde solo acredita el alcance documentado debajo.
 name: Pipeline de pruebas
+run-name: Pruebas · ${{ github.event_name }} · ${{ github.head_ref || github.ref_name }}
 on:
   push:
     branches: ['**']
   pull_request:
     branches: [develop, main]
+  workflow_dispatch:
 permissions:
   contents: read
 concurrency:
@@ -14,137 +17,178 @@ concurrency:
 env:
   CI: '1'
   EXPO_NO_DOTENV: '1'
+  # Solo Playwright usa esta URL interceptada; integración crea su servidor HTTP local.
   EXPO_PUBLIC_API_URL: https://api.example.test/api
 jobs:
+  # Tipo: estático. Alcance: código completo; no ejecuta la interfaz ni la API.
   analisis-estatico:
     name: Análisis de código estático
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: '22.13.1'
           cache: npm
       - run: npm ci
       - run: npm run typecheck
       - run: npm run lint
+      - name: Resumen de tipo y alcance
+        if: always()
+        run: node scripts/test-summary.mjs static
+  # Tipo: unitaria. Alcance: reglas puras y HU01-U01–U09; datos versionados, sin red.
   unitarias:
     name: Pruebas unitarias
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: '22.13.1'
           cache: npm
       - run: npm ci
       - run: npm run test:unit
-      - uses: actions/upload-artifact@v4
+      - name: Resumen y resultado
         if: always()
+        run: node scripts/test-summary.mjs unit
+      - uses: actions/upload-artifact@v7.0.2
+        if: failure()
         with:
-          name: unitarias
+          name: fallo-unitarias
           path: reports/unit.xml
-          if-no-files-found: error
+          retention-days: 7
+          if-no-files-found: warn
+  # Tipo: integración. Alcance: cliente → HTTP local → sesión/perfil/catálogo/reserva.
+  # API/BD real solo se acredita si el paso staging se ejecutó y aprobó.
   integracion:
     name: Pruebas de integración
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
+    env:
+      STAGING_API_URL: ${{ vars.STAGING_API_URL }}
+      STAGING_ENVIRONMENT_CONFIRMED: ${{ vars.STAGING_ENVIRONMENT_CONFIRMED }}
+      STAGING_CLIENT_EMAIL: ${{ secrets.STAGING_CLIENT_EMAIL }}
+      STAGING_CLIENT_PASSWORD: ${{ secrets.STAGING_CLIENT_PASSWORD }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: '22.13.1'
           cache: npm
       - run: npm ci
       - run: npm run test:integration
-      - uses: actions/upload-artifact@v4
+      - name: Contrato con backend de pruebas real (si está configurado; nunca en PR)
+        if: github.event_name != 'pull_request' && env.STAGING_API_URL != ''
+        run: npm run test:staging
+      - name: Resumen y cobertura pendiente de staging
         if: always()
+        run: node scripts/test-summary.mjs integration
+      - uses: actions/upload-artifact@v7.0.2
+        if: failure()
         with:
-          name: integracion-http-local
-          path: reports/integration.xml
-          if-no-files-found: error
+          name: fallo-integracion
+          path: reports/
+          retention-days: 7
+          if-no-files-found: warn
+  # Tipo: regresión. Alcance: suite acumulada de las HU ya cubiertas; revisión de módulo/sprint.
+  # Exportar Android/web es adicional: NO sustituye regresión, APK ni aceptación nativa.
   regresion:
     name: Pruebas de regresión y empaquetado
     needs: [analisis-estatico, unitarias, integracion]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: '22.13.1'
           cache: npm
       - run: npm ci
       - run: npm run test:regression
-      - name: Empaquetar JavaScript Android (no genera APK)
+      - name: Exportación JavaScript Android (no APK)
         run: npx expo export --platform android --output-dir dist-android
-      - name: Exportar interfaz para pruebas web
+      - name: Exportación compartida para navegador
         run: npm run test:export
-      - uses: actions/upload-artifact@v4
+      # Único artefacto en ejecuciones correctas: se necesita para los dos jobs de navegador.
+      - uses: actions/upload-artifact@v7.0.2
         with:
           name: interfaz-web-pruebas
           path: dist-test/
+          retention-days: 3
           include-hidden-files: true
           if-no-files-found: error
-      - uses: actions/upload-artifact@v4
+      - name: Resumen de regresión
         if: always()
+        run: node scripts/test-summary.mjs regression
+      - uses: actions/upload-artifact@v7.0.2
+        if: failure()
         with:
-          name: regresion
+          name: fallo-regresion
           path: reports/regression.xml
-          if-no-files-found: error
+          retention-days: 7
+          if-no-files-found: warn
+  # Tipo: aceptación. Alcance: HU01–HU05, web móvil y API simulada; no teléfono físico.
   aceptacion:
     name: Pruebas de aceptación (web móvil)
     needs: regresion
-    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: '22.13.1'
           cache: npm
       - run: npm ci
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8.0.2
         with:
           name: interfaz-web-pruebas
           path: dist-test/
       - run: npx playwright install --with-deps chromium
       - run: npm run test:acceptance
-      - uses: actions/upload-artifact@v4
+      - name: Resumen de aceptación
         if: always()
+        run: node scripts/test-summary.mjs acceptance
+      - uses: actions/upload-artifact@v7.0.2
+        if: failure()
         with:
-          name: aceptacion-web-movil
+          name: fallo-aceptacion
           path: |
             reports/
             test-results/
-          if-no-files-found: error
+          retention-days: 7
+          if-no-files-found: warn
+  # Tipo: rendimiento. Alcance: HU01/HU02/HU04; cinco muestras, p95 < 5 s; API simulada.
+  # No demuestra latencia del backend real ni rendimiento Android/iOS.
   rendimiento:
     name: Pruebas de rendimiento (web móvil)
     needs: regresion
-    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: '22.13.1'
           cache: npm
       - run: npm ci
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8.0.2
         with:
           name: interfaz-web-pruebas
           path: dist-test/
       - run: npx playwright install --with-deps chromium
       - run: npm run test:performance
-      - uses: actions/upload-artifact@v4
+      - name: Resumen con tiempos y presupuesto
         if: always()
+        run: node scripts/test-summary.mjs performance
+      - uses: actions/upload-artifact@v7.0.2
+        if: failure()
         with:
-          name: rendimiento-web-movil
+          name: fallo-rendimiento
           path: |
             reports/
             test-results/
-          if-no-files-found: error
+          retention-days: 7
+          if-no-files-found: warn

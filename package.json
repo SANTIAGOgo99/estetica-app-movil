@@ -38,7 +38,8 @@
     "test:regression": "node scripts/run-tests.mjs regression",
     "test:acceptance": "playwright test acceptance.spec.ts",
     "test:performance": "playwright test performance.spec.ts",
-    "test:export": "node scripts/export-test-web.mjs"
+    "test:export": "node scripts/export-test-web.mjs",
+    "test:staging": "node --experimental-strip-types scripts/test-staging.mjs"
   },
   "private": true,
   "devDependencies": {
