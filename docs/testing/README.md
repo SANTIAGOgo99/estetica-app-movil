@@ -1,5 +1,7 @@
 # Plan y ejecución de pruebas móvil
 
+Actualización del 29/10/2026: sesión separada en dominio, aplicación, infraestructura y composición; cuatro patrones explícitos conectados al flujo real. Semgrep forma parte del análisis estático y ZAP pasivo analiza la web local antes de exportar Android. [Capturas y resultados de octubre](../evidence/octubre-2026/README.md).
+
 Estándar vigente desde el 19/10/2026: seis jobs en cada push y pull request hacia develop/main; mismo workflow general para todas las historias. Esfuerzo se registra manualmente en P07. Esto sustituye la separación anterior de cuatro jobs por rama y dos adicionales en develop.
 
 18 historias, 59 tareas de desarrollo conservadas y siete tareas de pruebas por historia (126). [Matriz](plan.json). Tener tareas creadas o un workflow verde no aprueba automáticamente una historia.
@@ -35,7 +37,7 @@ Solo HU00 y HU01 tienen ramas activas por historia: feature/hu00-pruebas-devops 
 
 Cada job agrega resumen de alcance, commit y casos/resultados a Summary. Rendimiento incluye muestras, p95 y presupuesto. El estado del job y los logs son la fuente del resultado; un resumen escrito en always() no transforma un fallo en éxito.
 
-En ejecuciones correctas se genera un solo artefacto, interfaz-web-pruebas, necesario para compartir la exportación entre dos máquinas; caduca en tres días. Los fallos adjuntan JUnit, HTML/trazas disponibles por siete días. Conservar enlaces al run/commit y registrar los resultados en cada tarea. [Plantilla](evidence-template.md).
+En ejecuciones correctas se conserva interfaz-web-pruebas por tres días para compartir la exportación, y seguridad-sast, seguridad-dast y evidencias-interfaces por 30 días para revisión. Los fallos adjuntan además JUnit y trazas disponibles por siete días. Cada artefacto pertenece al SHA de su run. Conservar enlaces al run/commit y registrar los resultados en cada tarea. [Plantilla](evidence-template.md).
 
 ## Integración real pendiente y configuración
 

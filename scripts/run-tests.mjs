@@ -4,7 +4,7 @@ import { mkdirSync, readdirSync } from 'node:fs';
 const suite = process.argv[2] ?? 'regression';
 const files = {
   unit: ['tests/unit.test.mjs', ...readdirSync('tests').filter(name => name.endsWith('.unit.test.mjs')).map(name => `tests/${name}`)],
-  integration: ['tests/integration.test.mjs'],
+  integration: ['tests/integration.test.mjs', ...readdirSync('tests').filter(name => name.endsWith('.integration.test.mjs')).map(name => `tests/${name}`)],
   regression: readdirSync('tests').filter(name => name.endsWith('.test.mjs')).map(name => `tests/${name}`),
 }[suite];
 if (!files?.length) throw Error(`Suite desconocida o vacía: ${suite}`);

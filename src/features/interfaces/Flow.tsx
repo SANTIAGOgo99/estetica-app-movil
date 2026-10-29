@@ -8,6 +8,10 @@ import {
 import { router, type Href } from "expo-router";
 import { useAuth } from "../auth/AuthProvider";
 import { accessReason, needsSession, routePath } from "./access";
+import type { Item } from '../../domain/catalog/Item';
+import { addCartItem, updateCartQuantity, type CartLine } from '../../domain/commerce/cart';
+export type { Item } from '../../domain/catalog/Item';
+export type { CartLine } from '../../domain/commerce/cart';
 export type Screen =
   | "welcome"
   | "sign-in"
@@ -25,19 +29,6 @@ export type Screen =
   | "appointments"
   | "orders"
   | "profile";
-export type Item = {
-  id: number;
-  name: string;
-  price: number;
-  category: string;
-  description: string;
-  image?: string;
-  duration?: number;
-  brand?: string;
-  stock?: number;
-  size?: string;
-};
-export type CartLine = { item: Item; quantity: number };
 export type Booking = {
   id: number;
   service: Item;
@@ -115,31 +106,12 @@ export function FlowProvider({ children }: PropsWithChildren) {
     if (!requireSession("product-detail")) return false;
     const stock = item.stock ?? 0;
     if (stock <= 0 || !Number.isInteger(amount) || amount < 1) return false;
-    setCart((previous) => {
-      const found = previous.find((line) => line.item.id === item.id);
-      const quantity = Math.min(stock, (found?.quantity ?? 0) + amount);
-      return found
-        ? previous.map((line) =>
-            line.item.id === item.id ? { item, quantity } : line,
-          )
-        : [...previous, { item, quantity }];
-    });
+    setCart(previous => addCartItem(previous, item, amount));
     return true;
   }
   function quantity(id: number, value: number) {
     if (!token || !Number.isInteger(value)) return;
-    setCart((previous) =>
-      previous
-        .map((line) =>
-          line.item.id === id
-            ? {
-                ...line,
-                quantity: Math.max(0, Math.min(value, line.item.stock ?? 0)),
-              }
-            : line,
-        )
-        .filter((line) => line.quantity > 0),
-    );
+    setCart(previous => updateCartQuantity(previous, id, value));
   }
   return (
     <Context.Provider

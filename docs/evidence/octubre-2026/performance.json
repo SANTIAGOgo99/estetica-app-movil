@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-29",
+  "command": "npm run test:performance",
+  "stats": {
+    "startTime": "2026-10-29T17:27:56.823Z",
+    "duration": 40150.693,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "measurements": [
+    {
+      "hu": "HU02",
+      "scope": "interfaz web móvil; API simulada; primera carga y cuatro recargas",
+      "samplesMs": [
+        1936.9742999999999,
+        1083.5863,
+        1013.2404000000006,
+        853.8220000000001,
+        1083.3464999999997
+      ],
+      "p95Ms": 1936.9742999999999,
+      "budgetMs": 5000
+    },
+    {
+      "hu": "HU04",
+      "scope": "interfaz web móvil; API simulada; primera carga y cuatro recargas",
+      "samplesMs": [
+        1350.0359000000008,
+        808.5882000000001,
+        899.1608000000015,
+        936.8531999999977,
+        873.8673999999992
+      ],
+      "p95Ms": 1350.0359000000008,
+      "budgetMs": 5000
+    },
+    {
+      "hu": "HU01",
+      "scope": "envío de formulario → pantalla de cliente; web móvil y API simulada",
+      "samplesMs": [
+        313.4843000000001,
+        764.1251999999986,
+        353.45990000000165,
+        449.60109999999986,
+        331.1762000000017
+      ],
+      "p95Ms": 764.1251999999986,
+      "budgetMs": 5000
+    }
+  ]
+}

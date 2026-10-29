@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-29",
+  "environment": "Windows; Node 22.13.1; servidor HTTP local autorizado; Chromium móvil con API simulada",
+  "lint": {
+    "exitCode": 0
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "suites": {
+    "unit": {
+      "cases": 29,
+      "failures": 0,
+      "errors": 0
+    },
+    "regression": {
+      "cases": 59,
+      "failures": 0,
+      "errors": 0
+    }
+  },
+  "acceptance": {
+    "passed": 8,
+    "failed": 0
+  },
+  "performance": {
+    "passed": 3,
+    "failed": 0
+  }
+}

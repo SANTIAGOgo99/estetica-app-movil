@@ -1,5 +1,5 @@
 import { object } from "../api/client.ts";
-import type { Item } from "../interfaces/Flow";
+import type { Item } from "../../domain/catalog/Item";
 export function decodeItem(value: unknown): Item {
   const item = object(value);
   const id = Number(item.id),
