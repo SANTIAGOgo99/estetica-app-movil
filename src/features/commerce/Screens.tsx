@@ -96,10 +96,7 @@ export function CartScreen() {
 }
 export function CheckoutScreen() {
   const flow = useFlow();
-  const total = flow.cart.reduce(
-    (n, line) => n + line.item.price * line.quantity,
-    0,
-  );
+  const total = cartTotal(flow.cart);
   return (
     <Page
       title="Tu selección"

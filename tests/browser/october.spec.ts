@@ -51,7 +51,7 @@ test('Octubre: sesión, carrito con cantidades y cierre actualizan las pantallas
   await expect(page.getByRole('button', { name: 'Quitar Shampoo de prueba' })).toBeVisible();
   await capture(page, info, 'carrito');
   await page.getByRole('button', { name: '+', exact: true }).click();
-  await expect(page.getByText(new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(Number(product.price) * 2), { exact: true }).first()).toBeVisible();
+  await expect(page.getByText(new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(Number(product.price) * 2), { exact: true }).first()).toBeVisible();
   await capture(page, info, 'carrito-dos-unidades');
   await page.getByRole('button', { name: 'Continuar compra', exact: true }).click();
   await expect(page).toHaveURL(/checkout/);
