@@ -12,12 +12,10 @@ import {
 } from "../../components/ui";
 import { useFlow } from "../interfaces/Flow";
 import { ItemImage } from "../catalog/Screens";
+import { cartTotal } from '../../domain/commerce/cart';
 export function CartScreen() {
   const flow = useFlow();
-  const total = flow.cart.reduce(
-    (n, line) => n + line.item.price * line.quantity,
-    0,
-  );
+  const total = cartTotal(flow.cart);
   return (
     <Page
       title="Tu carrito"
