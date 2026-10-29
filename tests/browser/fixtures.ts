@@ -25,6 +25,14 @@ export async function mockApi(page: Page) {
         body = { role: 'client', token: `e30.${claims}.test` };
       }
     } else if (path.endsWith('/users/profile')) body = data.profile;
+    else if (path.endsWith('/appointments/slots')) {
+      const date = new URL(route.request().url()).searchParams.get('date');
+      body = { all_slots: [
+        { time: '11:00', appointment_date: `${date} 11:00:00`, available: true },
+        { time: '12:00', appointment_date: `${date} 12:00:00`, available: false, reason: 'Ocupado' },
+      ] };
+    }
+    else if (path === '/api/appointments' && route.request().method() === 'POST') body = { appointment: { id: 99, status: 'pending', total_amount: service.price, deposit_amount: 0 } };
     else if (path.endsWith('/appointments/my')) body = { appointments: [] };
     else { status = 404; body = { message: `Ruta de prueba no configurada: ${path}` }; }
     await route.fulfill({ status, json: body });

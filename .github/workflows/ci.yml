@@ -34,6 +34,23 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
       - run: npm run lint
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Instalar Semgrep CE
+        run: python -m pip install semgrep==1.182.1
+      - name: SAST Semgrep antes de empaquetar (bloquea severidad ERROR)
+        run: |
+          mkdir -p reports
+          semgrep scan --config p/typescript --config p/react --config p/secrets --severity ERROR --error --strict --metrics off --json-output reports/semgrep.json src
+      - name: Conservar reporte SAST del commit
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: seguridad-sast
+          path: reports/semgrep.json
+          retention-days: 30
+          if-no-files-found: error
       - name: Resumen de tipo y alcance
         if: always()
         run: node scripts/test-summary.mjs static
@@ -107,11 +124,36 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run test:regression
-      - name: Exportación JavaScript Android (no APK)
-        run: npx expo export --platform android --output-dir dist-android
       - name: Exportación compartida para navegador
         run: npm run test:export
-      # Único artefacto en ejecuciones correctas: se necesita para los dos jobs de navegador.
+      - name: DAST ZAP sobre web local antes de empaquetar Android
+        run: |
+          mkdir -p reports
+          chmod 777 reports
+          node scripts/serve-test-web.mjs > reports/dast-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then break; fi
+            sleep 1
+          done
+          curl --fail --silent http://127.0.0.1:4173/ > /dev/null
+          docker run --rm --network host -v "$PWD/reports:/zap/wrk:rw" ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://127.0.0.1:4173 -m 1 -T 5 -I -J zap.json -r zap.html
+          node scripts/check-security.mjs reports/zap.json
+      - name: Conservar reporte DAST del commit
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: seguridad-dast
+          path: |
+            reports/zap.json
+            reports/zap.html
+            reports/dast-server.log
+          retention-days: 30
+          if-no-files-found: error
+      - name: Exportación JavaScript Android después de seguridad (no APK)
+        run: npx expo export --platform android --output-dir dist-android
+      # Web compartida y reportes de seguridad conservados para revisión.
       - uses: actions/upload-artifact@v7.0.2
         with:
           name: interfaz-web-pruebas
@@ -151,6 +193,16 @@ jobs:
       - name: Resumen de aceptación
         if: always()
         run: node scripts/test-summary.mjs acceptance
+      - name: Evidencias de interfaces y navegación del commit
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: evidencias-interfaces
+          path: |
+            test-results/
+            reports/browser.json
+          retention-days: 30
+          if-no-files-found: error
       - uses: actions/upload-artifact@v7.0.2
         if: failure()
         with:
