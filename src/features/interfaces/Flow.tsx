@@ -9,8 +9,8 @@ import { router, type Href } from "expo-router";
 import { useAuth } from "../auth/AuthProvider";
 import { accessReason, needsSession, routePath } from "./access";
 import type { Item } from '../../domain/catalog/Item';
-export type { Item } from '../../domain/catalog/Item';
 import { addCartItem, updateCartQuantity, type CartLine } from '../../domain/commerce/cart';
+export type { Item } from '../../domain/catalog/Item';
 export type { CartLine } from '../../domain/commerce/cart';
 export type Screen =
   | "welcome"

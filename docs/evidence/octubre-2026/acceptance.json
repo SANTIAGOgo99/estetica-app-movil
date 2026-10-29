@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-29",
+  "command": "npm run test:acceptance",
+  "scope": "Chromium web móvil; API simulada; 320 y 412 px en recorrido público y viewport Pixel 7 en los demás casos; no dispositivo físico",
+  "stats": {
+    "startTime": "2026-10-29T17:25:35.035Z",
+    "duration": 98652.87700000001,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "name": "HU01: exige credenciales y permite iniciar/restaurar sesión de cliente",
+      "expected": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 12291
+        }
+      ]
+    },
+    {
+      "name": "HU02/HU03: consulta pública, búsqueda y detalle",
+      "expected": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 4255
+        }
+      ]
+    },
+    {
+      "name": "HU04/HU05: consulta pública, búsqueda y detalle",
+      "expected": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 4078
+        }
+      ]
+    },
+    {
+      "name": "HU02: muestra fallo y permite reintentar el catálogo",
+      "expected": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2606
+        }
+      ]
+    },
+    {
+      "name": "HU01: credenciales rechazadas muestran error y no crean sesión",
+      "expected": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3041
+        }
+      ]
+    },
+    {
+      "name": "Octubre: catálogo público, validación y detalle a 320 y 412 px sin desborde",
+      "expected": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 10303
+        }
+      ]
+    },
+    {
+      "name": "Octubre: sesión, carrito con cantidades y cierre actualizan las pantallas",
+      "expected": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 9111
+        }
+      ]
+    },
+    {
+      "name": "Octubre: agenda selecciona horario y confirma solo con respuesta del servidor simulado",
+      "expected": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 5450
+        }
+      ]
+    }
+  ]
+}
