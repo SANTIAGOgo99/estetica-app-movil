@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testcase name="el registro público ignora roles y persiste únicamente client mediante SQL parametrizado" time="0.330607" classname="test"/>
+	<testcase name="conserva el contrato normal del registro y no recorta la contraseña" time="0.033612" classname="test"/>
+	<testcase name="rechaza entradas incompletas, tipos inesperados y contraseñas que bcrypt truncaría antes de consultar BD" time="0.084806" classname="test"/>
+	<testcase name="una falla de BD devuelve solo el mensaje público y registra únicamente el código" time="0.029513" classname="test"/>
+	<testcase name="un correo duplicado conserva la respuesta conocida y no devuelve detalles internos" time="0.031606" classname="test"/>
+	<testcase name="un fallo inesperado de cifrado no consulta la BD ni filtra el error" time="0.018742" classname="test"/>
+	<!-- tests 6 -->
+	<!-- suites 0 -->
+	<!-- pass 6 -->
+	<!-- fail 0 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 1208.8067 -->
+</testsuites>

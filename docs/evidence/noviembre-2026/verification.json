@@ -1,0 +1,181 @@
+{
+  "recordedAt": "2026-11-10T18:41:02.566Z",
+  "scope": "Regresión local y exportación web móvil con API simulada. No acredita Debug/Release Android ni Google Play.",
+  "checks": {
+    "lint": {
+      "command": "npm run lint",
+      "exitCode": 0
+    },
+    "typecheck": {
+      "command": "npm run typecheck",
+      "exitCode": 0
+    }
+  },
+  "regression": {
+    "tests": 63,
+    "failures": 0,
+    "errors": 0
+  },
+  "browser": {
+    "stats": {
+      "startTime": "2026-11-10T18:38:04.826Z",
+      "duration": 102948.762,
+      "expected": 15,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "title": "HU01: exige credenciales y permite iniciar/restaurar sesión de cliente",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 5161
+          }
+        ]
+      },
+      {
+        "title": "HU02/HU03: consulta pública, búsqueda y detalle",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3150
+          }
+        ]
+      },
+      {
+        "title": "HU04/HU05: consulta pública, búsqueda y detalle",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3436
+          }
+        ]
+      },
+      {
+        "title": "HU02: muestra fallo y permite reintentar el catálogo",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2909
+          }
+        ]
+      },
+      {
+        "title": "HU01: credenciales rechazadas muestran error y no crean sesión",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2446
+          }
+        ]
+      },
+      {
+        "title": "NOV-01: visitante ve solo Inicio, Servicios y Productos a 320 y 412 px",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 10975
+          }
+        ]
+      },
+      {
+        "title": "NOV-02: sesión muestra accesos privados y cerrar sesión los retira",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 4783
+          }
+        ]
+      },
+      {
+        "title": "NOV-03: abrir una URL privada sin sesión no revela datos ni consulta el perfil",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 6747
+          }
+        ]
+      },
+      {
+        "title": "NOV-04: aviso público y lectura en registro conservan campos y no premarcan consentimiento",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 5084
+          }
+        ]
+      },
+      {
+        "title": "NOV-05: sin consentimiento no hay POST; al aceptar se envía la versión del aviso",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 4666
+          }
+        ]
+      },
+      {
+        "title": "NOV-06: un 401 retira sesión y accesos; al volver a entrar muestra la explicación",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 5745
+          }
+        ]
+      },
+      {
+        "title": "NOV-07: un 500 permite reintentar sin cerrar sesión ni mostrar detalles del servidor",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 7484
+          }
+        ]
+      },
+      {
+        "title": "Octubre: catálogo público, validación y detalle a 320 y 412 px sin desborde",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 11090
+          }
+        ]
+      },
+      {
+        "title": "Octubre: sesión, carrito con cantidades y cierre actualizan las pantallas",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 9623
+          }
+        ]
+      },
+      {
+        "title": "Octubre: agenda selecciona horario y confirma solo con respuesta del servidor simulado",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 5694
+          }
+        ]
+      }
+    ]
+  }
+}

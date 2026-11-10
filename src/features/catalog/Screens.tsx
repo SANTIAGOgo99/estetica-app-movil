@@ -26,6 +26,7 @@ import {
 import { colors } from "../../theme";
 import { useCatalog } from "./useCatalog";
 import { useFlow, type Item } from "../interfaces/Flow";
+import { useAuth } from "../auth/AuthProvider";
 export function ItemImage({
   item,
   large = false,
@@ -69,6 +70,7 @@ export function ItemImage({
 }
 export function CatalogScreen({ kind }: { kind: "services" | "products" }) {
   const flow = useFlow();
+  const { token } = useAuth();
   const catalog = useCatalog(kind);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("Todos");
@@ -182,7 +184,7 @@ export function CatalogScreen({ kind }: { kind: "services" | "products" }) {
           )}
         />
       )}
-      {!services && (
+      {!services && !!token && (
         <Button
           label={
             "Ver carrito · " +

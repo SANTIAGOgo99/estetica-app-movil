@@ -37,6 +37,7 @@ function Navigator() {
       <Stack.Screen name="products" />
       <Stack.Screen name="service-detail" />
       <Stack.Screen name="product-detail" />
+      <Stack.Screen name="privacy" />
       <Stack.Protected guard={!token}>
         <Stack.Screen name="sign-in" />
         <Stack.Screen name="register" />

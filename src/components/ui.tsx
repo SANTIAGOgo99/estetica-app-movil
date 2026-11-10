@@ -16,6 +16,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 import { colors, fonts } from "../theme";
 import { useFlow, type Screen } from "../features/interfaces/Flow";
+import { useAuth } from "../features/auth/AuthProvider";
+import { needsSession } from "../features/interfaces/access";
 export type IconName = ComponentProps<typeof Feather>["name"];
 export const money = (value: number) =>
   new Intl.NumberFormat("es-MX", {
@@ -280,6 +282,7 @@ export function Page({
   scroll?: boolean;
 }>) {
   const flow = useFlow();
+  const { token } = useAuth();
   return (
     <SafeAreaView style={s.page}>
       <KeyboardAvoidingView
@@ -315,7 +318,7 @@ export function Page({
         {footer && <View style={s.footer}>{footer}</View>}
         {screen && (
           <View style={s.nav}>
-            {tabs.map((tab) => (
+            {tabs.filter((tab) => !!token || !needsSession(tab.screen)).map((tab) => (
               <Pressable
                 accessibilityRole="button"
                 accessibilityLabel={tab.label}

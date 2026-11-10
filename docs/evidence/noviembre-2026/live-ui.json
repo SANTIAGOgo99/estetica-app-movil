@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-11-10T18:41:39.755Z",
+  "scope": "Interfaz web móvil en Expo desarrollo, backend real y sesión anónima; solo lectura. No acredita APK Android ni operaciones autenticadas.",
+  "results": [
+    {
+      "path": "/services",
+      "apiPath": "/api/services/active",
+      "status": 200,
+      "itemCount": 11,
+      "screenshot": "real-services.png"
+    },
+    {
+      "path": "/products",
+      "apiPath": "/api/products/active",
+      "status": 200,
+      "itemCount": 17,
+      "screenshot": "real-products.png"
+    }
+  ],
+  "pageErrors": []
+}

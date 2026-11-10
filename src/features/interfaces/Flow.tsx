@@ -16,6 +16,7 @@ export type Screen =
   | "welcome"
   | "sign-in"
   | "register"
+  | "privacy"
   | "home"
   | "services"
   | "service-detail"

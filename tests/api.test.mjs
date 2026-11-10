@@ -6,6 +6,7 @@ import {decodeCatalog,decodeItem} from '../src/features/catalog/model.ts';
 import {decodeProfile} from '../src/features/account/model.ts';
 import {decodeAppointments,decodeSlots,isUpcoming,displayedStatus} from '../src/features/appointments/model.ts';
 import {registerClient} from '../src/features/auth/registration.ts';
+import {PRIVACY_NOTICE_VERSION} from '../src/features/privacy/notice.ts';
 import {needsSession,accessReason,routePath} from '../src/features/interfaces/access.ts';
 process.env.EXPO_PUBLIC_API_URL='https://backend.example/api';
 const response=(status,body)=>async()=>new Response(JSON.stringify(body),{status});
@@ -33,9 +34,9 @@ test('perfil real rechaza respuestas de administradores, suspendidos e incomplet
  for(const value of [{...profile,role:'admin'},{...profile,is_active:false},{...profile,email:null}])assert.throws(()=>decodeProfile(value));
 });
 test('registro envía solamente datos de cliente, sin roles administrativos',async()=>{
- await registerClient({name:' Cliente ',email:'CLIENTE@EXAMPLE.COM ',phone:'5550000000',password:'fake-test-password',role:'admin'},async(url,options)=>{
+ await registerClient({name:' Cliente ',email:'CLIENTE@EXAMPLE.COM ',phone:'5550000000',password:'fake-test-password',role:'admin',privacyAccepted:true,privacyVersion:PRIVACY_NOTICE_VERSION},async(url,options)=>{
  assert.equal(url,'https://backend.example/api/auth/register');const body=JSON.parse(options.body);assert.equal(body.email,'CLIENTE@EXAMPLE.COM');assert.equal(body.full_name,'Cliente');assert.equal(body.role,undefined);return new Response(JSON.stringify({user:{id:3,role:'client'}}),{status:201});});
- await assert.rejects(registerClient({name:'Cliente',email:'cliente@example.com',phone:'5550000000',password:'fake'},response(400,{error:'El correo ya está registrado'})),/ya está registrado/);
+ await assert.rejects(registerClient({name:'Cliente',email:'cliente@example.com',phone:'5550000000',password:'fake',privacyAccepted:true,privacyVersion:PRIVACY_NOTICE_VERSION},response(400,{error:'El correo ya está registrado'})),/ya está registrado/);
 });
 test('interpreta los horarios del servidor y conserva los no disponibles',()=>{
  const data=decodeSlots({all_slots:[{time:'11:00',appointment_date:'2026-10-08 11:00:00',available:false,reason:'Ocupado'}],message:'Sin horarios'});

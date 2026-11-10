@@ -1,3 +1,6 @@
+import { normalizeApiUrl } from "../../infrastructure/http/apiUrl.ts";
+import { notifyUnauthorized } from "./unauthorized.ts";
+
 export class ApiError extends Error {
   status: number;
   constructor(message: string, status: number) { super(message); this.status=status; }
@@ -14,13 +17,16 @@ export async function apiRequest(
 ): Promise<unknown> {
   const base = process.env.EXPO_PUBLIC_API_URL;
   if (!base) throw Error("No está configurada la conexión con la estética.");
+  const apiUrl = normalizeApiUrl(base);
+  if (!path.startsWith("/") || path.startsWith("//"))
+    throw Error("La operación solicitada no es válida.");
   const controller = new AbortController();
   const abort = () => controller.abort();
   options.signal?.addEventListener("abort", abort, { once: true });
   if (options.signal?.aborted) controller.abort();
   const timer = setTimeout(abort, 20000);
   try {
-    const response = await fetcher(base.replace(/\/$/, "") + path, {
+    const response = await fetcher(apiUrl + path, {
       method: options.method ?? "GET",
       headers: {
         Accept: "application/json",
@@ -30,6 +36,7 @@ export async function apiRequest(
       body: options.body ? JSON.stringify(options.body) : undefined,
       signal: controller.signal,
     });
+    if (response.status === 401 && options.token) notifyUnauthorized(options.token);
     let data: unknown;
     try {
       data = await response.json();

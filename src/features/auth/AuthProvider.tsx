@@ -2,6 +2,7 @@ import { AppState } from 'react-native';
 import { createContext, useContext, useEffect, useRef, useSyncExternalStore, type PropsWithChildren } from 'react';
 import { authService, sessionStore } from '../../composition/auth';
 import { sessionExpiry } from '../../domain/auth/session';
+import { subscribeUnauthorized } from '../api/unauthorized';
 
 type AuthContextValue = {
   token: string | null; restoring: boolean; notice: string | null;
@@ -20,6 +21,9 @@ export function AuthProvider({ children }: PropsWithChildren) {
   const snapshot = useSyncExternalStore(sessionStore.subscribe, sessionStore.getSnapshot, sessionStore.getServerSnapshot);
   const { token } = snapshot;
   const pending = useRef(false);
+  useEffect(() => subscribeUnauthorized(rejectedToken => {
+    void authService.expireIfCurrent(rejectedToken);
+  }), []);
   useEffect(() => { void authService.restore(); }, []);
   useEffect(() => {
     if (!token) return;

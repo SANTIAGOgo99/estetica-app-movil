@@ -1,4 +1,6 @@
 import { registerClient } from "./registration";
+import { PrivacyNoticeContent } from "../privacy/Screens";
+import { PRIVACY_NOTICE_VERSION } from "../privacy/notice";
 
 import { useRef, useState } from "react";
 import { Alert, Pressable, Text } from "react-native";
@@ -136,6 +138,7 @@ export function RegisterScreen() {
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [terms, setTerms] = useState(false);
+  const [showPrivacy, setShowPrivacy] = useState(false);
   const [registered, setRegistered] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -150,7 +153,7 @@ export function RegisterScreen() {
       !terms
     ) {
       setError(
-        "Revisa tu nombre, correo, teléfono de 10 dígitos, contraseñas y confirmación de datos.",
+        "Revisa tu nombre, correo, teléfono de 10 dígitos, contraseñas y aceptación del aviso de privacidad.",
       );
       return;
     }
@@ -164,7 +167,7 @@ export function RegisterScreen() {
     pending.current = true;
     setLoading(true);
     try {
-      await registerClient({ name, email, phone, password });
+      await registerClient({ name, email, phone, password, privacyAccepted: terms, privacyVersion: PRIVACY_NOTICE_VERSION });
       setPassword("");
       setConfirm("");
       setRegistered(true);
@@ -245,13 +248,20 @@ export function RegisterScreen() {
       />
       <Pressable
         accessibilityRole="checkbox"
+        accessibilityLabel="Acepto el aviso de privacidad para crear mi cuenta"
         accessibilityState={{ checked: terms }}
+        disabled={loading}
         onPress={() => setTerms((old) => !old)}
         style={[s.row, { justifyContent: "flex-start", minHeight: 48 }]}
       >
         <Icon name={terms ? "check-square" : "square"} />
-        <Body>He revisado que mis datos son correctos.</Body>
+        <Text style={[s.body, { flex: 1 }]}>He leído y acepto el aviso de privacidad para crear mi cuenta.</Text>
       </Pressable>
+      <TextAction
+        label={showPrivacy ? "Ocultar aviso de privacidad" : "Leer aviso de privacidad"}
+        onPress={() => setShowPrivacy((value) => !value)}
+      />
+      {showPrivacy && <Card><PrivacyNoticeContent /></Card>}
       {!!error && (
         <Text accessibilityRole="alert" style={s.error}>
           {error}

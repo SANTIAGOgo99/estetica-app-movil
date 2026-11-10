@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testcase name="el catálogo es público; agenda, carrito y perfil requieren sesión" time="0.006312" classname="test"/>
+	<testcase name="consulta pública no envía autorización; una consulta de perfil sí" time="0.128965" classname="test"/>
+	<testcase name="maneja una sesión vencida y no revela detalles internos de un fallo del servidor" time="0.006394" classname="test"/>
+	<testcase name="normaliza precio y existencias, excluye inactivos y una foto inválida no bloquea el catálogo" time="0.002185" classname="test"/>
+	<testcase name="perfil real rechaza respuestas de administradores, suspendidos e incompletas" time="0.001114" classname="test"/>
+	<testcase name="registro envía solamente datos de cliente, sin roles administrativos" time="0.004891" classname="test"/>
+	<testcase name="interpreta los horarios del servidor y conserva los no disponibles" time="0.003476" classname="test"/>
+	<testcase name="lee la agenda real y rechaza una confirmación incompleta" time="0.001526" classname="test"/>
+	<testcase name="el regreso al flujo usa solo destinos internos y conserva el servicio elegido" time="0.002627" classname="test"/>
+	<testcase name="reserva usa el horario exacto del servidor y no inventa anticipo ni confirmación" time="0.015688" classname="test"/>
+	<testcase name="una cita pasada pendiente de cierre no se muestra como próxima" time="0.001405" classname="test"/>
+	<testcase name="Clean: dominio y casos de uso no importan React, Expo, vistas ni adaptadores" time="0.012061" classname="test"/>
+	<testcase name="Clean: infraestructura de sesión no depende de pantallas" time="0.005368" classname="test"/>
+	<testcase name="Clean integrada: HTTP → caso de uso → Repository → Singleton → Observer" time="0.337461" classname="test"/>
+	<testcase name="rechaza correo y contraseña vacíos" time="0.007326" classname="test"/>
+	<testcase name="rechaza formatos de correo inválidos" time="0.001306" classname="test"/>
+	<testcase name="permite credenciales existentes sin imponer reglas de registro" time="0.000881" classname="test"/>
+	<testcase name="no envía datos si falta la URL de API" time="0.026609" classname="test"/>
+	<testcase name="usa el contrato real, recorta correo y conserva la contraseña" time="0.143177" classname="test"/>
+	<testcase name="credenciales rechazadas no revelan si existe la cuenta" time="0.005492" classname="test"/>
+	<testcase name="no concede acceso móvil a administradores" time="0.002013" classname="test"/>
+	<testcase name="maneja suspensión, límite de intentos y fallo del servidor" time="0.003215" classname="test"/>
+	<testcase name="rechaza respuesta incompleta o sin llave de acceso" time="0.010085" classname="test"/>
+	<testcase name="rechaza respuesta no JSON" time="0.004743" classname="test"/>
+	<testcase name="maneja un fallo de red" time="0.001736" classname="test"/>
+	<testcase name="acepta vencimiento futuro de cliente y rechaza vencido, malformado o de administrador" time="0.002871" classname="test"/>
+	<testcase name="restaura una sesión vigente sin borrarla" time="0.000974" classname="test"/>
+	<testcase name="limpia sesiones vencidas o malformadas antes de permitir otro acceso" time="0.001014" classname="test"/>
+	<testcase name="no inventa una sesión si el almacenamiento está vacío" time="0.000526" classname="test"/>
+	<testcase name="propaga fallos de almacenamiento para mostrar el aviso al cliente" time="0.001264" classname="test"/>
+	<testcase name="Carrito: suma sin mutar, limita por existencias y calcula el total" time="0.009680" classname="test"/>
+	<testcase name="Carrito: modificar cantidad conserva otras líneas y elimina al llegar a cero" time="0.001179" classname="test"/>
+	<testcase name="HU01/HU02/HU08: cliente → HTTP → decodificador; errores y conflicto" time="0.504290" classname="test"/>
+	<testcase name="HU01-I02: login HTTP, restauración, perfil autorizado y retirada de sesión" time="0.327307" classname="test"/>
+	<testcase name="HTTPS: rechaza destinos inseguros antes de transmitir contraseña o token" time="0.011113" classname="test"/>
+	<testcase name="401: identifica el token rechazado; 403 y 500 conservan la sesión" time="0.167638" classname="test"/>
+	<testcase name="401 atrasado no elimina una sesión nueva; el vigente elimina almacenamiento y acceso" time="0.002422" classname="test"/>
+	<testcase name="consentimiento: no crea cuenta sin aceptación o con otra versión del aviso" time="0.006120" classname="test"/>
+	<testcase name="Singleton: la misma instancia y estado se comparten entre consumidores" time="0.005896" classname="test"/>
+	<testcase name="Observer: notifica cambios, evita avisos repetidos y permite cancelar" time="0.001385" classname="test"/>
+	<testcase name="Factory y Repository: dos implementaciones cumplen el mismo contrato" time="0.004238" classname="test"/>
+	<testcase name="Caso de uso: validación antes de red, persistencia antes de avisar y cierre" time="0.005057" classname="test"/>
+	<testcase name="Caso de uso: restaurar vigente, eliminar vencida y avisar error de lectura" time="0.004516" classname="test"/>
+	<testcase name="Caso de uso: token inválido o fallo al guardar no conceden acceso" time="0.002999" classname="test"/>
+	<testcase name="Caso de uso: cerrar mientras responde el login no restaura la sesión" time="0.001419" classname="test"/>
+	<testcase name="Caso de uso: la expiración avisa al Observer y retira la persistencia" time="0.001633" classname="test"/>
+	<testcase name="HU00: APK solo con las seis verificaciones correctas del mismo commit" time="0.013225" classname="test"/>
+	<testcase name="HU00: bloquear PR, evidencia antigua y ejecución incompleta" time="0.001572" classname="test"/>
+	<testcase name="HU00: Google Play exige aceptación nativa y staging del mismo commit en main" time="0.003962" classname="test"/>
+	<testcase name="DAST: bloquea riesgo alto y no acepta reportes vacíos o de otro objetivo" time="0.010003" classname="test"/>
+	<testcase name="HU01-U01: validación de credenciales con datos versionados" time="0.005176" classname="test"/>
+	<testcase name="HU01-U02: validación de credenciales con datos versionados" time="0.000863" classname="test"/>
+	<testcase name="HU01-U03: validación de credenciales con datos versionados" time="0.003236" classname="test"/>
+	<testcase name="HU01-U04: validación de credenciales con datos versionados" time="0.000521" classname="test"/>
+	<testcase name="HU01-U05: validación de credenciales con datos versionados" time="0.000501" classname="test"/>
+	<testcase name="HU01-U06: validación de credenciales con datos versionados" time="0.000439" classname="test"/>
+	<testcase name="HU01-U07: validación de credenciales con datos versionados" time="0.000764" classname="test"/>
+	<testcase name="HU01-U08: vigencia y rol de la sesión" time="0.002730" classname="test"/>
+	<testcase name="HU01-U09: restaurar vigente y retirar vencida del almacenamiento" time="0.002637" classname="test"/>
+	<testcase name="HU01: correo válido y campos obligatorios" time="0.006593" classname="test"/>
+	<testcase name="HU02-HU05: catálogo vacío, inactivos y datos inválidos" time="0.002415" classname="test"/>
+	<testcase name="HU07: conserva ocupado y rechaza disponibilidad ambigua" time="0.001279" classname="test"/>
+	<testcase name="HU13: estado pendiente de cierre y autorización de rutas" time="0.001194" classname="test"/>
+	<!-- tests 63 -->
+	<!-- suites 0 -->
+	<!-- pass 63 -->
+	<!-- fail 0 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 3847.7445 -->
+</testsuites>

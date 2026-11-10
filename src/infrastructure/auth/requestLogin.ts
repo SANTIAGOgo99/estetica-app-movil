@@ -1,3 +1,4 @@
+import { normalizeApiUrl } from "../http/apiUrl.ts";
 export type ClientSession = { token: string };
 
 export async function requestLogin(
@@ -7,10 +8,11 @@ export async function requestLogin(
   fetcher: typeof fetch = fetch,
 ): Promise<ClientSession> {
   if (!apiUrl) throw new Error('El servicio de acceso aún no está configurado.');
+  const base = normalizeApiUrl(apiUrl);
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15000);
   try {
-    const response = await fetcher(`${apiUrl.replace(/\/$/, '')}/auth/login`, {
+    const response = await fetcher(`${base}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify({ email: email.trim(), password }),

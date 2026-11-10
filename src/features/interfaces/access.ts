@@ -23,6 +23,7 @@ const routes = [
   "welcome",
   "sign-in",
   "register",
+  "privacy",
   "home",
   "services",
   "service-detail",

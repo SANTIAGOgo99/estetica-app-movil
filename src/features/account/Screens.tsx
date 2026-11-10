@@ -46,7 +46,7 @@ export function HomeScreen() {
               : "Bienvenido a tu espacio"}
           </Text>
         </View>
-        <Pressable
+        {!!auth.token && <Pressable
           accessibilityRole="button"
           accessibilityLabel="Abrir carrito"
           onPress={() => flow.go("cart")}
@@ -60,7 +60,7 @@ export function HomeScreen() {
           }}
         >
           <Icon name="shopping-bag" />
-        </Pressable>
+        </Pressable>}
       </View>
       <View
         style={{
@@ -101,6 +101,7 @@ export function HomeScreen() {
           />
         </Card>
       )}
+      <TextAction label="Aviso de privacidad" onPress={() => flow.go("privacy")} />
       <Text style={s.subheading}>Descubre tu próximo favorito</Text>
       <View style={{ flexDirection: "row", gap: 12 }}>
         {[
@@ -235,6 +236,7 @@ export function ProfileScreen() {
         icon="calendar"
         onPress={() => flow.go("appointments")}
       />
+      <TextAction label="Privacidad y uso de mis datos" onPress={() => flow.go("privacy")} />
       <Button
         label="Mi carrito"
         secondary

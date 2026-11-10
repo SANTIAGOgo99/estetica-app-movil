@@ -51,6 +51,12 @@ export class AuthService {
     }
   }
 
+  async expireIfCurrent(rejectedToken: string): Promise<void> {
+    // Una respuesta atrasada de otra sesión no debe cerrar la sesión nueva.
+    if (this.store.getSnapshot().token !== rejectedToken) return;
+    await this.expire();
+  }
+
   async expire(): Promise<void> {
     ++this.revision;
     this.store.update({ token: null, restoring: false, notice: 'Tu sesión venció. Inicia sesión nuevamente.' });
