@@ -1,5 +1,8 @@
 # Evidencias de noviembre
 
+Este directorio conserva la revisión del 10 de noviembre. Para el APK y el backend
+actualizados consultar la [verificación del 19 de noviembre](../liberacion-2026-11-19/README.md).
+
 Verificación del 10/11/2026. Consultar también el [avance de noviembre](../../noviembre/README.md).
 
 ## Backend real y catálogos visibles

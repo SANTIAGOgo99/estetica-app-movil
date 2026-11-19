@@ -7,6 +7,7 @@ export const privateScreens = [
   "order-confirmed",
   "orders",
   "profile",
+  "account-settings",
 ] as const;
 export function needsSession(screen: string) {
   return privateScreens.some((value) => value === screen);

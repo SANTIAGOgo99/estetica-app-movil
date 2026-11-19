@@ -224,9 +224,7 @@ export function ProfileScreen() {
               label="Teléfono"
               value={profile.data.phone || "Sin registrar"}
             />
-            <Body muted>
-              Si necesitas corregir tus datos, contacta a la estética.
-            </Body>
+            <Button label="Administrar mis datos y privacidad" secondary onPress={() => flow.go('account-settings')} />
           </Card>
         </>
       ) : null}

@@ -11,6 +11,7 @@ import { Outfit_600SemiBold } from "@expo-google-fonts/outfit/600SemiBold";
 import { AuthProvider, useAuth } from "../features/auth/AuthProvider";
 import { FlowProvider } from "../features/interfaces/Flow";
 import { colors } from "../theme";
+import { NetworkSecurityGate } from "../components/NetworkSecurityGate";
 function Navigator() {
   const { token, restoring } = useAuth();
   if (restoring)
@@ -76,12 +77,14 @@ export default function RootLayout() {
     );
   return (
     <SafeAreaProvider>
+      <NetworkSecurityGate>
       <AuthProvider>
         <FlowProvider>
           <StatusBar style="dark" />
           <Navigator />
         </FlowProvider>
       </AuthProvider>
+      </NetworkSecurityGate>
     </SafeAreaProvider>
   );
 }

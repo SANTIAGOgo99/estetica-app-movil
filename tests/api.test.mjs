@@ -35,7 +35,7 @@ test('perfil real rechaza respuestas de administradores, suspendidos e incomplet
 });
 test('registro envía solamente datos de cliente, sin roles administrativos',async()=>{
  await registerClient({name:' Cliente ',email:'CLIENTE@EXAMPLE.COM ',phone:'5550000000',password:'fake-test-password',role:'admin',privacyAccepted:true,privacyVersion:PRIVACY_NOTICE_VERSION},async(url,options)=>{
- assert.equal(url,'https://backend.example/api/auth/register');const body=JSON.parse(options.body);assert.equal(body.email,'CLIENTE@EXAMPLE.COM');assert.equal(body.full_name,'Cliente');assert.equal(body.role,undefined);return new Response(JSON.stringify({user:{id:3,role:'client'}}),{status:201});});
+ assert.equal(url,'https://backend.example/api/auth/register-client');const body=JSON.parse(options.body);assert.equal(body.email,'CLIENTE@EXAMPLE.COM');assert.equal(body.full_name,'Cliente');assert.equal(body.role,undefined);return new Response(JSON.stringify({user:{id:3,role:'client'}}),{status:201});});
  await assert.rejects(registerClient({name:'Cliente',email:'cliente@example.com',phone:'5550000000',password:'fake',privacyAccepted:true,privacyVersion:PRIVACY_NOTICE_VERSION},response(400,{error:'El correo ya está registrado'})),/ya está registrado/);
 });
 test('interpreta los horarios del servidor y conserva los no disponibles',()=>{

@@ -1,0 +1,30 @@
+{
+  "stats": {
+    "startTime": "2026-11-19T20:33:39.891Z",
+    "duration": 51183.929,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "ARCO-01: modifica datos con confirmación y muestra la respuesta del servidor",
+      "results": [
+        "expected"
+      ]
+    },
+    {
+      "title": "ARCO-02: guarda oposición y conserva la preferencia al volver a abrir",
+      "results": [
+        "expected"
+      ]
+    },
+    {
+      "title": "ARCO-03: eliminación requiere confirmación y contraseña, espera al servidor y cierra sesión",
+      "results": [
+        "expected"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-11-19T18:24:33.034Z",
+  "host": "esteticaa-backend-five.vercel.app",
+  "authorized": true,
+  "chain": [
+    {
+      "subject": "CN=*.vercel.app",
+      "issuer": "C=US\nO=Google Trust Services\nCN=WR1",
+      "validTo": "Jan 29 11:46:09 2027 GMT",
+      "sha256Spki": "ED02jY6POswcMjticCshf50ywurppjVGa00Y+Oqf8ho="
+    },
+    {
+      "subject": "C=US\nO=Google Trust Services\nCN=WR1",
+      "issuer": "C=US\nO=Google Trust Services LLC\nCN=GTS Root R1",
+      "validTo": "Feb 20 14:00:00 2029 GMT",
+      "sha256Spki": "yDu9og255NN5GEf+Bwa9rTrqFQ0EydZ0r1FCh9TdAW4="
+    },
+    {
+      "subject": "C=US\nO=Google Trust Services LLC\nCN=GTS Root R1",
+      "issuer": "C=BE\nO=GlobalSign nv-sa\nOU=Root CA\nCN=GlobalSign Root CA",
+      "validTo": "Jan 28 00:00:42 2028 GMT",
+      "sha256Spki": "hxqRlPTu1bMS/0DITB1SSu0vd4u/8l8TjPgfaAp63Gc="
+    },
+    {
+      "subject": "C=BE\nO=GlobalSign nv-sa\nOU=Root CA\nCN=GlobalSign Root CA",
+      "issuer": "C=BE\nO=GlobalSign nv-sa\nOU=Root CA\nCN=GlobalSign Root CA",
+      "validTo": "Jan 28 12:00:00 2028 GMT",
+      "sha256Spki": "K87oWBWM9UZfyddvDfoxL+8lpNyoUB2ptGtn0fv6G2Q="
+    }
+  ]
+}

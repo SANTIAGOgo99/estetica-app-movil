@@ -1,5 +1,5 @@
 import { normalizeApiUrl } from "../../infrastructure/http/apiUrl.ts";
-import { notifyUnauthorized } from "./unauthorized.ts";
+import { notifyUnauthorized, recoverUnauthorized } from "./unauthorized.ts";
 
 export class ApiError extends Error {
   status: number;
@@ -14,6 +14,7 @@ export async function apiRequest(
     signal?: AbortSignal;
   } = {},
   fetcher: typeof fetch = fetch,
+  allowRecovery = true,
 ): Promise<unknown> {
   const base = process.env.EXPO_PUBLIC_API_URL;
   if (!base) throw Error("No está configurada la conexión con la estética.");
@@ -36,7 +37,12 @@ export async function apiRequest(
       body: options.body ? JSON.stringify(options.body) : undefined,
       signal: controller.signal,
     });
-    if (response.status === 401 && options.token) notifyUnauthorized(options.token);
+    if (response.status === 401 && options.token) {
+      clearTimeout(timer);
+      const fresh = allowRecovery ? await recoverUnauthorized(options.token) : null;
+      if (fresh && !options.signal?.aborted) return await apiRequest(path, { ...options, token: fresh }, fetcher, false);
+      notifyUnauthorized(options.token);
+    }
     let data: unknown;
     try {
       data = await response.json();

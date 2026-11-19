@@ -49,3 +49,5 @@ yarn-error.*
 /reports/
 /test-results/
 /dist-test/
+/output/
+/tmp/

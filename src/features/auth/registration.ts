@@ -7,7 +7,7 @@ export async function registerClient(
   requirePrivacyConsent(value.privacyAccepted, value.privacyVersion);
   const response = object(
     await apiRequest(
-      "/auth/register",
+      "/auth/register-client",
       {
         method: "POST",
         body: {
@@ -15,7 +15,6 @@ export async function registerClient(
           email: value.email.trim(),
           phone: value.phone,
           password: value.password,
-          // El backend actual ignora estos campos: su persistencia sigue pendiente.
           privacy_consent: { accepted: true, version: value.privacyVersion },
         },
       },

@@ -33,10 +33,12 @@ export function PrivacyNoticeContent() {
       </Body>
       <Text style={s.subheading}>Acceso, rectificación, cancelación y oposición</Text>
       <Body>
-        Puedes consultar tus datos desde Mi perfil. Para solicitar una
-        corrección, la cancelación de tu cuenta o manifestar oposición a un
-        uso de tus datos, solicita atención directamente en la recepción de la
-        estética. Se verificará tu identidad antes de atender la solicitud.
+        Puedes consultar tus datos desde Mi perfil. En Administrar mis datos y
+        privacidad puedes corregir tu información, modificar tu preferencia de
+        comunicaciones promocionales o eliminar tu cuenta confirmando tu contraseña.
+        La eliminación retira tus datos de identificación y tu acceso. El historial
+        operativo podrá conservarse sin esos datos de identificación. También
+        puedes solicitar atención directamente en la recepción de la estética.
         La cancelación de una cuenta y la cancelación de una cita son trámites
         distintos.
       </Body>

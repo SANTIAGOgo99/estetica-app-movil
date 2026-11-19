@@ -1,0 +1,37 @@
+{
+  "sha256": "a5df2f9fe05529b6a084a87bc83f2fcf3df150dc8922c4c09de1865d7e30f76b",
+  "classes": 19564,
+  "shortClassNames": 11407,
+  "sampleObfuscatedClasses": [
+    "LA/a;",
+    "LA/b;",
+    "LA/c;",
+    "LA/d;",
+    "LA/e;",
+    "LA/n;",
+    "LA/f;",
+    "LA/g;",
+    "Lz/g0;",
+    "Lz/e1;",
+    "LA/h;",
+    "LA/i;"
+  ],
+  "nativePinningModulePresent": true,
+  "hermesBundlePresent": true,
+  "method": "DEX class descriptors inspected directly; manifest decoded with JADX 1.5.7. Resource extraction incomplete because disk filled.",
+  "nativePinningMarkers": [
+    {
+      "dex": "classes2.dex",
+      "marker": "SslPublicKeyPinning"
+    },
+    {
+      "dex": "classes2.dex",
+      "marker": "Certificate pinning failure!"
+    },
+    {
+      "dex": "classes2.dex",
+      "marker": "pinning-error"
+    }
+  ],
+  "nativeMitmTestPassed": null
+}

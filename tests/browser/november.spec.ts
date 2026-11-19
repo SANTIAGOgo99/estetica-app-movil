@@ -85,7 +85,7 @@ test('NOV-04: aviso público y lectura en registro conservan campos y no premarc
 
 test('NOV-05: sin consentimiento no hay POST; al aceptar se envía la versión del aviso', async ({ page }) => {
   const requests: Record<string, unknown>[] = [];
-  await page.route('https://api.example.test/api/auth/register', async route => {
+  await page.route('https://api.example.test/api/auth/register-client', async route => {
     requests.push(route.request().postDataJSON());
     await route.fulfill({ status: 201, json: { user: { id: 999, role: 'client' } } });
   });
@@ -98,7 +98,7 @@ test('NOV-05: sin consentimiento no hay POST; al aceptar se envía la versión d
   await page.getByRole('button', { name: 'Crear cuenta', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Tu cuenta está lista' })).toBeVisible();
   expect(requests).toHaveLength(1);
-  expect(requests[0].privacy_consent).toEqual({ accepted: true, version: '2026-11-10' });
+  expect(requests[0].privacy_consent).toEqual({ accepted: true, version: '2026-11-19' });
   expect(requests[0].role).toBeUndefined();
   await capture(page, 'registro-confirmado-api-simulada');
 });

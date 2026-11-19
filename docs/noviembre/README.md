@@ -1,5 +1,10 @@
 # Avance de noviembre
 
+**Actualización del 19 de noviembre:** el APK ya se compiló y el backend nuevo
+está desplegado y verificado contra PostgreSQL real. Consultar la
+[tabla actual y guía para demostrarlo](liberacion-2026-11-19.md).
+El contenido que sigue conserva el corte del 10 de noviembre.
+
 ## Funciones implementadas
 
 - Navegación pública con Inicio, Servicios y Productos. Citas, Perfil y accesos al
