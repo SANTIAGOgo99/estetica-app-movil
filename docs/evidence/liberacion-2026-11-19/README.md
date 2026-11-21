@@ -15,8 +15,10 @@ se conservó el manifest y se retiraron los recursos temporales. No se ejecutó 
 
 El APK se subió desde el árbol de trabajo. La referencia Git de EAS corresponde
 al commit anterior a la compilación. Su SHA-256 identifica el archivo entregado.
-EAS generó y administra las credenciales de firma. La instalación en dispositivo
-y la verificación criptográfica independiente de firma quedan pendientes.
+EAS generó y administra las credenciales de firma. El 21 de noviembre el usuario
+confirmó que el APK se instaló y abrió en su Android. Esta confirmación acredita
+instalación y apertura; no acredita todavía los recorridos funcionales nativos.
+La verificación criptográfica independiente de firma queda pendiente.
 
 ## API y base real
 
@@ -51,7 +53,7 @@ para el host exacto. El APK incluye marcadores SslPublicKeyPinning, pinning-erro
 Certificate pinning failure!. La inspección estática no sustituye interceptación
 en Android.
 
-Pendientes: instalación y recorridos Android Debug/Release, prueba anti-MitM,
+Pendientes: recorridos Android Debug/Release, prueba anti-MitM,
 almacenamiento nativo, permisos heredados, análisis completo JADX/MobSF,
 avisos de dependencias y envío/revisión de Google Play.
 

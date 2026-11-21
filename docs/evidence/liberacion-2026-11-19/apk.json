@@ -9,5 +9,12 @@
   "sha256": "a5df2f9fe05529b6a084a87bc83f2fcf3df150dc8922c4c09de1865d7e30f76b",
   "download": "https://expo.dev/artifacts/eas/beAodsUy9xzXW6jSwZRqyqz6eM5N-1uPmaEoeJIyEAw.apk",
   "buildPage": "https://expo.dev/accounts/appmovilestetica/projects/estetica-clientes/builds/6953a647-0856-4125-afca-f40b1d20539d",
-  "nativeInstallationVerified": false
+  "nativeInstallationVerified": true,
+  "nativeLaunchVerified": true,
+  "nativeVerification": {
+    "date": "2026-11-21",
+    "method": "Confirmación del usuario en dispositivo Android",
+    "reportedResult": "Ya se instaló y abre",
+    "functionalFlowsVerified": false
+  }
 }

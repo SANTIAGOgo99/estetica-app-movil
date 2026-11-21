@@ -3,6 +3,9 @@
 El APK 1.0.0 está compilado para instalar directamente en Android. El backend
 actualizado está desplegado y pasó las comprobaciones con PostgreSQL real.
 
+Actualización del 21 de noviembre: el usuario confirmó instalación y apertura
+del APK en su Android. Los recorridos funcionales nativos siguen por comprobar.
+
 [Descargar APK](https://expo.dev/artifacts/eas/beAodsUy9xzXW6jSwZRqyqz6eM5N-1uPmaEoeJIyEAw.apk) ·
 [Compilación EAS](https://expo.dev/accounts/appmovilestetica/projects/estetica-clientes/builds/6953a647-0856-4125-afca-f40b1d20539d) ·
 [Evidencias](../evidence/liberacion-2026-11-19/README.md)
@@ -17,7 +20,7 @@ actualizado está desplegado y pasó las comprobaciones con PostgreSQL real.
 | R8/ProGuard y análisis | APK Release, minificación/reducción configuradas; manifest decodificado con JADX y 11,407 clases con nombres de uno o dos caracteres | Informe completo JADX/MobSF; extracción de recursos incompleta por falta de espacio |
 | Caja negra Android Debug y Release | 69 pruebas de regresión, 15 recorridos web anteriores y 3 recorridos web ARCO; 13 comprobaciones reales del backend | Ejecutar y documentar ambos tipos de compilación Android; la web no los sustituye |
 | Google Play en revisión o publicada | Identificador Android y perfil de producción AAB configurados | Acceso a Play Console, ficha, políticas, AAB y envío a revisión |
-| APK/AAB firmado | APK generado con credenciales de firma administradas por EAS; archivo y SHA-256 registrados | Confirmar instalación/apertura; AAB configurado, aún no generado |
+| APK/AAB firmado | APK generado con credenciales de firma administradas por EAS; archivo y SHA-256 registrados; instalación/apertura confirmadas por el usuario el 21/11 | AAB configurado, aún no generado; verificación criptográfica independiente pendiente |
 | Permisos justificados en ejecución | Manifest sin cámara, micrófono, ubicación, fotos ni almacenamiento compartido; HTTP bloqueado | Revisar permisos heredados, especialmente SYSTEM_ALERT_WINDOW; las funciones actuales no necesitan permisos peligrosos en ejecución |
 
 ## Cómo demostrarlo
