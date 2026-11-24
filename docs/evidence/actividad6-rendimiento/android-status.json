@@ -1,0 +1,9 @@
+{
+  "recordedAt": "2026-11-24T18:59:16.026Z",
+  "measured": true,
+  "samples": 20,
+  "installedHashVerified": true,
+  "stabilityScope": "Procesos vivos al final de cada arranque; consultar exit-reasons y distinguir salidas force-stop del protocolo de crashes/ANR. No constituye una prueba prolongada de estabilidad.",
+  "publicHomeScreenshot": "android-inicio-apk-liberado.png",
+  "publicHomeVerifiedAt": "2026-11-24T19:01:41.250Z"
+}

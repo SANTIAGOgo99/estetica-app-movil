@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "releasedCommit": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+  "apiBase": "https://esteticaa-backend-five.vercel.app/api",
+  "samplesPerFlow": 20,
+  "apiPauseMs": 1200,
+  "webPauseMs": 1200,
+  "timeoutMs": 30000,
+  "percentileMethod": "nearest rank: sorted[ceil(0.95*n)-1]",
+  "thresholds": {
+    "webOpenMs": 5000,
+    "webCatalogMs": 5000,
+    "webNavigationMs": 2000,
+    "apiTotalMs": 2000,
+    "apiTtfbMs": 1500,
+    "operationSuccessPct": 100,
+    "javascriptErrors": 0,
+    "androidColdStartMs": 3000,
+    "androidPssMiB": 250,
+    "androidIdleCpuOneCorePct": 10,
+    "androidCrashesAndAnrs": 0
+  },
+  "thresholdAuthority": "Presupuestos propuestos antes de medir para esta actividad; web 5000 ms conserva el presupuesto existente. No son SLA contractuales ni límites oficiales de Expo/Android.",
+  "safety": "Solo GET públicos reales; concurrencia 1; sin login real, datos personales ni escrituras. Detener backend ante 429 o 503. No optimizar ni reconstruir APK."
+}

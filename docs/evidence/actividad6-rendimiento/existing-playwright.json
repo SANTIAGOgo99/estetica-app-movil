@@ -1,0 +1,246 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\LENOVO\\Documents\\10 CUATRI\\DESARROLLO MOVIL INTEGRAL\\AppMovil\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "performance.spec.ts",
+      "--reporter=json",
+      "--output=tmp/activity6-existing-output"
+    ],
+    "configFile": "C:\\Users\\LENOVO\\Documents\\10 CUATRI\\DESARROLLO MOVIL INTEGRAL\\AppMovil\\playwright.config.ts",
+    "rootDir": "C:/Users/LENOVO/Documents/10 CUATRI/DESARROLLO MOVIL INTEGRAL/AppMovil/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/LENOVO/Documents/10 CUATRI/DESARROLLO MOVIL INTEGRAL/AppMovil/tmp/activity6-existing-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/LENOVO/Documents/10 CUATRI/DESARROLLO MOVIL INTEGRAL/AppMovil/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\LENOVO\\Documents\\10 CUATRI\\DESARROLLO MOVIL INTEGRAL\\AppMovil\\tmp\\activity6-existing-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "C:\\Users\\LENOVO\\Documents\\10 CUATRI\\DESARROLLO MOVIL INTEGRAL\\AppMovil\\tests\\browser",
+        "snapshotDir": "C:\\Users\\LENOVO\\Documents\\10 CUATRI\\DESARROLLO MOVIL INTEGRAL\\AppMovil\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Mobile Safari/537.36",
+          "viewport": {
+            "width": 412,
+            "height": 839
+          },
+          "screen": {
+            "width": 412,
+            "height": 915
+          },
+          "deviceScaleFactor": 2.625,
+          "isMobile": true,
+          "hasTouch": true,
+          "defaultBrowserType": "chromium",
+          "browserName": "chromium",
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "serviceWorkers": "block"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/serve-test-web.mjs",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "performance.spec.ts",
+      "file": "performance.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "HU02: catálogo utilizable dentro del presupuesto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13280,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-24T18:51:05.147Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "medicion.json",
+                      "contentType": "application/json",
+                      "body": "eyJodSI6IkhVMDIiLCJzY29wZSI6ImludGVyZmF6IHdlYiBtw7N2aWw7IEFQSSBzaW11bGFkYTsgcHJpbWVyYSBjYXJnYSB5IGN1YXRybyByZWNhcmdhcyIsInNhbXBsZXNNcyI6WzE4NzAuOTM4OCwxMTU0LjUzMDAwMDAwMDAwMDcsMTQ0My4yMDY1OTk5OTk5OTk1LDEyMDIuMzM0NTAwMDAwMDAwOCwxMDk0LjAxMTQwMDAwMDAwMTJdLCJwOTVNcyI6MTg3MC45Mzg4LCJidWRnZXRNcyI6NTAwMH0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b15d6361b2fc38288977-55b126f9e9d0f717b39e",
+          "file": "performance.spec.ts",
+          "line": 6,
+          "column": 7
+        },
+        {
+          "title": "HU04: catálogo utilizable dentro del presupuesto",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13640,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-24T18:51:20.798Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "medicion.json",
+                      "contentType": "application/json",
+                      "body": "eyJodSI6IkhVMDQiLCJzY29wZSI6ImludGVyZmF6IHdlYiBtw7N2aWw7IEFQSSBzaW11bGFkYTsgcHJpbWVyYSBjYXJnYSB5IGN1YXRybyByZWNhcmdhcyIsInNhbXBsZXNNcyI6WzIxMjkuNjEyMDk5OTk5OTk4NSwxMTQ5LjY3NzkwMDAwMDAwMjQsMTI2Ny44MzIxMDAwMDAwMDMzLDExNjYuMzYxNzk5OTk5OTk4OCwxMzU1LjI5OTY5OTk5OTk5OTZdLCJwOTVNcyI6MjEyOS42MTIwOTk5OTk5OTg1LCJidWRnZXRNcyI6NTAwMH0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b15d6361b2fc38288977-475b7fb7296f3b6400c5",
+          "file": "performance.spec.ts",
+          "line": 6,
+          "column": 7
+        },
+        {
+          "title": "HU01: tiempo desde enviar credenciales hasta pantalla de cliente",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14513,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-24T18:51:34.507Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "medicion.json",
+                      "contentType": "application/json",
+                      "body": "eyJodSI6IkhVMDEiLCJzY29wZSI6ImVudsOtbyBkZSBmb3JtdWxhcmlvIOKGkiBwYW50YWxsYSBkZSBjbGllbnRlOyB3ZWIgbcOzdmlsIHkgQVBJIHNpbXVsYWRhIiwic2FtcGxlc01zIjpbMzY4LjkwNjMwMDAwMDAwMjQsMzA3Ljg4OTE5OTk5OTk5NzgsMzA4LjU5NTk5OTk5OTk5NzczLDU5Ni45NzExMDAwMDAwMDI1LDI4OC4zMTc2MDAwMDAwMDIxM10sInA5NU1zIjo1OTYuOTcxMTAwMDAwMDAyNSwiYnVkZ2V0TXMiOjUwMDB9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b15d6361b2fc38288977-2fa82425ab1808df4966",
+          "file": "performance.spec.ts",
+          "line": 21,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-24T18:50:55.864Z",
+    "duration": 58129.594,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

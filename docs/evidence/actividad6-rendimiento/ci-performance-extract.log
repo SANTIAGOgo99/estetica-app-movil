@@ -1,0 +1,44 @@
+2026-11-24T04:01:00.5648574Z ##[group]Run npm run test:performance
+2026-11-24T04:01:00.5648787Z npm run test:performance
+2026-11-24T04:01:00.5664949Z shell: /usr/bin/bash -e {0}
+2026-11-24T04:01:00.5665095Z env:
+2026-11-24T04:01:00.5665206Z   CI: 1
+2026-11-24T04:01:00.5665318Z   EXPO_NO_DOTENV: 1
+2026-11-24T04:01:00.5665482Z   EXPO_PUBLIC_API_URL: https://api.example.test/api
+2026-11-24T04:01:00.5665659Z ##[endgroup]
+2026-11-24T04:01:00.6249932Z 
+2026-11-24T04:01:00.6250706Z > appmovil@1.0.0 test:performance
+2026-11-24T04:01:00.6251048Z > playwright test performance.spec.ts
+2026-11-24T04:01:00.6251173Z 
+2026-11-24T04:01:01.2203304Z 
+2026-11-24T04:01:01.2203813Z Running 3 tests using 1 worker
+2026-11-24T04:01:01.2204007Z 
+2026-11-24T04:01:02.7132879Z   ✓  1 tests/browser/performance.spec.ts:6:7 › HU02: catálogo utilizable dentro del presupuesto (944ms)
+2026-11-24T04:01:03.5928856Z   ✓  2 tests/browser/performance.spec.ts:6:7 › HU04: catálogo utilizable dentro del presupuesto (875ms)
+2026-11-24T04:01:05.3562083Z   ✓  3 tests/browser/performance.spec.ts:21:5 › HU01: tiempo desde enviar credenciales hasta pantalla de cliente (1.8s)
+2026-11-24T04:01:05.3983526Z 
+2026-11-24T04:01:05.3985940Z   3 passed (4.4s)
+2026-11-24T04:01:05.4335134Z ##[group]Run node scripts/test-summary.mjs performance
+2026-11-24T04:01:05.4335376Z node scripts/test-summary.mjs performance
+2026-11-24T04:01:05.4351612Z shell: /usr/bin/bash -e {0}
+2026-11-24T04:01:05.4351755Z env:
+2026-11-24T04:01:05.4351864Z   CI: 1
+2026-11-24T04:01:05.4351969Z   EXPO_NO_DOTENV: 1
+2026-11-24T04:01:05.4352131Z   EXPO_PUBLIC_API_URL: https://api.example.test/api
+2026-11-24T04:01:05.4352304Z ##[endgroup]
+2026-11-24T04:01:05.4551685Z ## performance
+2026-11-24T04:01:05.4551851Z 
+2026-11-24T04:01:05.4552733Z HU01/HU02/HU04: cinco muestras por flujo, p95 < 5000 ms; web móvil con API simulada, sin extrapolar a red o dispositivo real.
+2026-11-24T04:01:05.4553148Z 
+2026-11-24T04:01:05.4553457Z Commit: 35755d883bf111ab3596c30c2da9520cf7cecde5 · Evento: push
+2026-11-24T04:01:05.4553715Z 
+2026-11-24T04:01:05.4554163Z Casos: **3** · Fallos: **0** · Errores: **0**. El resultado definitivo es el estado del job y sus pasos.
+2026-11-24T04:01:05.4554493Z 
+2026-11-24T04:01:05.4554865Z - **HU02**: p95 270.5 ms; presupuesto 5000 ms; muestras: 270.5, 134.8, 127.5, 139.7, 140.8 ms.
+2026-11-24T04:01:05.4555465Z - **HU04**: p95 215.1 ms; presupuesto 5000 ms; muestras: 215.1, 145.4, 143.6, 126.4, 155.2 ms.
+2026-11-24T04:01:05.4556031Z - **HU01**: p95 89.6 ms; presupuesto 5000 ms; muestras: 89.6, 62.1, 62.7, 87.4, 60.7 ms.
+2026-11-24T04:01:05.4556312Z 
+2026-11-24T04:01:05.4556804Z Con cinco muestras el p95 calculado es el mayor valor; es un control inicial, no un estudio estadístico amplio.
+2026-11-24T04:01:05.4557179Z 
+2026-11-24T04:01:05.4557780Z Los resultados no cierran automáticamente las historias; esfuerzo y verificaciones nativas se registran manualmente.
+2026-11-24T04:01:05.4558191Z

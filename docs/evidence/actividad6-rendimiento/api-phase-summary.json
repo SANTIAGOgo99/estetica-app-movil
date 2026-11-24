@@ -1,0 +1,62 @@
+[
+  {
+    "field": "dnsMs",
+    "rejectedNegativeValues": 0,
+    "n": 40,
+    "mean": 76.26735000000001,
+    "min": 19.453000000000003,
+    "max": 208.009,
+    "p95": 149.96200000000002,
+    "sdPopulation": 49.54986292037042,
+    "coefficientVariationPct": 64.96864375171081,
+    "range": 188.55599999999998
+  },
+  {
+    "field": "tcpMs",
+    "rejectedNegativeValues": 3,
+    "n": 37,
+    "mean": 40.49037837837839,
+    "min": 0.05700000000000216,
+    "max": 125.57700000000001,
+    "p95": 77.37200000000001,
+    "sdPopulation": 24.370147464149603,
+    "coefficientVariationPct": 60.18750241455662,
+    "range": 125.52000000000001
+  },
+  {
+    "field": "tlsMs",
+    "rejectedNegativeValues": 0,
+    "n": 40,
+    "mean": 193.1615,
+    "min": 161.351,
+    "max": 444.829,
+    "p95": 290.51,
+    "sdPopulation": 49.80522273868474,
+    "coefficientVariationPct": 25.78423895998154,
+    "range": 283.478
+  },
+  {
+    "field": "afterTlsToFirstByteMs",
+    "rejectedNegativeValues": 0,
+    "n": 40,
+    "mean": 560.1626499999999,
+    "min": 394.89199999999994,
+    "max": 3331.761,
+    "p95": 742.6880000000001,
+    "sdPopulation": 510.97879099633633,
+    "coefficientVariationPct": 91.21971823654013,
+    "range": 2936.869
+  },
+  {
+    "field": "downloadMs",
+    "rejectedNegativeValues": 0,
+    "n": 40,
+    "mean": 2.538499999999999,
+    "min": 0.5299999999999727,
+    "max": 20.293000000000006,
+    "p95": 9.98099999999988,
+    "sdPopulation": 3.888866120092065,
+    "coefficientVariationPct": 153.19543510309498,
+    "range": 19.763000000000034
+  }
+]

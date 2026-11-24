@@ -1,0 +1,22 @@
+{
+  "recordedAt": "2026-11-24T18:55:18.582Z",
+  "command": "expo export --platform web --clear",
+  "rows": [
+    {
+      "dir": "dist-test",
+      "file": "entry-098d15bbcd9f595faa931f76efa4809b.js",
+      "bytes": 1694442,
+      "sha256": "427d127d298eb55150a0cdf9ec6bb82404e57410b93a3376f6404e1880a7ac04",
+      "mock": true,
+      "real": false
+    },
+    {
+      "dir": "tmp/actividad6-web-live",
+      "file": "entry-8b1974236795da3df888d29b4e3f4c30.js",
+      "bytes": 1694493,
+      "sha256": "43c2aac768bda74b273f1d6facad39021df98a15682ce32566132287c9313558",
+      "mock": false,
+      "real": true
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "recordedAt": "2026-11-24T19:15:05.136868+00:00",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "54caa1c1d39014b2efdcc71b2abf219fc93768953c862fff19be9926e19f0551"
+    },
+    {
+      "path": "docs/actividad6-rendimiento.md",
+      "sha256": "18a857482c080c739fefb31cf10073f66cdae376e5bc0465d5f8833db1af7432"
+    },
+    {
+      "path": "scripts/activity6/android.mjs",
+      "sha256": "5c67f26f8e8b45923a970716934685b1048af2642ca66531e8786cf39d1efef8"
+    },
+    {
+      "path": "scripts/activity6/capture.mjs",
+      "sha256": "fbdec0f18e3df81a4159873b20961793b9da6f578dd10d2afab3c37824e658e5"
+    },
+    {
+      "path": "scripts/activity6/controlled.spec.ts",
+      "sha256": "4e787ca2f33197c35c603cff8e40e821cfed5eb63739185b7a7e0e38e1e35b0f"
+    },
+    {
+      "path": "scripts/activity6/measure.mjs",
+      "sha256": "6df8d34e2f943b804b95cdef59d6b8978bf6195b7f2d478852fcf814834abbf2"
+    },
+    {
+      "path": "scripts/activity6/package.py",
+      "sha256": "c1cad5532e0ebd5c23b2c6c9837fdac606f7a86076b01bb542b613fbff2f985f"
+    },
+    {
+      "path": "scripts/activity6/playwright.config.ts",
+      "sha256": "2529d55253e52218ed1c9a508175c9e76ab5d08cf9f4107d90d8a3a2402e454b"
+    },
+    {
+      "path": "scripts/activity6/protocol.json",
+      "sha256": "0e17315fe66ee5fab7856d75f4bef1611e1f327041fc2022674d8d7f74055238"
+    },
+    {
+      "path": "scripts/activity6/summarize.mjs",
+      "sha256": "68afc217acac285559eac4743be9e4fd4addf244fe1cc5d64d321dcbb5b21f03"
+    },
+    {
+      "path": "scripts/activity6/validate.py",
+      "sha256": "35d0b4afcbea7c4597fdb90e9a850814f7c779824ce9a650c59bd629b622307e"
+    },
+    {
+      "path": "scripts/activity6/write-report.mjs",
+      "sha256": "16bd1f3ae862b8ca1d7ded67c980b576e04c44de7aea7f1a69cf2766b793a3f9"
+    }
+  ],
+  "scope": "Código de medición e informe final; el manifiesto SHA256SUMS de evidencia incluye los datos y capturas."
+}

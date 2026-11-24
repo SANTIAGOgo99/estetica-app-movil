@@ -1,0 +1,4 @@
+.gitattributes text eol=lf
+/docs/actividad6-rendimiento.md text eol=lf
+/scripts/activity6/** text eol=lf
+/docs/evidence/actividad6-rendimiento/** -text -whitespace

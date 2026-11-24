@@ -1,0 +1,167 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\LENOVO\\Documents\\10 CUATRI\\DESARROLLO MOVIL INTEGRAL\\AppMovil\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config=scripts/activity6/playwright.config.ts"
+    ],
+    "configFile": "C:\\Users\\LENOVO\\Documents\\10 CUATRI\\DESARROLLO MOVIL INTEGRAL\\AppMovil\\scripts\\activity6\\playwright.config.ts",
+    "rootDir": "C:/Users/LENOVO/Documents/10 CUATRI/DESARROLLO MOVIL INTEGRAL/AppMovil/scripts/activity6",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/LENOVO/Documents/10 CUATRI/DESARROLLO MOVIL INTEGRAL/AppMovil/tmp/activity6-controlled-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/LENOVO/Documents/10 CUATRI/DESARROLLO MOVIL INTEGRAL/AppMovil/scripts/activity6",
+        "testIgnore": [],
+        "testMatch": [
+          "controlled.spec.ts"
+        ],
+        "timeout": 180000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\LENOVO\\Documents\\10 CUATRI\\DESARROLLO MOVIL INTEGRAL\\AppMovil\\tmp\\activity6-controlled-output",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "C:\\Users\\LENOVO\\Documents\\10 CUATRI\\DESARROLLO MOVIL INTEGRAL\\AppMovil\\scripts\\activity6",
+        "snapshotDir": "C:\\Users\\LENOVO\\Documents\\10 CUATRI\\DESARROLLO MOVIL INTEGRAL\\AppMovil\\scripts\\activity6",
+        "testIgnore": [],
+        "testMatch": "controlled.spec.ts",
+        "timeout": 180000,
+        "use": {
+          "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Mobile Safari/537.36",
+          "viewport": {
+            "width": 412,
+            "height": 839
+          },
+          "screen": {
+            "width": 412,
+            "height": 915
+          },
+          "deviceScaleFactor": 2.625,
+          "isMobile": true,
+          "hasTouch": true,
+          "defaultBrowserType": "chromium",
+          "browserName": "chromium",
+          "baseURL": "http://127.0.0.1:4173",
+          "serviceWorkers": "block",
+          "trace": "off"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/actividad6-rendimiento/controlled-playwright.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/serve-test-web.mjs",
+      "cwd": "../..",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "controlled.spec.ts",
+      "file": "controlled.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Acceso y disponibilidad con API simulada y veinte repeticiones",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 58576,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-24T18:55:38.068Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "measurements.json",
+                      "contentType": "application/json",
+                      "body": "eyJzY29wZSI6IkludGVyZmF6IHJlYWwgd2ViIG3Ds3ZpbCBjb24gcmVzcHVlc3RhcyBBUEkgc2ltdWxhZGFzIHkgY3VlbnRhIGZpY3RpY2lhIGRlbCBmaXh0dXJlLiBObyBtaWRlIHNlcnZpZG9yIHJlYWwgbmkgQW5kcm9pZC4gTm8gc2UgY29uZmlybWEgbmluZ3VuYSBjaXRhLiIsInNhbXBsZXMiOlt7ImZsb3ciOiJtb2NrLWxvZ2luIiwicmVwZXRpdGlvbiI6MSwidG90YWxNcyI6NDM1LjE2Mzg5OTk5OTk5OTU2LCJvayI6dHJ1ZSwiYnVkZ2V0TXMiOjUwMDB9LHsiZmxvdyI6Im1vY2stYXZhaWxhYmlsaXR5IiwicmVwZXRpdGlvbiI6MSwidG90YWxNcyI6MjA2LjIxODk5OTk5OTk5OTE0LCJvayI6dHJ1ZSwiYnVkZ2V0TXMiOjIwMDB9LHsiZmxvdyI6Im1vY2stbG9naW4iLCJyZXBldGl0aW9uIjoyLCJ0b3RhbE1zIjozMDIuMzUwMDk5OTk5OTk5NjYsIm9rIjp0cnVlLCJidWRnZXRNcyI6NTAwMH0seyJmbG93IjoibW9jay1hdmFpbGFiaWxpdHkiLCJyZXBldGl0aW9uIjoyLCJ0b3RhbE1zIjoyMTUuNTA5Nzk5OTk5OTk5OCwib2siOnRydWUsImJ1ZGdldE1zIjoyMDAwfSx7ImZsb3ciOiJtb2NrLWxvZ2luIiwicmVwZXRpdGlvbiI6MywidG90YWxNcyI6MzM3LjEzNjI5OTk5OTk5ODMsIm9rIjp0cnVlLCJidWRnZXRNcyI6NTAwMH0seyJmbG93IjoibW9jay1hdmFpbGFiaWxpdHkiLCJyZXBldGl0aW9uIjozLCJ0b3RhbE1zIjoxNzYuNjg4Mjk5OTk5OTk3OTgsIm9rIjp0cnVlLCJidWRnZXRNcyI6MjAwMH0seyJmbG93IjoibW9jay1sb2dpbiIsInJlcGV0aXRpb24iOjQsInRvdGFsTXMiOjI2Ni44NjcyOTk5OTk5OTgwNywib2siOnRydWUsImJ1ZGdldE1zIjo1MDAwfSx7ImZsb3ciOiJtb2NrLWF2YWlsYWJpbGl0eSIsInJlcGV0aXRpb24iOjQsInRvdGFsTXMiOjE3Ny4xNTQ2MDAwMDAwMDE2Niwib2siOnRydWUsImJ1ZGdldE1zIjoyMDAwfSx7ImZsb3ciOiJtb2NrLWxvZ2luIiwicmVwZXRpdGlvbiI6NSwidG90YWxNcyI6Mjk3Ljc4NTg5OTk5OTk5ODk1LCJvayI6dHJ1ZSwiYnVkZ2V0TXMiOjUwMDB9LHsiZmxvdyI6Im1vY2stYXZhaWxhYmlsaXR5IiwicmVwZXRpdGlvbiI6NSwidG90YWxNcyI6MTY5LjU0OTgwMDAwMDAwMDcsIm9rIjp0cnVlLCJidWRnZXRNcyI6MjAwMH0seyJmbG93IjoibW9jay1sb2dpbiIsInJlcGV0aXRpb24iOjYsInRvdGFsTXMiOjM0MS4yNTA1MDAwMDAwMDE5LCJvayI6dHJ1ZSwiYnVkZ2V0TXMiOjUwMDB9LHsiZmxvdyI6Im1vY2stYXZhaWxhYmlsaXR5IiwicmVwZXRpdGlvbiI6NiwidG90YWxNcyI6MjAzLjM4NzQ5OTk5OTk5NzEsIm9rIjp0cnVlLCJidWRnZXRNcyI6MjAwMH0seyJmbG93IjoibW9jay1sb2dpbiIsInJlcGV0aXRpb24iOjcsInRvdGFsTXMiOjI3MS4yOTM5MDAwMDAwMDA2LCJvayI6dHJ1ZSwiYnVkZ2V0TXMiOjUwMDB9LHsiZmxvdyI6Im1vY2stYXZhaWxhYmlsaXR5IiwicmVwZXRpdGlvbiI6NywidG90YWxNcyI6MTcyLjA4MjA5OTk5OTk5OTYzLCJvayI6dHJ1ZSwiYnVkZ2V0TXMiOjIwMDB9LHsiZmxvdyI6Im1vY2stbG9naW4iLCJyZXBldGl0aW9uIjo4LCJ0b3RhbE1zIjoyOTEuMjA2NjAwMDAwMDAxMzQsIm9rIjp0cnVlLCJidWRnZXRNcyI6NTAwMH0seyJmbG93IjoibW9jay1hdmFpbGFiaWxpdHkiLCJyZXBldGl0aW9uIjo4LCJ0b3RhbE1zIjoxODIuNDQyNjk5OTk5OTk5Niwib2siOnRydWUsImJ1ZGdldE1zIjoyMDAwfSx7ImZsb3ciOiJtb2NrLWxvZ2luIiwicmVwZXRpdGlvbiI6OSwidG90YWxNcyI6MjcxLjIyNDkwMDAwMDAwMTA3LCJvayI6dHJ1ZSwiYnVkZ2V0TXMiOjUwMDB9LHsiZmxvdyI6Im1vY2stYXZhaWxhYmlsaXR5IiwicmVwZXRpdGlvbiI6OSwidG90YWxNcyI6MTc2LjkzMTcwMDAwMDAwMSwib2siOnRydWUsImJ1ZGdldE1zIjoyMDAwfSx7ImZsb3ciOiJtb2NrLWxvZ2luIiwicmVwZXRpdGlvbiI6MTAsInRvdGFsTXMiOjI3OC42NTg4MDAwMDAwMDQ3LCJvayI6dHJ1ZSwiYnVkZ2V0TXMiOjUwMDB9LHsiZmxvdyI6Im1vY2stYXZhaWxhYmlsaXR5IiwicmVwZXRpdGlvbiI6MTAsInRvdGFsTXMiOjIxMS4yMjQyMDAwMDAwMDQyLCJvayI6dHJ1ZSwiYnVkZ2V0TXMiOjIwMDB9LHsiZmxvdyI6Im1vY2stbG9naW4iLCJyZXBldGl0aW9uIjoxMSwidG90YWxNcyI6MjYwLjcyODUwMDAwMDAwNDcsIm9rIjp0cnVlLCJidWRnZXRNcyI6NTAwMH0seyJmbG93IjoibW9jay1hdmFpbGFiaWxpdHkiLCJyZXBldGl0aW9uIjoxMSwidG90YWxNcyI6MTczLjUwODk5OTk5OTk5ODIsIm9rIjp0cnVlLCJidWRnZXRNcyI6MjAwMH0seyJmbG93IjoibW9jay1sb2dpbiIsInJlcGV0aXRpb24iOjEyLCJ0b3RhbE1zIjozMDIuMzMwNTAwMDAwMDAzNjcsIm9rIjp0cnVlLCJidWRnZXRNcyI6NTAwMH0seyJmbG93IjoibW9jay1hdmFpbGFiaWxpdHkiLCJyZXBldGl0aW9uIjoxMiwidG90YWxNcyI6MTY2LjQ5OTc5OTk5OTk5Nzc4LCJvayI6dHJ1ZSwiYnVkZ2V0TXMiOjIwMDB9LHsiZmxvdyI6Im1vY2stbG9naW4iLCJyZXBldGl0aW9uIjoxMywidG90YWxNcyI6Mjk2LjA5MTc5OTk5OTk5NDcsIm9rIjp0cnVlLCJidWRnZXRNcyI6NTAwMH0seyJmbG93IjoibW9jay1hdmFpbGFiaWxpdHkiLCJyZXBldGl0aW9uIjoxMywidG90YWxNcyI6MTgzLjQyNDU5OTk5OTk5ODQ2LCJvayI6dHJ1ZSwiYnVkZ2V0TXMiOjIwMDB9LHsiZmxvdyI6Im1vY2stbG9naW4iLCJyZXBldGl0aW9uIjoxNCwidG90YWxNcyI6MjY0LjExMjcwMDAwMDAwNTEzLCJvayI6dHJ1ZSwiYnVkZ2V0TXMiOjUwMDB9LHsiZmxvdyI6Im1vY2stYXZhaWxhYmlsaXR5IiwicmVwZXRpdGlvbiI6MTQsInRvdGFsTXMiOjE4MC45NjA0OTk5OTk5OTM3Nywib2siOnRydWUsImJ1ZGdldE1zIjoyMDAwfSx7ImZsb3ciOiJtb2NrLWxvZ2luIiwicmVwZXRpdGlvbiI6MTUsInRvdGFsTXMiOjI2OS45ODE2OTk5OTk5OTY2NCwib2siOnRydWUsImJ1ZGdldE1zIjo1MDAwfSx7ImZsb3ciOiJtb2NrLWF2YWlsYWJpbGl0eSIsInJlcGV0aXRpb24iOjE1LCJ0b3RhbE1zIjozMjIuMzUxMzAwMDAwMDAyMSwib2siOnRydWUsImJ1ZGdldE1zIjoyMDAwfSx7ImZsb3ciOiJtb2NrLWxvZ2luIiwicmVwZXRpdGlvbiI6MTYsInRvdGFsTXMiOjIxOC4yNDgyMDAwMDAwMDE4Miwib2siOnRydWUsImJ1ZGdldE1zIjo1MDAwfSx7ImZsb3ciOiJtb2NrLWF2YWlsYWJpbGl0eSIsInJlcGV0aXRpb24iOjE2LCJ0b3RhbE1zIjoxNjEuMzA2NTk5OTk5OTk2MjUsIm9rIjp0cnVlLCJidWRnZXRNcyI6MjAwMH0seyJmbG93IjoibW9jay1sb2dpbiIsInJlcGV0aXRpb24iOjE3LCJ0b3RhbE1zIjoyMzcuNjMxMTk5OTk5OTk2MTcsIm9rIjp0cnVlLCJidWRnZXRNcyI6NTAwMH0seyJmbG93IjoibW9jay1hdmFpbGFiaWxpdHkiLCJyZXBldGl0aW9uIjoxNywidG90YWxNcyI6MTM5LjYxNDYwMDAwMDAwMDgsIm9rIjp0cnVlLCJidWRnZXRNcyI6MjAwMH0seyJmbG93IjoibW9jay1sb2dpbiIsInJlcGV0aXRpb24iOjE4LCJ0b3RhbE1zIjoyNTIuNDg4MTk5OTk5OTk5NzgsIm9rIjp0cnVlLCJidWRnZXRNcyI6NTAwMH0seyJmbG93IjoibW9jay1hdmFpbGFiaWxpdHkiLCJyZXBldGl0aW9uIjoxOCwidG90YWxNcyI6MTY4LjEzMTgwMDAwMDAwMjg0LCJvayI6dHJ1ZSwiYnVkZ2V0TXMiOjIwMDB9LHsiZmxvdyI6Im1vY2stbG9naW4iLCJyZXBldGl0aW9uIjoxOSwidG90YWxNcyI6MjM0Ljc3NzkwMDAwMDAwMDk1LCJvayI6dHJ1ZSwiYnVkZ2V0TXMiOjUwMDB9LHsiZmxvdyI6Im1vY2stYXZhaWxhYmlsaXR5IiwicmVwZXRpdGlvbiI6MTksInRvdGFsTXMiOjE3NC40MjkzMDAwMDAwMDM0Miwib2siOnRydWUsImJ1ZGdldE1zIjoyMDAwfSx7ImZsb3ciOiJtb2NrLWxvZ2luIiwicmVwZXRpdGlvbiI6MjAsInRvdGFsTXMiOjI3My41NTQ1MDAwMDAwMDU2NSwib2siOnRydWUsImJ1ZGdldE1zIjo1MDAwfSx7ImZsb3ciOiJtb2NrLWF2YWlsYWJpbGl0eSIsInJlcGV0aXRpb24iOjIwLCJ0b3RhbE1zIjoxNTguMDQyNTAwMDAwMDAzMiwib2siOnRydWUsImJ1ZGdldE1zIjoyMDAwfV19"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "33e4c69f2bda34c651d3-69897f6570ec97b2e9c4",
+          "file": "controlled.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-24T18:55:31.997Z",
+    "duration": 69664.012,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

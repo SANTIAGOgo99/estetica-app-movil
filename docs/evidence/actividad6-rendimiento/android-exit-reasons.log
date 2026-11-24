@@ -1,0 +1,48 @@
+          timestamp=2026-11-24 12:59:06.841 pid=28924 realUid=10400 packageUid=10400 definingUid=10400 user=0
+          process=com.santiagogo99.esteticaclientes reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.santiagogo99.esteticaclientes due to from pid 29173 state=empty trace=null
+          timestamp=2026-11-24 12:58:57.716 pid=28498 realUid=10400 packageUid=10400 definingUid=10400 user=0
+          process=com.santiagogo99.esteticaclientes reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.santiagogo99.esteticaclientes due to from pid 28898 state=empty trace=null
+          timestamp=2026-11-24 12:58:48.166 pid=28373 realUid=10400 packageUid=10400 definingUid=10400 user=0
+          process=com.santiagogo99.esteticaclientes reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.santiagogo99.esteticaclientes due to from pid 28477 state=empty trace=null
+          timestamp=2026-11-24 12:58:38.862 pid=28230 realUid=10400 packageUid=10400 definingUid=10400 user=0
+          process=com.santiagogo99.esteticaclientes reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.santiagogo99.esteticaclientes due to from pid 28353 state=empty trace=null
+          timestamp=2026-11-24 12:58:28.258 pid=28085 realUid=10400 packageUid=10400 definingUid=10400 user=0
+          process=com.santiagogo99.esteticaclientes reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.santiagogo99.esteticaclientes due to from pid 28211 state=empty trace=null
+          timestamp=2026-11-24 12:58:18.407 pid=27962 realUid=10400 packageUid=10400 definingUid=10400 user=0
+          process=com.santiagogo99.esteticaclientes reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.santiagogo99.esteticaclientes due to from pid 28065 state=empty trace=null
+          timestamp=2026-11-24 12:58:09.105 pid=27840 realUid=10400 packageUid=10400 definingUid=10400 user=0
+          process=com.santiagogo99.esteticaclientes reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.santiagogo99.esteticaclientes due to from pid 27945 state=empty trace=null
+          timestamp=2026-11-24 12:57:59.601 pid=27695 realUid=10400 packageUid=10400 definingUid=10400 user=0
+          process=com.santiagogo99.esteticaclientes reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.santiagogo99.esteticaclientes due to from pid 27821 state=empty trace=null
+          timestamp=2026-11-24 12:57:50.344 pid=27378 realUid=10400 packageUid=10400 definingUid=10400 user=0
+          process=com.santiagogo99.esteticaclientes reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.santiagogo99.esteticaclientes due to from pid 27669 state=empty trace=null
+          timestamp=2026-11-24 12:57:39.886 pid=27070 realUid=10400 packageUid=10400 definingUid=10400 user=0
+          process=com.santiagogo99.esteticaclientes reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.santiagogo99.esteticaclientes due to from pid 27338 state=empty trace=null
+          timestamp=2026-11-24 12:57:30.368 pid=26696 realUid=10400 packageUid=10400 definingUid=10400 user=0
+          process=com.santiagogo99.esteticaclientes reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.santiagogo99.esteticaclientes due to from pid 27052 state=empty trace=null
+          timestamp=2026-11-24 12:57:21.084 pid=26164 realUid=10400 packageUid=10400 definingUid=10400 user=0
+          process=com.santiagogo99.esteticaclientes reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.santiagogo99.esteticaclientes due to from pid 26653 state=empty trace=null
+          timestamp=2026-11-24 12:57:11.888 pid=25435 realUid=10400 packageUid=10400 definingUid=10400 user=0
+          process=com.santiagogo99.esteticaclientes reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.santiagogo99.esteticaclientes due to from pid 26130 state=empty trace=null
+          timestamp=2026-11-24 12:57:02.579 pid=24934 realUid=10400 packageUid=10400 definingUid=10400 user=0
+          process=com.santiagogo99.esteticaclientes reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.santiagogo99.esteticaclientes due to from pid 25384 state=empty trace=null
+          timestamp=2026-11-24 12:56:52.758 pid=24584 realUid=10400 packageUid=10400 definingUid=10400 user=0
+          process=com.santiagogo99.esteticaclientes reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.santiagogo99.esteticaclientes due to from pid 24887 state=empty trace=null
+          timestamp=2026-11-24 12:56:43.378 pid=24130 realUid=10400 packageUid=10400 definingUid=10400 user=0
+          process=com.santiagogo99.esteticaclientes reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.santiagogo99.esteticaclientes due to from pid 24559 state=empty trace=null

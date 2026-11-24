@@ -1,0 +1,81 @@
+LAUNCH
+Starting: Intent { cmp=com.santiagogo99.esteticaclientes/.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.santiagogo99.esteticaclientes/.MainActivity
+TotalTime: 454
+WaitTime: 457
+Complete
+
+MEMORY
+Applications Memory Usage (in Kilobytes):
+Uptime: 642622 Realtime: 642622
+
+** MEMINFO in pid 28924 [com.santiagogo99.esteticaclientes] **
+                   Pss  Private  Private  SwapPss      Rss     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty    Total     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------   ------
+  Native Heap    30073    30036        0       40    31220    40196    38130     2065
+  Dalvik Heap    11480    11440        0      127    12416    12028     5884     6144
+ Dalvik Other     1579     1576        0        1     1980                           
+        Stack     1220     1220        0        0     1228                           
+       Ashmem       12        0        0        0      460                           
+    Other dev       15        0        8        0      272                           
+     .so mmap     9146      536     7104       22    23552                           
+    .jar mmap     1939        0      572        0    15820                           
+    .apk mmap    17906     1016    15360        0    21012                           
+    .ttf mmap      578        0      568        0      672                           
+    .dex mmap    13592       68    13468        0    14228                           
+    .oat mmap     1044        0      288        0     7592                           
+    .art mmap     8110     7656       52      124    20592                           
+   Other mmap      123        8       76        0      620                           
+   EGL mtrack    10363    10363        0        0    10363                           
+    GL mtrack     5188     5188        0        0     5188                           
+ Other mtrack        3        3        0        0        3                           
+      Unknown    11503    11476       24        3    11864                           
+        TOTAL   124191    80586    37520      317   179082    52224    44014     8209
+ 
+ App Summary
+                       Pss(KB)                        Rss(KB)
+                        ------                         ------
+           Java Heap:    19148                          33008
+         Native Heap:    30036                          31220
+                Code:    38996                          82892
+               Stack:     1220                           1228
+            Graphics:    15551                          15551
+       Private Other:    13155
+              System:     6085
+             Unknown:                                   15183
+ 
+           TOTAL PSS:   124191            TOTAL RSS:   179082       TOTAL SWAP PSS:      317
+ 
+ Objects
+               Views:       69         ViewRootImpl:        1
+         AppContexts:        9           Activities:        1
+              Assets:       29        AssetManagers:        0
+       Local Binders:       17        Proxy Binders:       53
+       Parcel memory:       13         Parcel count:       33
+    Death Recipients:        0      OpenSSL Sockets:        1
+            WebViews:        0
+ 
+ SQL
+         MEMORY_USED:        0
+  PAGECACHE_OVERFLOW:        0          MALLOC_SIZE:        0
+ 
+
+CPU
+Tasks: 1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+  Mem:  3655916K total,  3541984K used,   113932K free,     1116K buffers
+ Swap:  4194300K total,  1187632K used,  3006668K free,  1142128K cached
+800%cpu 147%user 130%nice 173%sys 340%idle   0%iow   0%irq  10%sirq   0%host
+  PID USER         PR  NI VIRT  RES  SHR S[%CPU] %MEM     TIME+ ARGS
+28924 u0_a400      10 -10  37G 163M  84M S  6.6   4.5   0:02.07 com.santiagogo99.esteticaclientes
+
+
+
+Tasks: 1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+  Mem:  3655916K total,  3527568K used,   128348K free,     1116K buffers
+ Swap:  4194300K total,  1187376K used,  3006924K free,  1143552K cached
+800%cpu  99%user 133%nice 137%sys 397%idle  21%iow   0%irq  13%sirq   0%host
+  PID USER         PR  NI VIRT  RES  SHR S[%CPU] %MEM     TIME+ ARGS
+28924 u0_a400      10 -10  37G 163M  84M S  7.0   4.5   0:02.09 com.santiagogo99.esteticaclientes

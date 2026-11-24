@@ -1,0 +1,238 @@
+{
+  "metadata": {
+    "recordedAt": "2026-11-24T18:55:51.554Z",
+    "commit": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+    "apkSha256": "0c4152abe89972016a49fd1abf9087dfe9fefec409b70cfc22548259986bdf42",
+    "installedHashVerified": true,
+    "model": "SM-A515F",
+    "android": "13",
+    "sdk": "33",
+    "battery": "Current Battery Service state:\r\n  AC powered: false\r\n  USB powered: true\r\n  Wireless powered: false\r\n  Max charging current: 0\r\n  Max charging voltage: 0\r\n  Charge counter: 171045\r\n  status: 2\r\n  health: 2\r\n  present: true\r\n  level: 4\r\n  scale: 100\r\n  voltage: 3750\r\n  temperature: 271\r\n  technology: Li-ion\r\n  batteryMiscEvent: 983040\r\n  batteryCurrentEvent: 0\r\n  mSecPlugTypeSummary: 2\r\n  LED Charging: true\r\n  LED Low Battery: true\r\n  current now: 817\r\n  charge counter: 171045\r\n  Adaptive Fast Charging Settings: true\r\n  Super Fast Charging Settings: false\r\nFEATURE_WIRELESS_FAST_CHARGER_CONTROL: true\r\n  mWasUsedWirelessFastChargerPreviously: false\r\n  mWirelessFastChargingSettingsEnable: true\r\nLLB CAL: 20200103\r\nLLB MAN: \r\nLLB CURRENT: YEAR2026M11D24\r\nLLB DIFF: 358\r\n  mSavedBatteryBeginningDate: 0\r\nSEC_FEATURE_BATTERY_FULL_CAPACITY: true\r\n  mFullCapacityEnable: false\r\nFEATURE_HICCUP_CONTROL: true\r\nFEATURE_SUPPORTED_DAILY_BOARD: false\r\nSEC_FEATURE_BATTERY_LIFE_EXTENDER: false\r\nSEC_FEATURE_USE_WIRELESS_POWER_SHARING: false\r\nBatteryInfoBackUp\r\n  mSavedBatteryAsoc: 85\r\n  mSavedBatteryMaxTemp: 666\r\n  mSavedBatteryMaxCurrent: 2506\r\n  mSavedBatteryUsage: 230031\r\n  FEATURE_SAVE_BATTERY_CYCLE: true\r\n  SEC_FEATURE_PREVENT_SWELLING: false\r\n",
+    "display": "Physical size: 1080x2400\r\n",
+    "version": "    versionCode=1 minSdk=24 targetSdk=36\n    versionName=1.0.0",
+    "scope": "am start mide espera reportada por Activity Manager, no asegura contenido React listo. Force-stop enfría el proceso; no elimina cachés de disco ni datos. Memoria y CPU son muestras en reposo tras 5 s; CPU top usa la segunda actualización de intervalo 1 s. No se realiza login ni operaciones productivas."
+  },
+  "source": "android.json + android-raw-NN.log; CPU recalculada por alineación de cabecera toybox. Archivos crudos intactos.",
+  "samples": [
+    {
+      "repetition": 1,
+      "recordedAt": "2026-11-24T18:56:10.388Z",
+      "launchStatus": 0,
+      "totalTimeMs": 2284,
+      "waitTimeMs": 2333,
+      "processAlive": true,
+      "pssMiB": 166.583984375,
+      "idleCpuOneCorePct": 7,
+      "ok": true
+    },
+    {
+      "repetition": 2,
+      "recordedAt": "2026-11-24T18:56:22.061Z",
+      "launchStatus": 0,
+      "totalTimeMs": 706,
+      "waitTimeMs": 711,
+      "processAlive": true,
+      "pssMiB": 114.9775390625,
+      "idleCpuOneCorePct": 7,
+      "ok": true
+    },
+    {
+      "repetition": 3,
+      "recordedAt": "2026-11-24T18:56:32.986Z",
+      "launchStatus": 0,
+      "totalTimeMs": 638,
+      "waitTimeMs": 643,
+      "processAlive": true,
+      "pssMiB": 114.494140625,
+      "idleCpuOneCorePct": 6,
+      "ok": true
+    },
+    {
+      "repetition": 4,
+      "recordedAt": "2026-11-24T18:56:43.072Z",
+      "launchStatus": 0,
+      "totalTimeMs": 698,
+      "waitTimeMs": 708,
+      "processAlive": true,
+      "pssMiB": 114.716796875,
+      "idleCpuOneCorePct": 7,
+      "ok": true
+    },
+    {
+      "repetition": 5,
+      "recordedAt": "2026-11-24T18:56:52.451Z",
+      "launchStatus": 0,
+      "totalTimeMs": 633,
+      "waitTimeMs": 649,
+      "processAlive": true,
+      "pssMiB": 119.1044921875,
+      "idleCpuOneCorePct": 6,
+      "ok": true
+    },
+    {
+      "repetition": 6,
+      "recordedAt": "2026-11-24T18:57:02.175Z",
+      "launchStatus": 0,
+      "totalTimeMs": 630,
+      "waitTimeMs": 639,
+      "processAlive": true,
+      "pssMiB": 121.140625,
+      "idleCpuOneCorePct": 7,
+      "ok": true
+    },
+    {
+      "repetition": 7,
+      "recordedAt": "2026-11-24T18:57:11.534Z",
+      "launchStatus": 0,
+      "totalTimeMs": 490,
+      "waitTimeMs": 495,
+      "processAlive": true,
+      "pssMiB": 121.953125,
+      "idleCpuOneCorePct": 7,
+      "ok": true
+    },
+    {
+      "repetition": 8,
+      "recordedAt": "2026-11-24T18:57:20.802Z",
+      "launchStatus": 0,
+      "totalTimeMs": 534,
+      "waitTimeMs": 536,
+      "processAlive": true,
+      "pssMiB": 121.59375,
+      "idleCpuOneCorePct": 6,
+      "ok": true
+    },
+    {
+      "repetition": 9,
+      "recordedAt": "2026-11-24T18:57:29.943Z",
+      "launchStatus": 0,
+      "totalTimeMs": 528,
+      "waitTimeMs": 532,
+      "processAlive": true,
+      "pssMiB": 121.5244140625,
+      "idleCpuOneCorePct": 6,
+      "ok": true
+    },
+    {
+      "repetition": 10,
+      "recordedAt": "2026-11-24T18:57:39.532Z",
+      "launchStatus": 0,
+      "totalTimeMs": 533,
+      "waitTimeMs": 545,
+      "processAlive": true,
+      "pssMiB": 121.484375,
+      "idleCpuOneCorePct": 7,
+      "ok": true
+    },
+    {
+      "repetition": 11,
+      "recordedAt": "2026-11-24T18:57:49.637Z",
+      "launchStatus": 0,
+      "totalTimeMs": 543,
+      "waitTimeMs": 557,
+      "processAlive": true,
+      "pssMiB": 121.455078125,
+      "idleCpuOneCorePct": 5,
+      "ok": true
+    },
+    {
+      "repetition": 12,
+      "recordedAt": "2026-11-24T18:57:59.380Z",
+      "launchStatus": 0,
+      "totalTimeMs": 579,
+      "waitTimeMs": 587,
+      "processAlive": true,
+      "pssMiB": 121.349609375,
+      "idleCpuOneCorePct": 6,
+      "ok": true
+    },
+    {
+      "repetition": 13,
+      "recordedAt": "2026-11-24T18:58:08.910Z",
+      "launchStatus": 0,
+      "totalTimeMs": 525,
+      "waitTimeMs": 530,
+      "processAlive": true,
+      "pssMiB": 121.21484375,
+      "idleCpuOneCorePct": 6,
+      "ok": true
+    },
+    {
+      "repetition": 14,
+      "recordedAt": "2026-11-24T18:58:18.083Z",
+      "launchStatus": 0,
+      "totalTimeMs": 534,
+      "waitTimeMs": 539,
+      "processAlive": true,
+      "pssMiB": 121.568359375,
+      "idleCpuOneCorePct": 7,
+      "ok": true
+    },
+    {
+      "repetition": 15,
+      "recordedAt": "2026-11-24T18:58:27.842Z",
+      "launchStatus": 0,
+      "totalTimeMs": 457,
+      "waitTimeMs": 464,
+      "processAlive": true,
+      "pssMiB": 121.728515625,
+      "idleCpuOneCorePct": 9,
+      "ok": true
+    },
+    {
+      "repetition": 16,
+      "recordedAt": "2026-11-24T18:58:38.263Z",
+      "launchStatus": 0,
+      "totalTimeMs": 435,
+      "waitTimeMs": 437,
+      "processAlive": true,
+      "pssMiB": 121.5078125,
+      "idleCpuOneCorePct": 6,
+      "ok": true
+    },
+    {
+      "repetition": 17,
+      "recordedAt": "2026-11-24T18:58:47.873Z",
+      "launchStatus": 0,
+      "totalTimeMs": 567,
+      "waitTimeMs": 572,
+      "processAlive": true,
+      "pssMiB": 121.5634765625,
+      "idleCpuOneCorePct": 10,
+      "ok": true
+    },
+    {
+      "repetition": 18,
+      "recordedAt": "2026-11-24T18:58:57.354Z",
+      "launchStatus": 0,
+      "totalTimeMs": 469,
+      "waitTimeMs": 472,
+      "processAlive": true,
+      "pssMiB": 121.88671875,
+      "idleCpuOneCorePct": 7,
+      "ok": true
+    },
+    {
+      "repetition": 19,
+      "recordedAt": "2026-11-24T18:59:06.519Z",
+      "launchStatus": 0,
+      "totalTimeMs": 454,
+      "waitTimeMs": 457,
+      "processAlive": true,
+      "pssMiB": 121.2802734375,
+      "idleCpuOneCorePct": 7,
+      "ok": true
+    },
+    {
+      "repetition": 20,
+      "recordedAt": "2026-11-24T18:59:15.536Z",
+      "launchStatus": 0,
+      "totalTimeMs": 653,
+      "waitTimeMs": 662,
+      "processAlive": true,
+      "pssMiB": 121.4248046875,
+      "idleCpuOneCorePct": 5,
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "flow": "HU02",
+    "scope": "CI del commit liberado; API simulada; valores redondeados del log",
+    "budget": 5000,
+    "n": 5,
+    "mean": 162.66,
+    "min": 127.5,
+    "max": 270.5,
+    "p95": 270.5,
+    "sdPopulation": 54.12373231771807,
+    "coefficientVariationPct": 33.27414995556257,
+    "range": 143
+  },
+  {
+    "flow": "HU04",
+    "scope": "CI del commit liberado; API simulada; valores redondeados del log",
+    "budget": 5000,
+    "n": 5,
+    "mean": 157.14,
+    "min": 126.4,
+    "max": 215.1,
+    "p95": 215.1,
+    "sdPopulation": 30.427724200143523,
+    "coefficientVariationPct": 19.36344928098735,
+    "range": 88.69999999999999
+  },
+  {
+    "flow": "HU01",
+    "scope": "CI del commit liberado; API simulada; valores redondeados del log",
+    "budget": 5000,
+    "n": 5,
+    "mean": 72.5,
+    "min": 60.7,
+    "max": 89.6,
+    "p95": 89.6,
+    "sdPopulation": 13.098549538021375,
+    "coefficientVariationPct": 18.066964880029484,
+    "range": 28.89999999999999
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "evaluationDateLocal": "2026-11-24",
+  "timezone": "America/Mexico_City",
+  "desktopNetwork": {
+    "interface": "Wi-Fi",
+    "description": "Realtek 8822CE Wireless LAN 802.11ac PCI-E NIC",
+    "negotiatedLinkSpeed": "300 Mbps",
+    "interpretation": "Velocidad de enlace informada por Get-NetAdapter; no es una medición de ancho de banda a Internet. No se registraron SSID, IP ni MAC.",
+    "throttling": "Ninguno"
+  },
+  "androidInitialCondition": {
+    "model": "SM-A515F",
+    "android": "13",
+    "apiLevel": 33,
+    "batteryPct": 4,
+    "temperatureC": 27.1,
+    "chargingViaUsb": true,
+    "physicalResolution": "1080x2400",
+    "source": "android.json metadata: dumpsys battery, getprop y wm size"
+  },
+  "androidSettingsObservedAfterRun": {
+    "low_power": "1",
+    "wifi_on": "2",
+    "mobile_data": "1",
+    "interpretation": "Ahorro de energía activado al consultar tras el lote. No se cambiaron ajustes. Los otros valores se conservan crudos; no certifican qué transporte usó cada solicitud."
+  },
+  "curl": "8.21.0 (Windows), libcurl/8.21.0, Schannel, HTTP/1.1 en las 40 mediciones",
+  "overlap": "Las mediciones nativas se solaparon temporalmente con parte de las pruebas web simuladas y curl. Las consultas curl finalizaron antes del lote web real. Una generación preliminar de capturas de resultados se intentó durante el lote web real; no se eliminan muestras por esa actividad del host. No se ejecutaron builds de APK."
+}

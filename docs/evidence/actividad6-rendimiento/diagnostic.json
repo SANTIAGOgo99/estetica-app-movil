@@ -1,0 +1,73 @@
+{
+  "recordedAt": "2026-11-24T18:48:53.283Z",
+  "source": {
+    "releasedCommit": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+    "checkoutCommit": "5fade8e62ad6adadb86b5684ff854962a6d7b6bb",
+    "branch": "codex/actividad6-rendimiento",
+    "sourceTreeMatchesRelease": true,
+    "comparedPaths": [
+      "src",
+      "assets",
+      "package.json",
+      "package-lock.json",
+      "app.json",
+      "eas.json",
+      "tests",
+      "playwright.config.ts"
+    ]
+  },
+  "initialUntrackedFiles": "docs/avance-noviembre-2026.md\ndocs/evidence/noviembre-2026/backend-change.json\ndocs/noviembre/backend-pendientes.md\ndocs/noviembre/registro-clientes-seguro.md\ndocs/noviembre/registro-clientes-seguro.patch\nscripts/activity6/measure.mjs\nscripts/activity6/protocol.json",
+  "remote": {
+    "exitCode": 0,
+    "refs": "70a871703c30e5379a71471d6def287f5545c53b\trefs/heads/codex/actividad5-cd-preview\n6b13942dc5fa0b615722254cbe1afbd2d03e1b6e\trefs/heads/codex/fix-cd-expo-secret\n35755d883bf111ab3596c30c2da9520cf7cecde5\trefs/heads/develop\n5fade8e62ad6adadb86b5684ff854962a6d7b6bb\trefs/heads/docs/actividad5-cd-evidencias\n228da7413895c611c9a00392f084b8e4db1a4482\trefs/heads/feature/acceso-navegacion-oct05\ne29e1d1561438f929bc079690d8e70c7410acf14\trefs/heads/feature/ci-github-actions\na6e7dc001320b44a0621181793c2f9ae9b59ec2b\trefs/heads/feature/hu00-pruebas-devops\n8a7ea8f538caf3df084c716eba4d1db7dfa8bc23\trefs/heads/feature/hu01-iniciar-sesion\na3a36867c9bb0525f660884d4ecced64725bf3a2\trefs/heads/feature/noviembre-seguridad-privacidad\nf8433db0138cd997e066c8f7ef88c9c0ed126132\trefs/heads/feature/octubre-arquitectura-seguridad\n79ad3affa3f36146cfdde5a5a0a6c8c6d6a645b2\trefs/heads/main\n",
+    "error": ""
+  },
+  "recentCommits": "5fade8e Documentar liberación interna Android verificada y sus evidencias\n35755d8 Merge pull request #239 from SANTIAGOgo99/codex/fix-cd-expo-secret\n6b13942 fix(ci): pasar EXPO_TOKEN al workflow reutilizable de APK\n9c6d3f1 Merge pull request #238 from SANTIAGOgo99/codex/actividad5-cd-preview\n70a8717 ci: preparar liberacion controlada de APK interno con EAS\na3a3686 Registrar instalacion y apertura del APK en Android\n062ecf6 Completar privacidad, sesiones y compilacion Android de noviembre\n940f564 Agregar privacidad y seguridad de sesión para noviembre",
+  "runtime": {
+    "node": "v22.13.1",
+    "playwright": "1.64.1",
+    "expo": "57.0.33",
+    "platform": "win32",
+    "osRelease": "10.0.26200",
+    "cpu": "Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz",
+    "logicalCpus": 8,
+    "totalRamBytes": 16942501888,
+    "freeRamBytes": 3374956544
+  },
+  "android": {
+    "sdk": "C:/Users/LENOVO/AppData/Local/Android/Sdk",
+    "adbExists": true,
+    "emulatorExists": true,
+    "adbExitCode": 0,
+    "devices": "List of devices attached\r\n\r\n",
+    "avdsExitCode": 0,
+    "avds": "",
+    "avdsError": "",
+    "releasedApkExists": true
+  },
+  "protocol": {
+    "version": 1,
+    "releasedCommit": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+    "apiBase": "https://esteticaa-backend-five.vercel.app/api",
+    "samplesPerFlow": 20,
+    "apiPauseMs": 1200,
+    "webPauseMs": 1200,
+    "timeoutMs": 30000,
+    "percentileMethod": "nearest rank: sorted[ceil(0.95*n)-1]",
+    "thresholds": {
+      "webOpenMs": 5000,
+      "webCatalogMs": 5000,
+      "webNavigationMs": 2000,
+      "apiTotalMs": 2000,
+      "apiTtfbMs": 1500,
+      "operationSuccessPct": 100,
+      "javascriptErrors": 0,
+      "androidColdStartMs": 3000,
+      "androidPssMiB": 250,
+      "androidIdleCpuOneCorePct": 10,
+      "androidCrashesAndAnrs": 0
+    },
+    "thresholdAuthority": "Presupuestos propuestos antes de medir para esta actividad; web 5000 ms conserva el presupuesto existente. No son SLA contractuales ni límites oficiales de Expo/Android.",
+    "safety": "Solo GET públicos reales; concurrencia 1; sin login real, datos personales ni escrituras. Detener backend ante 429 o 503. No optimizar ni reconstruir APK."
+  }
+}

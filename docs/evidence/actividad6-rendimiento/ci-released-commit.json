@@ -1,0 +1,89 @@
+{
+  "retrievedAt": "2026-11-24T18:48:54.715Z",
+  "repository": "SANTIAGOgo99/estetica-app-movil",
+  "runId": 45321572186,
+  "attempt": 2,
+  "commit": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+  "url": "https://github.com/SANTIAGOgo99/estetica-app-movil/actions/runs/45321572186/attempts/2",
+  "performanceJobId": 138206835483,
+  "source": "GitHub connector: fetch_workflow_run_jobs + fetch_workflow_job_logs",
+  "jobs": [
+    {
+      "id": 138205651869,
+      "name": "Análisis de código estático",
+      "conclusion": "success"
+    },
+    {
+      "id": 138205652281,
+      "name": "Pruebas de integración",
+      "conclusion": "success",
+      "stagingStep": {
+        "name": "Contrato con backend de pruebas real (si está configurado; nunca en PR)",
+        "status": "completed",
+        "conclusion": "skipped",
+        "number": 6
+      }
+    },
+    {
+      "id": 138205652303,
+      "name": "Pruebas unitarias",
+      "conclusion": "success"
+    },
+    {
+      "id": 138205914459,
+      "name": "Pruebas de regresión y empaquetado",
+      "conclusion": "success"
+    },
+    {
+      "id": 138206835483,
+      "name": "Pruebas de rendimiento (web móvil)",
+      "conclusion": "success"
+    },
+    {
+      "id": 138206835740,
+      "name": "Pruebas de aceptación (web móvil)",
+      "conclusion": "success"
+    },
+    {
+      "id": 138209661545,
+      "name": "Liberación interna controlada / APK interno aprobado",
+      "conclusion": "success"
+    }
+  ],
+  "precision": "Valores de muestras redondeados a 0.1 ms en log; no son JSON originales del runner.",
+  "measurements": [
+    {
+      "flow": "HU02",
+      "samplesMs": [
+        270.5,
+        134.8,
+        127.5,
+        139.7,
+        140.8
+      ],
+      "budgetMs": 5000
+    },
+    {
+      "flow": "HU04",
+      "samplesMs": [
+        215.1,
+        145.4,
+        143.6,
+        126.4,
+        155.2
+      ],
+      "budgetMs": 5000
+    },
+    {
+      "flow": "HU01",
+      "samplesMs": [
+        89.6,
+        62.1,
+        62.7,
+        87.4,
+        60.7
+      ],
+      "budgetMs": 5000
+    }
+  ]
+}

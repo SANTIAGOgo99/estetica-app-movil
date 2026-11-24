@@ -1,0 +1,447 @@
+{
+  "recordedAt": "2026-11-24T19:13:40.846054+00:00",
+  "checks": [
+    {
+      "check": "40 solicitudes públicas reales correctas",
+      "passed": true
+    },
+    {
+      "check": "100 operaciones web reales completadas",
+      "passed": true
+    },
+    {
+      "check": "Sin errores JavaScript ni escrituras reales",
+      "passed": true
+    },
+    {
+      "check": "20 lanzamientos nativos observados",
+      "passed": true
+    },
+    {
+      "check": "Hash instalado acreditado",
+      "passed": true
+    },
+    {
+      "check": "SHA-256 independiente de APK original y base.apk recuperado",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 1 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 2 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 3 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 4 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 5 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 6 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 7 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 8 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 9 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 10 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 11 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 12 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 13 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 14 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 15 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 16 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 17 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 18 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 19 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "Muestra Android 20 coincide con registro original",
+      "passed": true
+    },
+    {
+      "check": "CSV completo sin valores ausentes",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de api-services-total",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de api-services-ttfb",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de api-products-total",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de api-products-ttfb",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de web-open",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de web-services",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de navigation-services-detail",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de web-products",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de navigation-products-detail",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de mock-login",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de mock-availability",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de existing-HU02",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de existing-HU04",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de existing-HU01",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de android-process-start",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de android-pss",
+      "passed": true
+    },
+    {
+      "check": "Estadística independiente de android-idle-cpu",
+      "passed": true
+    },
+    {
+      "check": "Playwright aprobado controlled-playwright.json",
+      "passed": true
+    },
+    {
+      "check": "Playwright aprobado existing-playwright.json",
+      "passed": true
+    },
+    {
+      "check": "PNG válido results.png",
+      "passed": true
+    },
+    {
+      "check": "PNG válido p95-budget.png",
+      "passed": true
+    },
+    {
+      "check": "PNG válido android-inicio-apk-liberado.png",
+      "passed": true
+    },
+    {
+      "check": "PNG válido web-inicio.png",
+      "passed": true
+    },
+    {
+      "check": "PNG válido web-services.png",
+      "passed": true
+    },
+    {
+      "check": "PNG válido web-products.png",
+      "passed": true
+    },
+    {
+      "check": "PNG válido web-services-detail.png",
+      "passed": true
+    },
+    {
+      "check": "PNG válido web-products-detail.png",
+      "passed": true
+    },
+    {
+      "check": "PNG válido web-mock-disponibilidad.png",
+      "passed": true
+    },
+    {
+      "check": "Control estático lint",
+      "passed": true
+    },
+    {
+      "check": "Control estático typecheck",
+      "passed": true
+    },
+    {
+      "check": "Control estático scriptsLint",
+      "passed": true
+    },
+    {
+      "check": "Fuente y workflows liberados sin cambios",
+      "passed": true
+    },
+    {
+      "check": "main y develop conservados",
+      "passed": true
+    },
+    {
+      "check": "Rama independiente",
+      "passed": true
+    },
+    {
+      "check": "Tres fases TCP negativas identificadas y excluidas",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido ../scripts/activity6/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido evidence/actividad6-rendimiento/README.md",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido ../../actividad6-rendimiento.md",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido comparison.md",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido results.html",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido samples.csv",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido summary.csv",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido diagnostic.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido conditions.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido ci-released-commit.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido ci-performance-extract.log",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido web-export-verification.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido export-live.log",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido export-mock.log",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido api.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido api-execution.log",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido api-phase-summary.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido results.png",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido web.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido web-execution.log",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido web-inicio.png",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido web.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido web-services.png",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido web-products.png",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido web.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido web-services-detail.png",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido web-products-detail.png",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido controlled-playwright.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido web-mock-disponibilidad.png",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido existing-playwright.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido android.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido android-status.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido android-inicio-apk-liberado.png",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido android-derived.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido android-exit-reasons.log",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido summary.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido summary.csv",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido samples.csv",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido comparison.md",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido results.html",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido results.png",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido p95-budget.png",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido p95-budget.svg",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido validation.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido local-checks.json",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido lint.log",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido typecheck.log",
+      "passed": true
+    },
+    {
+      "check": "Enlace local válido SHA256SUMS.txt",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "independentChecks": "Python statistics y lectura de logs ADB, CSV, hashes, PNG, referencias Git y códigos de salida. No vuelve a solicitar datos al backend."
+}

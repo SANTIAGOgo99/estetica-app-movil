@@ -1,0 +1,15 @@
+{
+  "typecheck": {
+    "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+    "exitCode": 0
+  },
+  "scriptsLint": {
+    "command": "node node_modules/eslint/bin/eslint.js scripts/activity6 --no-cache",
+    "exitCode": 0
+  },
+  "recordedAt": "2026-11-24T19:13:22.5225421Z",
+  "lint": {
+    "command": "EXPO_NO_DOTENV=1 EXPO_NO_TELEMETRY=1 node node_modules/expo/bin/cli lint --no-cache",
+    "exitCode": 0
+  }
+}

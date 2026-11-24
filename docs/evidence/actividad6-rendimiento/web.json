@@ -1,0 +1,1629 @@
+{
+  "startedAt": "2026-11-24T18:58:36.796Z",
+  "updatedAt": "2026-11-24T19:03:20.442Z",
+  "source": {
+    "releasedCommit": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+    "checkoutCommit": "5fade8e62ad6adadb86b5684ff854962a6d7b6bb",
+    "branch": "codex/actividad6-rendimiento",
+    "sourceTreeMatchesRelease": true,
+    "comparedPaths": [
+      "src",
+      "assets",
+      "package.json",
+      "package-lock.json",
+      "app.json",
+      "eas.json",
+      "tests",
+      "playwright.config.ts"
+    ]
+  },
+  "protocol": {
+    "version": 1,
+    "releasedCommit": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+    "apiBase": "https://esteticaa-backend-five.vercel.app/api",
+    "samplesPerFlow": 20,
+    "apiPauseMs": 1200,
+    "webPauseMs": 1200,
+    "timeoutMs": 30000,
+    "percentileMethod": "nearest rank: sorted[ceil(0.95*n)-1]",
+    "thresholds": {
+      "webOpenMs": 5000,
+      "webCatalogMs": 5000,
+      "webNavigationMs": 2000,
+      "apiTotalMs": 2000,
+      "apiTtfbMs": 1500,
+      "operationSuccessPct": 100,
+      "javascriptErrors": 0,
+      "androidColdStartMs": 3000,
+      "androidPssMiB": 250,
+      "androidIdleCpuOneCorePct": 10,
+      "androidCrashesAndAnrs": 0
+    },
+    "thresholdAuthority": "Presupuestos propuestos antes de medir para esta actividad; web 5000 ms conserva el presupuesto existente. No son SLA contractuales ni límites oficiales de Expo/Android.",
+    "safety": "Solo GET públicos reales; concurrencia 1; sin login real, datos personales ni escrituras. Detener backend ante 429 o 503. No optimizar ni reconstruir APK."
+  },
+  "browser": "156.0.8078.4",
+  "device": {
+    "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Mobile Safari/537.36",
+    "viewport": {
+      "width": 412,
+      "height": 839
+    },
+    "screen": {
+      "width": 412,
+      "height": 915
+    },
+    "deviceScaleFactor": 2.625,
+    "isMobile": true,
+    "hasTouch": true,
+    "defaultBrowserType": "chromium"
+  },
+  "cache": "Contexto nuevo por repetición; rutas Playwright desactivan caché HTTP; servidor local no-store; proceso Chromium compartido.",
+  "networkCondition": "Red real del equipo sin throttling; no equivale a radio móvil ni CPU Android.",
+  "samples": [
+    {
+      "recordedAt": "2026-11-24T18:58:40.068Z",
+      "flow": "web-open",
+      "repetition": 1,
+      "budgetMs": 5000,
+      "totalMs": 1267.4998000000005,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:58:42.266Z",
+      "flow": "web-open",
+      "repetition": 2,
+      "budgetMs": 5000,
+      "totalMs": 1252.0854,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:58:43.851Z",
+      "flow": "web-open",
+      "repetition": 3,
+      "budgetMs": 5000,
+      "totalMs": 1249.5913,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:58:45.478Z",
+      "flow": "web-open",
+      "repetition": 4,
+      "budgetMs": 5000,
+      "totalMs": 1305.3045000000002,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:58:46.826Z",
+      "flow": "web-open",
+      "repetition": 5,
+      "budgetMs": 5000,
+      "totalMs": 1039.3174,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:58:48.160Z",
+      "flow": "web-open",
+      "repetition": 6,
+      "budgetMs": 5000,
+      "totalMs": 1059.1525999999994,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:58:49.635Z",
+      "flow": "web-open",
+      "repetition": 7,
+      "budgetMs": 5000,
+      "totalMs": 1221.5833999999995,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:58:51.118Z",
+      "flow": "web-open",
+      "repetition": 8,
+      "budgetMs": 5000,
+      "totalMs": 1226.309699999998,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:58:52.696Z",
+      "flow": "web-open",
+      "repetition": 9,
+      "budgetMs": 5000,
+      "totalMs": 1205.4164000000019,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:58:54.168Z",
+      "flow": "web-open",
+      "repetition": 10,
+      "budgetMs": 5000,
+      "totalMs": 1147.0700000000033,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:58:55.656Z",
+      "flow": "web-open",
+      "repetition": 11,
+      "budgetMs": 5000,
+      "totalMs": 1175.700499999999,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:58:57.248Z",
+      "flow": "web-open",
+      "repetition": 12,
+      "budgetMs": 5000,
+      "totalMs": 1249.4040999999997,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:58:58.753Z",
+      "flow": "web-open",
+      "repetition": 13,
+      "budgetMs": 5000,
+      "totalMs": 1244.9776999999995,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:00.493Z",
+      "flow": "web-open",
+      "repetition": 14,
+      "budgetMs": 5000,
+      "totalMs": 1168.2909,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:01.861Z",
+      "flow": "web-open",
+      "repetition": 15,
+      "budgetMs": 5000,
+      "totalMs": 1187.931800000002,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:03.130Z",
+      "flow": "web-open",
+      "repetition": 16,
+      "budgetMs": 5000,
+      "totalMs": 1006.5627999999997,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:04.457Z",
+      "flow": "web-open",
+      "repetition": 17,
+      "budgetMs": 5000,
+      "totalMs": 1080.3292999999976,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:05.895Z",
+      "flow": "web-open",
+      "repetition": 18,
+      "budgetMs": 5000,
+      "totalMs": 1178.3781000000017,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:07.184Z",
+      "flow": "web-open",
+      "repetition": 19,
+      "budgetMs": 5000,
+      "totalMs": 1047.7189999999973,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:08.639Z",
+      "flow": "web-open",
+      "repetition": 20,
+      "budgetMs": 5000,
+      "totalMs": 1243.5160000000033,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:15.844Z",
+      "flow": "web-services",
+      "repetition": 1,
+      "budgetMs": 5000,
+      "totalMs": 6801.808400000002,
+      "ok": true,
+      "error": null,
+      "meetsBudget": false
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:18.670Z",
+      "flow": "navigation-services-detail",
+      "repetition": 1,
+      "budgetMs": 2000,
+      "totalMs": 1090.1787999999942,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:22.994Z",
+      "flow": "web-products",
+      "repetition": 1,
+      "budgetMs": 5000,
+      "totalMs": 1871.3916000000027,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:25.802Z",
+      "flow": "navigation-products-detail",
+      "repetition": 1,
+      "budgetMs": 2000,
+      "totalMs": 1069.7301000000007,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:29.611Z",
+      "flow": "web-services",
+      "repetition": 2,
+      "budgetMs": 5000,
+      "totalMs": 1964.1394999999975,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:31.867Z",
+      "flow": "navigation-services-detail",
+      "repetition": 2,
+      "budgetMs": 2000,
+      "totalMs": 1041.7790000000023,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:35.458Z",
+      "flow": "web-products",
+      "repetition": 2,
+      "budgetMs": 5000,
+      "totalMs": 2108.505799999999,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:37.727Z",
+      "flow": "navigation-products-detail",
+      "repetition": 2,
+      "budgetMs": 2000,
+      "totalMs": 1053.9821999999913,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:40.888Z",
+      "flow": "web-services",
+      "repetition": 3,
+      "budgetMs": 5000,
+      "totalMs": 1731.8001999999979,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:43.092Z",
+      "flow": "navigation-services-detail",
+      "repetition": 3,
+      "budgetMs": 2000,
+      "totalMs": 988.8757999999943,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:46.745Z",
+      "flow": "web-products",
+      "repetition": 3,
+      "budgetMs": 5000,
+      "totalMs": 2105.5360000000073,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:48.661Z",
+      "flow": "navigation-products-detail",
+      "repetition": 3,
+      "budgetMs": 2000,
+      "totalMs": 669.3322000000044,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:52.288Z",
+      "flow": "web-services",
+      "repetition": 4,
+      "budgetMs": 5000,
+      "totalMs": 2089.0604999999923,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:54.201Z",
+      "flow": "navigation-services-detail",
+      "repetition": 4,
+      "budgetMs": 2000,
+      "totalMs": 699.3948999999993,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T18:59:58.467Z",
+      "flow": "web-products",
+      "repetition": 4,
+      "budgetMs": 5000,
+      "totalMs": 2242.614300000001,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:00.957Z",
+      "flow": "navigation-products-detail",
+      "repetition": 4,
+      "budgetMs": 2000,
+      "totalMs": 1243.636400000003,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:04.507Z",
+      "flow": "web-services",
+      "repetition": 5,
+      "budgetMs": 5000,
+      "totalMs": 1997.1631999999954,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:06.753Z",
+      "flow": "navigation-services-detail",
+      "repetition": 5,
+      "budgetMs": 2000,
+      "totalMs": 1041.1242000000057,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:10.004Z",
+      "flow": "web-products",
+      "repetition": 5,
+      "budgetMs": 5000,
+      "totalMs": 1817.657699999996,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:12.169Z",
+      "flow": "navigation-products-detail",
+      "repetition": 5,
+      "budgetMs": 2000,
+      "totalMs": 958.9758000000002,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:16.151Z",
+      "flow": "web-services",
+      "repetition": 6,
+      "budgetMs": 5000,
+      "totalMs": 2393.197899999999,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:18.462Z",
+      "flow": "navigation-services-detail",
+      "repetition": 6,
+      "budgetMs": 2000,
+      "totalMs": 1107.2378000000026,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:23.428Z",
+      "flow": "web-products",
+      "repetition": 6,
+      "budgetMs": 5000,
+      "totalMs": 3507.462599999999,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:26.833Z",
+      "flow": "navigation-products-detail",
+      "repetition": 6,
+      "budgetMs": 2000,
+      "totalMs": 2194.5137000000104,
+      "ok": true,
+      "error": null,
+      "meetsBudget": false
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:32.423Z",
+      "flow": "web-services",
+      "repetition": 7,
+      "budgetMs": 5000,
+      "totalMs": 4019.4940999999963,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:34.771Z",
+      "flow": "navigation-services-detail",
+      "repetition": 7,
+      "budgetMs": 2000,
+      "totalMs": 1116.3473000000085,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:38.426Z",
+      "flow": "web-products",
+      "repetition": 7,
+      "budgetMs": 5000,
+      "totalMs": 2067.0525000000052,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:40.779Z",
+      "flow": "navigation-products-detail",
+      "repetition": 7,
+      "budgetMs": 2000,
+      "totalMs": 1126.7229999999981,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:44.855Z",
+      "flow": "web-services",
+      "repetition": 8,
+      "budgetMs": 5000,
+      "totalMs": 2434.823199999999,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:47.193Z",
+      "flow": "navigation-services-detail",
+      "repetition": 8,
+      "budgetMs": 2000,
+      "totalMs": 1125.2315000000235,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:51.484Z",
+      "flow": "web-products",
+      "repetition": 8,
+      "budgetMs": 5000,
+      "totalMs": 2692.416599999997,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:53.777Z",
+      "flow": "navigation-products-detail",
+      "repetition": 8,
+      "budgetMs": 2000,
+      "totalMs": 1069.3490999999922,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:57.799Z",
+      "flow": "web-services",
+      "repetition": 9,
+      "budgetMs": 5000,
+      "totalMs": 2303.258999999991,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:00:59.698Z",
+      "flow": "navigation-services-detail",
+      "repetition": 9,
+      "budgetMs": 2000,
+      "totalMs": 621.6125999999931,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:04.006Z",
+      "flow": "web-products",
+      "repetition": 9,
+      "budgetMs": 5000,
+      "totalMs": 2737.2621999999974,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:05.972Z",
+      "flow": "navigation-products-detail",
+      "repetition": 9,
+      "budgetMs": 2000,
+      "totalMs": 697.4024999999965,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:09.639Z",
+      "flow": "web-services",
+      "repetition": 10,
+      "budgetMs": 5000,
+      "totalMs": 2079.25,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:11.555Z",
+      "flow": "navigation-services-detail",
+      "repetition": 10,
+      "budgetMs": 2000,
+      "totalMs": 696.1591999999946,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:15.046Z",
+      "flow": "web-products",
+      "repetition": 10,
+      "budgetMs": 5000,
+      "totalMs": 1960.5819999999949,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:17.276Z",
+      "flow": "navigation-products-detail",
+      "repetition": 10,
+      "budgetMs": 2000,
+      "totalMs": 1023.947599999985,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:20.611Z",
+      "flow": "web-services",
+      "repetition": 11,
+      "budgetMs": 5000,
+      "totalMs": 1849.2581000000064,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:22.842Z",
+      "flow": "navigation-services-detail",
+      "repetition": 11,
+      "budgetMs": 2000,
+      "totalMs": 1025.7265000000189,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:26.052Z",
+      "flow": "web-products",
+      "repetition": 11,
+      "budgetMs": 5000,
+      "totalMs": 1753.7851000000082,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:28.527Z",
+      "flow": "navigation-products-detail",
+      "repetition": 11,
+      "budgetMs": 2000,
+      "totalMs": 1258.7917000000016,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:32.256Z",
+      "flow": "web-services",
+      "repetition": 12,
+      "budgetMs": 5000,
+      "totalMs": 2102.806600000011,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:34.590Z",
+      "flow": "navigation-services-detail",
+      "repetition": 12,
+      "budgetMs": 2000,
+      "totalMs": 1103.8744000000006,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:38.244Z",
+      "flow": "web-products",
+      "repetition": 12,
+      "budgetMs": 5000,
+      "totalMs": 2084.2588000000105,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:40.653Z",
+      "flow": "navigation-products-detail",
+      "repetition": 12,
+      "budgetMs": 2000,
+      "totalMs": 1156.6015999999945,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:44.300Z",
+      "flow": "web-services",
+      "repetition": 13,
+      "budgetMs": 5000,
+      "totalMs": 2113.281099999993,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:46.589Z",
+      "flow": "navigation-services-detail",
+      "repetition": 13,
+      "budgetMs": 2000,
+      "totalMs": 1062.9377000000095,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:50.203Z",
+      "flow": "web-products",
+      "repetition": 13,
+      "budgetMs": 5000,
+      "totalMs": 2060.1322999999975,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:52.496Z",
+      "flow": "navigation-products-detail",
+      "repetition": 13,
+      "budgetMs": 2000,
+      "totalMs": 1049.2741000000096,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:56.220Z",
+      "flow": "web-services",
+      "repetition": 14,
+      "budgetMs": 5000,
+      "totalMs": 2196.263100000011,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:01:58.802Z",
+      "flow": "navigation-services-detail",
+      "repetition": 14,
+      "budgetMs": 2000,
+      "totalMs": 1344.1218000000226,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:03.712Z",
+      "flow": "web-products",
+      "repetition": 14,
+      "budgetMs": 5000,
+      "totalMs": 2434.5337,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:05.965Z",
+      "flow": "navigation-products-detail",
+      "repetition": 14,
+      "budgetMs": 2000,
+      "totalMs": 764.909799999994,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:10.214Z",
+      "flow": "web-services",
+      "repetition": 15,
+      "budgetMs": 5000,
+      "totalMs": 2313.5597000000125,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:12.136Z",
+      "flow": "navigation-services-detail",
+      "repetition": 15,
+      "budgetMs": 2000,
+      "totalMs": 667.0855999999912,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:16.131Z",
+      "flow": "web-products",
+      "repetition": 15,
+      "budgetMs": 5000,
+      "totalMs": 2293.634100000025,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:18.487Z",
+      "flow": "navigation-products-detail",
+      "repetition": 15,
+      "budgetMs": 2000,
+      "totalMs": 1106.6178000000073,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:22.893Z",
+      "flow": "web-services",
+      "repetition": 16,
+      "budgetMs": 5000,
+      "totalMs": 2634.3276000000187,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:25.169Z",
+      "flow": "navigation-services-detail",
+      "repetition": 16,
+      "budgetMs": 2000,
+      "totalMs": 1056.9110999999975,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:28.958Z",
+      "flow": "web-products",
+      "repetition": 16,
+      "budgetMs": 5000,
+      "totalMs": 2354.5929999999935,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:31.869Z",
+      "flow": "navigation-products-detail",
+      "repetition": 16,
+      "budgetMs": 2000,
+      "totalMs": 1693.371599999984,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:36.087Z",
+      "flow": "web-services",
+      "repetition": 17,
+      "budgetMs": 5000,
+      "totalMs": 2560.290900000022,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:38.719Z",
+      "flow": "navigation-services-detail",
+      "repetition": 17,
+      "budgetMs": 2000,
+      "totalMs": 1389.1811999999918,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:42.436Z",
+      "flow": "web-products",
+      "repetition": 17,
+      "budgetMs": 5000,
+      "totalMs": 2184.8981000000203,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:44.358Z",
+      "flow": "navigation-products-detail",
+      "repetition": 17,
+      "budgetMs": 2000,
+      "totalMs": 687.0733999999939,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:48.057Z",
+      "flow": "web-services",
+      "repetition": 18,
+      "budgetMs": 5000,
+      "totalMs": 2169.0230000000156,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:50.444Z",
+      "flow": "navigation-services-detail",
+      "repetition": 18,
+      "budgetMs": 2000,
+      "totalMs": 1176.0596000000078,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:54.267Z",
+      "flow": "web-products",
+      "repetition": 18,
+      "budgetMs": 5000,
+      "totalMs": 2111.519800000009,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:56.565Z",
+      "flow": "navigation-products-detail",
+      "repetition": 18,
+      "budgetMs": 2000,
+      "totalMs": 1081.7165000000386,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:02:59.723Z",
+      "flow": "web-services",
+      "repetition": 19,
+      "budgetMs": 5000,
+      "totalMs": 1769.7280999999493,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:03:02.044Z",
+      "flow": "navigation-services-detail",
+      "repetition": 19,
+      "budgetMs": 2000,
+      "totalMs": 1096.4785000000265,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:03:05.271Z",
+      "flow": "web-products",
+      "repetition": 19,
+      "budgetMs": 5000,
+      "totalMs": 1729.9343999999692,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:03:07.541Z",
+      "flow": "navigation-products-detail",
+      "repetition": 19,
+      "budgetMs": 2000,
+      "totalMs": 1043.1490999999805,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:03:11.190Z",
+      "flow": "web-services",
+      "repetition": 20,
+      "budgetMs": 5000,
+      "totalMs": 2051.1364000000176,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:03:13.575Z",
+      "flow": "navigation-services-detail",
+      "repetition": 20,
+      "budgetMs": 2000,
+      "totalMs": 1141.8778000000166,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:03:17.324Z",
+      "flow": "web-products",
+      "repetition": 20,
+      "budgetMs": 5000,
+      "totalMs": 2191.5750000000116,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    },
+    {
+      "recordedAt": "2026-11-24T19:03:19.180Z",
+      "flow": "navigation-products-detail",
+      "repetition": 20,
+      "budgetMs": 2000,
+      "totalMs": 604.3263000000152,
+      "ok": true,
+      "error": null,
+      "meetsBudget": true
+    }
+  ],
+  "network": [
+    {
+      "scope": "live-services",
+      "repetition": 1,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 1,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 1,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 1,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 2,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 2,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 2,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 2,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 3,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 3,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 3,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 3,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 4,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 4,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 4,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 4,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 5,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 5,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 5,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 5,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 6,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 6,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 6,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 6,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 7,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 7,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 7,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 7,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 8,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 8,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 8,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 8,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 9,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 9,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 9,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 9,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 10,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 10,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 10,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 10,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 11,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 11,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 11,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 11,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 12,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 12,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 12,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 12,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 13,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 13,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 13,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 13,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 14,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 14,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 14,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 14,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 15,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 15,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 15,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 15,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 16,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 16,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 16,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 16,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 17,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 17,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 17,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 17,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 18,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 18,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 18,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 18,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 19,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 19,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 19,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 19,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 20,
+      "method": "GET",
+      "path": "/api/services/active",
+      "status": 200
+    },
+    {
+      "scope": "live-services",
+      "repetition": 20,
+      "method": "GET",
+      "path": "/api/services/9",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 20,
+      "method": "GET",
+      "path": "/api/products/active",
+      "status": 200
+    },
+    {
+      "scope": "live-products",
+      "repetition": 20,
+      "method": "GET",
+      "path": "/api/products/508",
+      "status": 200
+    }
+  ],
+  "pageErrors": [],
+  "blocked": []
+}
