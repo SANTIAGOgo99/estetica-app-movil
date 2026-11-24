@@ -1,0 +1,72 @@
+[
+  {
+    "completed_at": "2026-11-24T03:57:46Z",
+    "conclusion": "success",
+    "head_sha": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+    "html_url": "https://github.com/SANTIAGOgo99/estetica-app-movil/actions/runs/45321572186/job/138205651869",
+    "id": 138205651869,
+    "name": "Análisis de código estático",
+    "started_at": "2026-11-24T03:57:02Z",
+    "status": "completed"
+  },
+  {
+    "completed_at": "2026-11-24T03:57:31Z",
+    "conclusion": "success",
+    "head_sha": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+    "html_url": "https://github.com/SANTIAGOgo99/estetica-app-movil/actions/runs/45321572186/job/138205652281",
+    "id": 138205652281,
+    "name": "Pruebas de integración",
+    "started_at": "2026-11-24T03:57:04Z",
+    "status": "completed"
+  },
+  {
+    "completed_at": "2026-11-24T03:57:24Z",
+    "conclusion": "success",
+    "head_sha": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+    "html_url": "https://github.com/SANTIAGOgo99/estetica-app-movil/actions/runs/45321572186/job/138205652303",
+    "id": 138205652303,
+    "name": "Pruebas unitarias",
+    "started_at": "2026-11-24T03:57:02Z",
+    "status": "completed"
+  },
+  {
+    "completed_at": "2026-11-24T04:00:20Z",
+    "conclusion": "success",
+    "head_sha": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+    "html_url": "https://github.com/SANTIAGOgo99/estetica-app-movil/actions/runs/45321572186/job/138205914459",
+    "id": 138205914459,
+    "name": "Pruebas de regresión y empaquetado",
+    "started_at": "2026-11-24T03:57:48Z",
+    "status": "completed"
+  },
+  {
+    "completed_at": "2026-11-24T04:01:08Z",
+    "conclusion": "success",
+    "head_sha": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+    "html_url": "https://github.com/SANTIAGOgo99/estetica-app-movil/actions/runs/45321572186/job/138206835483",
+    "id": 138206835483,
+    "name": "Pruebas de rendimiento (web móvil)",
+    "started_at": "2026-11-24T04:00:22Z",
+    "status": "completed"
+  },
+  {
+    "completed_at": "2026-11-24T04:07:33Z",
+    "conclusion": "success",
+    "head_sha": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+    "html_url": "https://github.com/SANTIAGOgo99/estetica-app-movil/actions/runs/45321572186/job/138206835740",
+    "id": 138206835740,
+    "name": "Pruebas de aceptación (web móvil)",
+    "started_at": "2026-11-24T04:00:22Z",
+    "status": "completed"
+  },
+  {
+    "completed_at": "2026-11-24T04:41:26Z",
+    "conclusion": "success",
+    "head_sha": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+    "html_url": "https://github.com/SANTIAGOgo99/estetica-app-movil/actions/runs/45321572186/job/138209661545",
+    "id": 138209661545,
+    "name": "Liberación interna controlada / APK interno aprobado",
+    "started_at": "2026-11-24T04:24:34Z",
+    "status": "completed"
+  }
+]

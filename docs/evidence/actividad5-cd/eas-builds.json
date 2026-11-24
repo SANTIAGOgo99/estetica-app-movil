@@ -1,0 +1,20 @@
+[
+  {
+    "id": "cd8bb15d-b39e-4c9a-a0be-68dad9cfa0b3",
+    "status": "FINISHED",
+    "buildProfile": "preview",
+    "distribution": "INTERNAL",
+    "gitCommitHash": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+    "createdAt": "2026-11-24T04:25:25.822Z",
+    "completedAt": "2026-11-24T04:41:14.395Z"
+  },
+  {
+    "id": "6953a647-0856-4125-afca-f40b1d20539d",
+    "status": "FINISHED",
+    "buildProfile": "preview",
+    "distribution": "INTERNAL",
+    "gitCommitHash": "940f564f7d86635cb420c0c9c75f28fd0814e0c8",
+    "createdAt": "2026-11-19T18:52:12.62Z",
+    "completedAt": "2026-11-19T19:47:38.284Z"
+  }
+]

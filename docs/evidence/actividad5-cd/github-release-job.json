@@ -1,0 +1,82 @@
+{
+  "completed_at": "2026-11-24T04:41:26Z",
+  "conclusion": "success",
+  "head_sha": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+  "html_url": "https://github.com/SANTIAGOgo99/estetica-app-movil/actions/runs/45321572186/job/138209661545",
+  "id": 138209661545,
+  "name": "Liberación interna controlada / APK interno aprobado",
+  "started_at": "2026-11-24T04:24:34Z",
+  "status": "completed",
+  "steps": [
+    {
+      "conclusion": "success",
+      "name": "Set up job",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "name": "Run actions/checkout@v7.0.1",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "name": "Run actions/setup-node@v7.1.0",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "name": "Verificar pruebas, intento, SHA y configuración",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "name": "Run npm ci",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "name": "Confirmar acceso al proyecto existente (solo consulta)",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "name": "Revalidar pruebas y árbol limpio antes de solicitar build",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "name": "Generar únicamente APK preview y esperar FINISHED",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "name": "Verificar build, descargar APK y registrar SHA-256",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "name": "Conservar APK y trazabilidad sin respuestas crudas ni credenciales",
+      "status": "completed"
+    },
+    {
+      "conclusion": "skipped",
+      "name": "Conservar verificaciones previas si falla la liberación",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "name": "Post Run actions/setup-node@v7.1.0",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "name": "Post Run actions/checkout@v7.0.1",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "name": "Complete job",
+      "status": "completed"
+    }
+  ]
+}
