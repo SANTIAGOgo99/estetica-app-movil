@@ -1,4 +1,5 @@
-export type ClientSession = { token: string };
+import { normalizeApiUrl } from "../http/apiUrl.ts";
+export type ClientSession = { token: string; refreshToken?: string };
 
 export async function requestLogin(
   apiUrl: string | undefined,
@@ -7,10 +8,11 @@ export async function requestLogin(
   fetcher: typeof fetch = fetch,
 ): Promise<ClientSession> {
   if (!apiUrl) throw new Error('El servicio de acceso aún no está configurado.');
+  const base = normalizeApiUrl(apiUrl);
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15000);
   try {
-    const response = await fetcher(`${apiUrl.replace(/\/$/, '')}/auth/login`, {
+    const response = await fetcher(`${base}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify({ email: email.trim(), password }),
@@ -30,7 +32,8 @@ export async function requestLogin(
     }
     if (data.role !== 'client') throw new Error('Esta aplicación es solo para clientes. Usa el sistema web para administrar.');
     if (typeof data.token !== 'string' || !data.token.trim()) throw new Error('No se recibió una sesión válida.');
-    return { token: data.token };
+    const refreshToken = 'refreshToken' in data && typeof data.refreshToken === 'string' && data.refreshToken.length > 30 && data.refreshToken.length < 2048 ? data.refreshToken : undefined;
+    return { token: data.token, ...(refreshToken ? { refreshToken } : {}) };
   } catch (error) {
     if (controller.signal.aborted) throw new Error('La conexión tardó demasiado. Inténtalo nuevamente.');
     if (error instanceof TypeError) throw new Error('No pudimos conectar. Revisa tu conexión a internet.');

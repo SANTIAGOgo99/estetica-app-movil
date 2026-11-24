@@ -1,8 +1,8 @@
 {
-  "cli": {"appVersionSource":"remote"},
+  "cli": {"version":"27.11.0","requireCommit":true,"appVersionSource":"remote"},
   "build": {
-    "preview": {"distribution":"internal","environment":"preview","node":"22.13.1","android":{"buildType":"apk"}},
-    "production": {"distribution":"store","environment":"production","node":"22.13.1","autoIncrement":true,"android":{"buildType":"app-bundle"}}
+    "preview": {"distribution":"internal","environment":"preview","node":"22.13.1","env":{"EXPO_PUBLIC_API_URL":"https://esteticaa-backend-five.vercel.app/api"},"android":{"buildType":"apk"}},
+    "production": {"distribution":"store","environment":"production","node":"22.13.1","autoIncrement":true,"env":{"EXPO_PUBLIC_API_URL":"https://esteticaa-backend-five.vercel.app/api"},"android":{"buildType":"app-bundle"}}
   },
   "submit": {
     "production": {"android":{"track":"internal","releaseStatus":"draft","serviceAccountKeyPath":"$GOOGLE_SERVICE_ACCOUNT_KEY_PATH"}}

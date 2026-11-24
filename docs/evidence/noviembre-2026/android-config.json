@@ -1,0 +1,65 @@
+{
+  "checkedAt": "2026-11-10T18:37:29.944Z",
+  "scope": "Introspección de configuración Expo SDK 57; no es una compilación ni una inspección de APK final.",
+  "release": {
+    "minify": "true",
+    "shrinkResources": "true",
+    "cleartextTraffic": "false"
+  },
+  "permissions": [
+    {
+      "name": "android.permission.INTERNET",
+      "action": "include"
+    },
+    {
+      "name": "android.permission.SYSTEM_ALERT_WINDOW",
+      "action": "include"
+    },
+    {
+      "name": "android.permission.VIBRATE",
+      "action": "include"
+    },
+    {
+      "name": "android.permission.CAMERA",
+      "action": "remove"
+    },
+    {
+      "name": "android.permission.RECORD_AUDIO",
+      "action": "remove"
+    },
+    {
+      "name": "android.permission.ACCESS_FINE_LOCATION",
+      "action": "remove"
+    },
+    {
+      "name": "android.permission.ACCESS_COARSE_LOCATION",
+      "action": "remove"
+    },
+    {
+      "name": "android.permission.READ_EXTERNAL_STORAGE",
+      "action": "remove"
+    },
+    {
+      "name": "android.permission.WRITE_EXTERNAL_STORAGE",
+      "action": "remove"
+    },
+    {
+      "name": "android.permission.READ_MEDIA_IMAGES",
+      "action": "remove"
+    },
+    {
+      "name": "android.permission.READ_MEDIA_VIDEO",
+      "action": "remove"
+    },
+    {
+      "name": "android.permission.READ_MEDIA_AUDIO",
+      "action": "remove"
+    }
+  ],
+  "pending": [
+    "Compilar y firmar APK Release",
+    "Verificar manifest fusionado y funcionamiento en Android",
+    "Inspección JADX/MobSF y revisión de mapping R8",
+    "Pinning SHA-256 real y pruebas anti-MitM"
+  ]
+}

@@ -16,6 +16,7 @@ export type Screen =
   | "welcome"
   | "sign-in"
   | "register"
+  | "privacy"
   | "home"
   | "services"
   | "service-detail"
@@ -28,7 +29,8 @@ export type Screen =
   | "order-confirmed"
   | "appointments"
   | "orders"
-  | "profile";
+  | "profile"
+  | "account-settings";
 export type Booking = {
   id: number;
   service: Item;

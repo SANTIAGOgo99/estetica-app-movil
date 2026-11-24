@@ -48,6 +48,8 @@ La aplicación utiliza una arquitectura cliente-servidor. La aplicación móvil 
 
 ## Estrategia de ramas y pruebas
 
+La configuración de la **Actividad 5 (CD)** prepara APK internos mediante GitHub Actions y el proyecto EAS existente. La liberación permanece desactivada hasta habilitar un SHA de `develop`, configurar el token y aprobar el entorno. No envía a Google Play. Consultar [reporte y rúbrica](docs/actividad5-cd.md) y [guía operativa](docs/testing/despliegue-android.md).
+
 - main: entregas estables.
 - develop: integración de historias y ejecución de las seis verificaciones.
 - feature/huXX-descripcion: crear la rama al iniciar la historia; actualmente solo HU00 y HU01.

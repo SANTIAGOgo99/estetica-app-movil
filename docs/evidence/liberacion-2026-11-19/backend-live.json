@@ -1,0 +1,86 @@
+{
+  "at": "2026-11-19T19:55:22.327Z",
+  "base": "https://esteticaa-backend-hqg1a8jqg-estetica3.vercel.app/api",
+  "checks": [
+    {
+      "name": "consent-required",
+      "status": 400,
+      "expected": 400,
+      "passed": true
+    },
+    {
+      "name": "register",
+      "status": 201,
+      "expected": 201,
+      "passed": true
+    },
+    {
+      "name": "login",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "profile",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "update-profile",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "marketing-enable",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "marketing-read",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "marketing-disable",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "refresh",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "reject-replayed-refresh",
+      "status": 401,
+      "expected": 401,
+      "passed": true
+    },
+    {
+      "name": "delete-own-test-account",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "reject-deleted-access",
+      "status": 401,
+      "expected": 401,
+      "passed": true
+    },
+    {
+      "name": "reject-deleted-refresh",
+      "status": 401,
+      "expected": 401,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "testAccountAnonymized": true
+}

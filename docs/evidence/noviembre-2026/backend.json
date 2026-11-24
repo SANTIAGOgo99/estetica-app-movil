@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-11-10T18:31:52.530Z",
+  "base": "https://esteticaa-backend-five.vercel.app/api",
+  "scope": "Backend publicado; solo lectura. Sin credenciales reales. No acredita login real, escrituras, pinning ni pruebas Android.",
+  "checks": [
+    {
+      "path": "/services/active",
+      "scenario": "catálogo público real",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "count": 11,
+      "firstPublicItem": {
+        "id": 9,
+        "name": "Color",
+        "price": 1600
+      },
+      "durationMs": 3600
+    },
+    {
+      "path": "/products/active",
+      "scenario": "catálogo público real",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "count": 17,
+      "firstPublicItem": {
+        "id": 508,
+        "name": "Aceite Reparador de Argán Premium",
+        "price": 280
+      },
+      "durationMs": 3018
+    },
+    {
+      "path": "/users/profile",
+      "scenario": "sin sesión",
+      "status": 403,
+      "expected": 403,
+      "passed": true,
+      "durationMs": 1607
+    },
+    {
+      "path": "/users/profile",
+      "scenario": "token inválido",
+      "status": 401,
+      "expected": 401,
+      "passed": true,
+      "durationMs": 1324
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import { appendFileSync, existsSync, readFileSync } from 'node:fs';
 const suite = process.argv[2];
 const scopes = {
-  static: 'Análisis estático de todo src, configuración y pruebas; TypeScript + ESLint.',
+  static: 'TypeScript del proyecto y lint Expo de la aplicación (src/app/components existentes); SAST sobre src. Los scripts CD se comprueban con ESLint en un paso separado.',
   unit: 'HU01: credenciales, vigencia/restauración; reglas puras de catálogo y horarios. Datos: tests/fixtures/mobile.json.',
   integration: 'HU01/HU02/HU08: cliente → servidor HTTP local de contrato. No acredita PostgreSQL real. Staging se declara aparte.',
   regression: 'Todos los archivos tests/*.test.mjs; alcance de módulo/sprint sobre funciones ya cubiertas. Empaquetado es una verificación adicional.',

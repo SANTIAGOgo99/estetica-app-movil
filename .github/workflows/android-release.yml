@@ -1,97 +1,94 @@
-# Distribución opcional; NO es el workflow de seis pruebas.
-# Activación manual tras configurar EAS, firma, API y aprobación de android-release.
-name: Distribución Android
-run-name: Android · ${{ inputs.target }} · ${{ github.ref_name }}
+# CI lo llama solo con un SHA habilitado. workflow_dispatch requiere la rama predeterminada.
+name: Distribución interna Android
+run-name: APK preview · ${{ github.ref_name }} · CI ${{ inputs.source_run_id }}
 on:
   workflow_dispatch:
     inputs:
       source_run_id:
-        description: ID del push del mismo commit con los seis jobs aprobados
+        description: ID de CI aprobada por push del mismo commit en develop
         required: true
         type: string
-      target:
-        description: APK para probar o AAB para borrador interno en Google Play
-        type: choice
-        options: [preview, play-internal]
-        default: preview
+  workflow_call:
+    inputs:
+      source_run_id:
+        required: true
+        type: string
 permissions:
   contents: read
   actions: read
+concurrency:
+  group: android-preview-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
-  verificar:
-    name: Verificar pruebas y configuración de distribución
+  preview:
+    name: APK interno aprobado
+    if: github.ref == 'refs/heads/develop' && vars.ANDROID_PREVIEW_RELEASE_SHA == github.sha
     runs-on: ubuntu-24.04
-    environment: android-release
-    outputs:
-      profile: ${{ steps.gate.outputs.profile }}
+    timeout-minutes: 90
+    environment:
+      name: android-release
+      url: ${{ steps.record.outputs.build_page }}
+    env:
+      EXPO_NO_DOTENV: '1'
+      EXPO_NO_TELEMETRY: '1'
     steps:
       - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-node@v7.1.0
         with:
-          node-version: '22.13.1'
-      - id: gate
-        run: node scripts/verify-release.mjs
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
-          RELEASE_TARGET: ${{ inputs.target }}
-          RELEASE_API_URL: ${{ vars.RELEASE_API_URL }}
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-          NATIVE_ACCEPTANCE_APPROVED_SHA: ${{ vars.NATIVE_ACCEPTANCE_APPROVED_SHA }}
-          STAGING_ACCEPTANCE_APPROVED_SHA: ${{ vars.STAGING_ACCEPTANCE_APPROVED_SHA }}
-  generar:
-    name: Generar APK o AAB en EAS
-    needs: verificar
-    runs-on: ubuntu-24.04
-    environment: android-release
-    timeout-minutes: 60
-    outputs:
-      build_id: ${{ steps.result.outputs.build_id }}
-    steps:
-      - uses: actions/checkout@v7.0.1
+          ref: ${{ github.sha }}
+          persist-credentials: false
       - uses: actions/setup-node@v7.1.0
         with:
           node-version: '22.13.1'
           cache: npm
+      - name: Verificar pruebas, intento, SHA y configuración
+        run: node scripts/verify-release.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          APPROVED_RELEASE_SHA: ${{ vars.ANDROID_PREVIEW_RELEASE_SHA }}
+          RELEASE_API_URL: ${{ vars.RELEASE_API_URL }}
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
       - run: npm ci
-      - name: Construir y esperar resultado (no solo encolar)
-        run: npx --yes eas-cli@latest build --platform android --profile "$BUILD_PROFILE" --non-interactive --wait --json > release-build.json
-        env:
-          BUILD_PROFILE: ${{ needs.verificar.outputs.profile }}
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-          EXPO_NO_DOTENV: '1'
-          EXPO_PUBLIC_API_URL: ${{ vars.RELEASE_API_URL }}
-      - id: result
-        name: Verificar compilación completada
+      - name: Confirmar acceso al proyecto existente (solo consulta)
         run: |
-          node --input-type=module <<'NODE'
-          import fs from 'node:fs';
-          const raw=JSON.parse(fs.readFileSync('release-build.json','utf8'));
-          const build=Array.isArray(raw)?raw[0]:raw;
-          if(build.status!=='FINISHED'||!build.id||!build.artifacts?.buildUrl)throw Error('EAS no confirmó un paquete finalizado');
-          fs.appendFileSync(process.env.GITHUB_OUTPUT,`build_id=${build.id}\n`);
-          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,`## Android generado\n\nBuild EAS: ${build.id}. Abrir EAS para descargar el paquete firmado. Esto no acredita por sí solo aceptación en dispositivo.\n`);
-          NODE
-  enviar:
-    name: Enviar AAB como borrador interno de Google Play
-    needs: [verificar, generar]
-    if: inputs.target == 'play-internal'
-    runs-on: ubuntu-24.04
-    environment: android-release
-    steps:
-      - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-node@v7.1.0
+          npx --yes eas-cli@27.11.0 project:status --json --non-interactive --limit 1 > output/release/project-status.json
+          node scripts/verify-eas-project.mjs
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+      - name: Revalidar pruebas y árbol limpio antes de solicitar build
+        run: node scripts/verify-release.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          APPROVED_RELEASE_SHA: ${{ vars.ANDROID_PREVIEW_RELEASE_SHA }}
+          RELEASE_API_URL: ${{ vars.RELEASE_API_URL }}
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+      - name: Generar únicamente APK preview y esperar FINISHED
+        run: npx --yes eas-cli@27.11.0 build --platform android --profile preview --non-interactive --wait --json > output/release/eas-build.json
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+      - id: record
+        name: Verificar build, descargar APK y registrar SHA-256
+        run: node scripts/release-artifact.mjs
+      - name: Conservar APK y trazabilidad sin respuestas crudas ni credenciales
+        uses: actions/upload-artifact@v7.0.2
         with:
-          node-version: '22.13.1'
-      - name: Preparar credencial efímera de Google Play
-        run: |
-          test -n "$PLAY_SERVICE_ACCOUNT" || { echo 'Falta GOOGLE_PLAY_SERVICE_ACCOUNT'; exit 1; }
-          printf '%s' "$PLAY_SERVICE_ACCOUNT" > "$RUNNER_TEMP/play-service-account.json"
-        env:
-          PLAY_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
-      - name: Enviar el build aprobado (no el último build disponible)
-        run: npx --yes eas-cli@latest submit --platform android --profile production --id "$BUILD_ID" --non-interactive
-        env:
-          BUILD_ID: ${{ needs.generar.outputs.build_id }}
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-          GOOGLE_SERVICE_ACCOUNT_KEY_PATH: ${{ runner.temp }}/play-service-account.json
+          name: android-preview-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            output/release/*.apk
+            output/release/SHA256SUMS.txt
+            output/release/release.json
+            output/release/project.json
+          compression-level: 0
+          retention-days: 30
+          if-no-files-found: error
+      - name: Conservar verificaciones previas si falla la liberación
+        if: failure()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: android-preview-diagnostico-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            output/release/source.json
+            output/release/project.json
+          retention-days: 7
+          if-no-files-found: warn

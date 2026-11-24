@@ -68,9 +68,9 @@ Un correo sin @ debe rechazarse. Si el archivo de datos dice erróneamente que e
 
 ## Distribución
 
-android-release.yml es un workflow opcional de distribución, no otro workflow de pruebas. Antes de generar un paquete comprueba que un push del mismo SHA y rama tiene seis jobs aprobados. También exige configurar EAS y una URL real. Para enviar un AAB como borrador interno en Play Console exige main y aprobación nativa/staging del mismo commit. No publica automáticamente por subir código.
+android-release.yml es un workflow reutilizable de APK interno. CI solo lo llama después de los seis jobs, desde un push de develop cuyo SHA completo esté habilitado expresamente con la variable de repositorio ANDROID_PREVIEW_RELEASE_SHA. El entorno android-release exige aprobación antes de acceder al token y solicitar un build. Sin esa variable el job se omite. No contiene pasos de envío a Google Play.
 
-La distribución está preparada, pero no se afirma una compilación o publicación real sin cuentas, firma y evidencia. APK es instalable; AAB es el paquete de tienda. Ninguno sustituye aceptación.
+Existe un APK histórico de EAS (19/11), pero todavía no acredita la ejecución del nuevo flujo Actions → EAS. En workflow_call el run padre sigue abierto: se comprueban los seis jobs terminados del mismo ID/intento. Los artefactos CI llevan sufijo de intento para poder usar Re-run all jobs sin mezclar ni reemplazar evidencia anterior. Véanse [operación](despliegue-android.md) y [Actividad 5](../actividad5-cd.md).
 
 ## Respuestas para la revisión
 

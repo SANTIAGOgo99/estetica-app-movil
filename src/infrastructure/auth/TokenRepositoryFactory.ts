@@ -4,6 +4,9 @@ export type TokenStorage = {
   readToken: () => Promise<string | null>;
   saveToken: (token: string) => Promise<void>;
   removeToken: () => Promise<void>;
+  readRefreshToken?: () => Promise<string | null>;
+  saveRefreshToken?: (token: string) => Promise<void>;
+  removeRefreshToken?: () => Promise<void>;
 };
 
 /** Repository: concentra las operaciones de persistencia detrás de un contrato. */
@@ -13,13 +16,20 @@ export class PersistentTokenRepository implements TokenRepository {
   read() { return this.storage.readToken(); }
   save(token: string) { return this.storage.saveToken(token); }
   remove() { return this.storage.removeToken(); }
+  async readRefresh() { return this.storage.readRefreshToken?.() ?? null; }
+  async saveRefresh(token: string) { await this.storage.saveRefreshToken?.(token); }
+  async removeRefresh() { await this.storage.removeRefreshToken?.(); }
 }
 
 export class MemoryTokenRepository implements TokenRepository {
   private token: string | null = null;
+  private refreshToken: string | null = null;
   async read() { return this.token; }
   async save(token: string) { this.token = token; }
   async remove() { this.token = null; }
+  async readRefresh() { return this.refreshToken; }
+  async saveRefresh(token: string) { this.refreshToken = token; }
+  async removeRefresh() { this.refreshToken = null; }
 }
 
 type RepositoryConfig = { kind: 'persistent'; storage: TokenStorage } | { kind: 'memory' };
