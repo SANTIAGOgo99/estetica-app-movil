@@ -32,6 +32,9 @@ jobs:
     uses: ./.github/workflows/android-release.yml
     with:
       source_run_id: ${{ github.run_id }}
+    # Se requiere este paso incluso para el secreto del entorno del callee.
+    secrets:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
   # Tipo: estático. TypeScript y lint Expo de aplicación; no ejecuta interfaz/API.
   analisis-estatico:
     name: Análisis de código estático

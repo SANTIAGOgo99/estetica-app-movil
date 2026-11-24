@@ -54,6 +54,21 @@ debe crear o elegir un token autorizado y guardarlo directamente en
 no se transfiere al runner de GitHub. El token nuevo se comprobará en el runner;
 la consulta local del proyecto no acredita su validez.
 
+## Paso explícito del secreto entre workflows
+
+ci.yml pasa únicamente EXPO_TOKEN mediante jobs.liberar-preview.secrets y
+android-release.yml lo declara obligatorio en on.workflow_call.secrets. El job
+reutilizable conserva environment: android-release, cuya clave tiene precedencia.
+No se usa secrets: inherit para transmitir otros secretos innecesarios.
+
+El intento real 2 de la ejecución 45317089794 (commit 9c6d3f1) aprobó seis jobs y
+recibió aprobación normal del entorno, pero el control previo detectó el token
+vacío porque faltaba ese paso explícito. El build quedó skipped: no hubo una
+compilación EAS. Se conserva como fallo real de configuración, no como entrega.
+La corrección debe integrarse por PR y validarse con la CI de su nuevo commit.
+
+Referencia: [secretos en workflows reutilizables](https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#using-inputs-and-secrets-in-a-reusable-workflow).
+
 ## Ejecución futura, solo con autorización explícita
 
 No seguir estos pasos durante la preparación:
