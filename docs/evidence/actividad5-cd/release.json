@@ -1,0 +1,62 @@
+{
+  "recordedAt": "2026-11-24T04:41:20.998Z",
+  "source": {
+    "repository": "SANTIAGOgo99/estetica-app-movil",
+    "commit": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+    "branch": "develop",
+    "ciRunId": "45321572186",
+    "ciAttempt": 2,
+    "ciUrl": "https://github.com/SANTIAGOgo99/estetica-app-movil/actions/runs/45321572186/attempts/2",
+    "releaseRunId": "45321572186",
+    "releaseAttempt": 2,
+    "releaseUrl": "https://github.com/SANTIAGOgo99/estetica-app-movil/actions/runs/45321572186/attempts/2",
+    "checks": [
+      {
+        "name": "Análisis de código estático",
+        "conclusion": "success"
+      },
+      {
+        "name": "Pruebas unitarias",
+        "conclusion": "success"
+      },
+      {
+        "name": "Pruebas de integración",
+        "conclusion": "success"
+      },
+      {
+        "name": "Pruebas de regresión y empaquetado",
+        "conclusion": "success"
+      },
+      {
+        "name": "Pruebas de aceptación (web móvil)",
+        "conclusion": "success"
+      },
+      {
+        "name": "Pruebas de rendimiento (web móvil)",
+        "conclusion": "success"
+      }
+    ],
+    "scope": "Seis jobs del intento consultado; aceptación/rendimiento web. No acredita staging real ni aceptación nativa."
+  },
+  "build": {
+    "id": "cd8bb15d-b39e-4c9a-a0be-68dad9cfa0b3",
+    "status": "FINISHED",
+    "platform": "ANDROID",
+    "profile": "preview",
+    "distribution": "INTERNAL",
+    "projectId": "2760f10f-64e7-4592-a27d-902075976f54",
+    "package": "com.santiagogo99.esteticaclientes",
+    "commit": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+    "version": "1.0.0",
+    "versionCode": "1",
+    "completedAt": "2026-11-24T04:41:14.395Z",
+    "downloadUrl": "https://expo.dev/artifacts/eas/FWkL1mHZGJY0pdhgCkO64PRReILJp0IublyBCc5H7Lk.apk",
+    "page": "https://expo.dev/accounts/appmovilestetica/projects/estetica-clientes/builds/cd8bb15d-b39e-4c9a-a0be-68dad9cfa0b3"
+  },
+  "apk": {
+    "filename": "estetica-clientes-35755d883bf1-cd8bb15d-b39e-4c9a-a0be-68dad9cfa0b3.apk",
+    "bytes": 92061167,
+    "sha256": "0c4152abe89972016a49fd1abf9087dfe9fefec409b70cfc22548259986bdf42"
+  },
+  "scope": "Build FINISHED y SHA-256 de APK descargado. No acredita instalación, aceptación nativa ni verificación criptográfica independiente de firma."
+}

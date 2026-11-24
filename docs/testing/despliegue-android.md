@@ -1,7 +1,11 @@
 # Liberación controlada de APK interno
 
-Actualizado: 23/11/2026. Esta guía sustituye el estado de configuración de octubre.
-Los pasos de activación y compilación descritos aquí **no se han ejecutado**.
+Actualizado: 23/11/2026 (México; registros remotos del 24/11 UTC).
+La liberación de preview ya se ejecutó correctamente. Actions 45321572186,
+intento 2, terminó success y EAS cd8bb15d-b39e-4c9a-a0be-68dad9cfa0b3 terminó
+FINISHED para el SHA 35755d883bf111ab3596c30c2da9520cf7cecde5.
+La activación ANDROID_PREVIEW_RELEASE_SHA se retiró al terminar.
+Consultar [resultado y evidencias](../actividad5-cd.md).
 
 ## Estado y alcance
 
@@ -11,15 +15,15 @@ Paquete Android: `com.santiagogo99.esteticaclientes`.
 Hay un APK histórico EAS finalizado el 19/11 y confirmación de instalación/apertura
 del usuario el 21/11. No demuestra el nuevo flujo ni aceptación funcional nativa.
 
-Esta entrega prepara únicamente `preview`: APK firmado de distribución interna.
+Esta entrega utiliza únicamente `preview`: APK de distribución interna.
 Los perfiles `production` y `submit.production` se conservan en eas.json, pero no
 se invocan en los workflows. No hay envío, revisión ni publicación de Google Play.
 `expo export --platform android` sigue siendo exportación JS/Hermes, no APK.
 
 ## Integración sin modificar main
 
-1. Revisar el PR de `codex/actividad5-cd-preview` hacia `develop`. Incluye los tres
-   commits de noviembre ya existentes y un cambio separado de CD. No incluye los
+1. Los PR #238 y #239 se integraron normalmente hacia `develop`. Incluyen los
+   avances de noviembre, CD y la corrección del paso del secreto. No incluyen los
    cinco archivos locales sin seguimiento detectados al comenzar.
 2. Exigir los seis checks de la protección de develop. Mantener intacta la
    protección; no usar push directo, force-push, bypass ni merge administrativo.
@@ -33,26 +37,27 @@ no se modifica para resolverlo. La alternativa preparada es `workflow_call`:
 ci.yml llama al workflow del mismo commit después de sus seis jobs. Así puede
 operarse desde una ejecución de develop en la pestaña Actions.
 
-## Ajustes que debe completar el propietario, después de revisar
+## Ajustes verificados y conservados
 
 | Ámbito | Nombre | Contenido / propósito |
 | --- | --- | --- |
 | Environment `android-release` / Secret | `EXPO_TOKEN` | Token de Expo con acceso al proyecto existente y permiso para Build. Introducir únicamente en la interfaz de GitHub; nunca en Git, chats o capturas. |
 | Environment `android-release` / Variable | `RELEASE_API_URL` | `https://esteticaa-backend-five.vercel.app/api`; debe coincidir con preview.env.EXPO_PUBLIC_API_URL de eas.json. |
 | Repository / Variable | `ANDROID_PREVIEW_RELEASE_SHA` | SHA completo de 40 caracteres del commit integrado de develop aprobado para liberar. Dejar ausente hasta autorizar el build. |
-| Environment `android-release` | Required reviewers | Existe aprobación de SANTIAGOgo99. Conservarla. Restringir las ramas a develop antes de habilitar el flujo. |
+| Environment `android-release` | Required reviewers | SANTIAGOgo99 obligatorio y develop como única rama admitida; conservados después de la entrega. |
 
-Comprobación remota del 23/11: el entorno existe; sus secretos y variables estaban
-vacíos, y las variables de repositorio también. No se crearon tokens ni se
-guardaron credenciales. Para este alcance no se necesita cuenta de servicio Play
+La revisión inicial encontró el entorno sin secreto ni URL; el propietario
+guardó EXPO_TOKEN directamente en GitHub. La revisión final confirmó su presencia
+y el éxito de la autenticación desde el runner; no se leyó ni publicó su valor.
+RELEASE_API_URL coincide con eas.json. Para este alcance no se necesita cuenta de servicio Play
 ni NATIVE_ACCEPTANCE_APPROVED_SHA/STAGING_ACCEPTANCE_APPROVED_SHA.
 
 En [Expo → Access tokens](https://expo.dev/settings/access-tokens), el propietario
 debe crear o elegir un token autorizado y guardarlo directamente en
 [GitHub → Environments](https://github.com/SANTIAGOgo99/estetica-app-movil/settings/environments)
 → android-release → Environment secrets → EXPO_TOKEN. El login local de Expo
-no se transfiere al runner de GitHub. El token nuevo se comprobará en el runner;
-la consulta local del proyecto no acredita su validez.
+no se transfiere al runner de GitHub. El token se comprobó realmente desde el
+runner en el job 138209661545; una consulta local por sí sola no lo acreditaría.
 
 ## Paso explícito del secreto entre workflows
 
@@ -65,13 +70,15 @@ El intento real 2 de la ejecución 45317089794 (commit 9c6d3f1) aprobó seis job
 recibió aprobación normal del entorno, pero el control previo detectó el token
 vacío porque faltaba ese paso explícito. El build quedó skipped: no hubo una
 compilación EAS. Se conserva como fallo real de configuración, no como entrega.
-La corrección debe integrarse por PR y validarse con la CI de su nuevo commit.
+La corrección se integró en el PR #239 y la CI del SHA 35755d8 aprobó las seis
+categorías antes del build real; el intento anterior no se cuenta como build.
 
 Referencia: [secretos en workflows reutilizables](https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#using-inputs-and-secrets-in-a-reusable-workflow).
 
-## Ejecución futura, solo con autorización explícita
+## Procedimiento para una futura liberación autorizada
 
-No seguir estos pasos durante la preparación:
+La ejecución documentada ya concluyó. Para otra entrega se requiere elegir y
+autorizar un nuevo SHA; no volver a ejecutar el build de esta evidencia:
 
 1. Revisar los cambios y completar el token, URL y restricciones del entorno.
 2. Elegir la ejecución CI **por push de develop** posterior al merge. Anotar SHA
@@ -115,7 +122,7 @@ runner no garantiza cancelar la compilación remota. No reintentar a ciegas.
 
 ## Trazabilidad y evidencia
 
-El artefacto `android-preview-<SHA>-<RUN_ID>-<INTENTO>` conservará durante 30 días:
+El artefacto `android-preview-<SHA>-<RUN_ID>-<INTENTO>` conserva durante 30 días:
 
 - APK cuyo nombre incluye SHA e ID EAS.
 - release.json: repositorio, commit, rama, CI/intento, run de liberación, proyecto,
@@ -125,6 +132,11 @@ El artefacto `android-preview-<SHA>-<RUN_ID>-<INTENTO>` conservará durante 30 d
 No se adjuntan las respuestas crudas de EAS, tokens ni credenciales de firma.
 Si falla el proceso, solo se conservan metadatos previos ya verificados.
 FINISHED, cabecera ZIP y hash no sustituyen verificación de firma ni aceptación.
+En esta liberación también se verificó la firma de forma independiente con
+apksigner 35.0.0 (Verifies, salida 0, v2, un firmante), y aapt leyó el paquete y
+versión del APK. La descarga de Expo coincide con el hash de Actions. Esas
+comprobaciones están en [apk-verification.json](../evidence/actividad5-cd/apk-verification.json).
+La instalación y aceptación funcional del nuevo binario siguen pendientes.
 
 ## Validación sin compilar
 

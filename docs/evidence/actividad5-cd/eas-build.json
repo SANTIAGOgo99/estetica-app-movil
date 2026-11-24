@@ -1,0 +1,15 @@
+{
+  "id": "cd8bb15d-b39e-4c9a-a0be-68dad9cfa0b3",
+  "status": "FINISHED",
+  "platform": "ANDROID",
+  "buildProfile": "preview",
+  "distribution": "INTERNAL",
+  "gitCommitHash": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+  "appIdentifier": "com.santiagogo99.esteticaclientes",
+  "appVersion": "1.0.0",
+  "appBuildVersion": "1",
+  "createdAt": "2026-11-24T04:25:25.822Z",
+  "completedAt": "2026-11-24T04:41:14.395Z",
+  "projectId": "2760f10f-64e7-4592-a27d-902075976f54",
+  "apkUrl": "https://expo.dev/artifacts/eas/FWkL1mHZGJY0pdhgCkO64PRReILJp0IublyBCc5H7Lk.apk"
+}

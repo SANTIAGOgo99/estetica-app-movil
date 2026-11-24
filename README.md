@@ -48,7 +48,7 @@ La aplicación utiliza una arquitectura cliente-servidor. La aplicación móvil 
 
 ## Estrategia de ramas y pruebas
 
-La configuración de la **Actividad 5 (CD)** prepara APK internos mediante GitHub Actions y el proyecto EAS existente. La liberación permanece desactivada hasta habilitar un SHA de `develop`, configurar el token y aprobar el entorno. No envía a Google Play. Consultar [reporte y rúbrica](docs/actividad5-cd.md) y [guía operativa](docs/testing/despliegue-android.md).
+La **Actividad 5 (CD)** verificó una liberación real de APK interno mediante GitHub Actions y el proyecto EAS existente: ejecución 45321572186, intento 2, build EAS cd8bb15d-b39e-4c9a-a0be-68dad9cfa0b3 FINISHED. Se retiró el SHA de activación al terminar; se conservan el secreto y la aprobación del entorno. No envía a Google Play. La aceptación en teléfono del nuevo APK sigue pendiente. Consultar [reporte y rúbrica](docs/actividad5-cd.md) y [guía operativa](docs/testing/despliegue-android.md).
 
 - main: entregas estables.
 - develop: integración de historias y ejecución de las seis verificaciones.

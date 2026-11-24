@@ -1,0 +1,18 @@
+{
+  "recordedAt": "2026-11-24T04:50:52.0005209Z",
+  "sourceCommit": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+  "changes": "Documentation only",
+  "typecheck": {
+    "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+    "exitCode": 0
+  },
+  "lint": {
+    "command": "EXPO_NO_DOTENV=1 EXPO_NO_TELEMETRY=1 node node_modules/expo/bin/cli lint --no-cache",
+    "exitCode": 0
+  },
+  "diffCheck": {
+    "command": "git diff --check",
+    "exitCode": 0
+  },
+  "scope": "Local static checks; no native functional test and no additional build"
+}

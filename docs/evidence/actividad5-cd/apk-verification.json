@@ -1,0 +1,42 @@
+{
+  "recordedAt": "2026-11-24T04:52:37.2425100Z",
+  "buildId": "cd8bb15d-b39e-4c9a-a0be-68dad9cfa0b3",
+  "commit": "35755d883bf111ab3596c30c2da9520cf7cecde5",
+  "runId": "45321572186",
+  "attempt": 2,
+  "downloadSource": "https://expo.dev/artifacts/eas/FWkL1mHZGJY0pdhgCkO64PRReILJp0IublyBCc5H7Lk.apk",
+  "filename": "estetica-clientes-35755d883bf1-cd8bb15d-b39e-4c9a-a0be-68dad9cfa0b3.apk",
+  "bytes": 92061167,
+  "sha256": "0c4152abe89972016a49fd1abf9087dfe9fefec409b70cfc22548259986bdf42",
+  "matchesActionsReleaseManifest": true,
+  "matchesActionsSHA256SUMS": true,
+  "traceabilityVerified": true,
+  "signature": {
+    "tool": "Android SDK apksigner 35.0.0",
+    "matchesHistoricalCertificate": true,
+    "certificateSha256": "daba11567e6dccc39fe102c76496f23311061302c467ff1a04a84f56a749ba04",
+    "exitCode": 0,
+    "command": "apksigner verify --verbose --print-certs <APK>",
+    "result": [
+      "Verifies",
+      "Verified using v1 scheme (JAR signing): false",
+      "Verified using v2 scheme (APK Signature Scheme v2): true",
+      "Verified using v3 scheme (APK Signature Scheme v3): false",
+      "Verified using v3.1 scheme (APK Signature Scheme v3.1): false",
+      "Verified using v4 scheme (APK Signature Scheme v4): false",
+      "Number of signers: 1",
+      "Signer #1 certificate SHA-256 digest: daba11567e6dccc39fe102c76496f23311061302c467ff1a04a84f56a749ba04"
+    ]
+  },
+  "androidManifest": {
+    "result": [
+      "package: name='com.santiagogo99.esteticaclientes' versionCode='1' versionName='1.0.0' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sdkVersion:'24'",
+      "targetSdkVersion:'36'",
+      "launchable-activity: name='com.santiagogo99.esteticaclientes.MainActivity'  label='' icon=''"
+    ],
+    "exitCode": 0,
+    "tool": "Android SDK aapt 35.0.0"
+  },
+  "scope": "Real APK downloaded from Expo; hash matches Actions metadata. Signature and package verified locally. No installation or functional acceptance on Android device."
+}

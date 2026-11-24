@@ -1,0 +1,35 @@
+{
+  "recordedAt": "2026-11-24T04:45:49.8180021Z",
+  "releaseActivationPresent": false,
+  "environment": "android-release",
+  "protectionRules": [
+    {
+      "type": "required_reviewers",
+      "preventSelfReview": false,
+      "reviewers": [
+        "SANTIAGOgo99"
+      ]
+    },
+    {
+      "type": "branch_policy",
+      "preventSelfReview": null,
+      "reviewers": [
+        null
+      ]
+    }
+  ],
+  "deploymentBranchPolicy": {
+    "protected_branches": false,
+    "custom_branch_policies": true
+  },
+  "allowedBranches": [
+    {
+      "name": "develop",
+      "type": "branch"
+    }
+  ],
+  "expoTokenPresent": true,
+  "releaseApiUrl": "https://esteticaa-backend-five.vercel.app/api",
+  "mainSha": "79ad3affa3f36146cfdde5a5a0a6c8c6d6a645b2",
+  "developSha": "35755d883bf111ab3596c30c2da9520cf7cecde5"
+}
