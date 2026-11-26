@@ -16,6 +16,19 @@ export type Slot = {
   available: boolean;
   reason: string;
 };
+export type BookingQuote = {
+  required: boolean;
+  total: number;
+  deposit: number;
+  remaining: number;
+  percentage: number;
+};
+export function decodeBookingQuote(response: Record<string, unknown>): BookingQuote | undefined {
+  if (response.deposit_required === undefined) return undefined;
+  const total=Number(response.total_amount),deposit=Number(response.deposit_amount),remaining=Number(response.remaining_amount),percentage=Number(response.deposit_percentage);
+  if (typeof response.deposit_required !== 'boolean' || ![total,deposit,remaining,percentage].every(Number.isFinite) || total<0 || deposit<0 || remaining<0 || percentage<0 || percentage>100 || Math.round(total*100)!==Math.round(deposit*100)+Math.round(remaining*100) || response.deposit_required!==(deposit>0)) throw Error('El importe del anticipo está incompleto. Vuelve a consultar los horarios.');
+  return {required:response.deposit_required,total,deposit,remaining,percentage};
+}
 export function decodeAppointments(value: unknown): Appointment[] {
   const response = object(value);
   if (!Array.isArray(response.appointments))
@@ -48,13 +61,16 @@ export function decodeAppointments(value: unknown): Appointment[] {
 export function decodeSlots(value: unknown): {
   slots: Slot[];
   message: string;
+  quote?: BookingQuote;
 } {
   const response = object(value);
   const availableOnly = response.all_slots === undefined;
   const slots = availableOnly ? response.available_slots : response.all_slots;
   if (!Array.isArray(slots))
     throw Error("No pudimos interpretar los horarios disponibles.");
+  const quote=decodeBookingQuote(response);
   return {
+    ...(quote?{quote}:{}),
     message:
       typeof response.message === "string"
         ? response.message

@@ -19,6 +19,7 @@ import { colors } from "../../theme";
 import { useFlow } from "../interfaces/Flow";
 import { useAuth } from "../auth/AuthProvider";
 import { useRemote } from "../api/useRemote";
+import { DepositPayment } from './DepositPayment';
 import {
   decodeSlots,
   mexicoDates,
@@ -37,6 +38,7 @@ export function BookingScreen() {
     [saving, setSaving] = useState(false),
     [error, setError] = useState<string | null>(null);
   const pending = useRef(false);
+  const [paymentActive,setPaymentActive]=useState(false);
   const [dates] = useState(mexicoDates);
   const { service: id } = useLocalSearchParams<{ service?: string }>();
   const detail = useRemote(
@@ -55,8 +57,10 @@ export function BookingScreen() {
   const slot = availability.data?.slots.find(
     (slot) => slot.date === selected && slot.available,
   );
+  const quote=availability.data?.quote;
+  const requiresDeposit=quote?.required===true;
   async function reserve() {
-    if (pending.current || !auth.token || !service || !slot || !date) return;
+    if (pending.current || !auth.token || !service || !slot || !date || requiresDeposit) return;
     pending.current = true;
     setSaving(true);
     setError(null);
@@ -116,6 +120,7 @@ export function BookingScreen() {
       subtitle="Selecciona una fecha y un horario disponibles."
       back="service-detail"
       footer={
+        requiresDeposit ? undefined :
         <Button
           label="Confirmar mi cita"
           loading={saving}
@@ -132,6 +137,7 @@ export function BookingScreen() {
         />
         <Row label="Precio" value={money(service.price)} />
       </Card>
+      {!paymentActive&&<>
       <Text style={s.label}>Selecciona una fecha</Text>
       <Chips
         values={dates}
@@ -206,10 +212,14 @@ export function BookingScreen() {
         <Row label="Hora" value={slot?.time ?? "Por seleccionar"} />
         <Row label="Precio del servicio" value={money(service.price)} />
         <Body muted>
-          Al confirmar se registrará una cita real en la estética. El horario se
-          verifica nuevamente al guardar.
+          {requiresDeposit?'La cita se confirmará después de acreditar el anticipo.':'Al confirmar se registrará una cita real en la estética. El horario se verifica nuevamente al guardar.'}
         </Body>
       </Card>
+      </>}
+      {requiresDeposit&&quote&&<DepositPayment serviceId={service.id} selected={slot??null} quote={quote} refreshAvailability={availability.refresh} onActiveChange={setPaymentActive} onConfirmed={result=>{
+        flow.setBooking({...result,service:{...service,name:result.serviceName,price:result.total,duration:result.duration}});
+        flow.go('booking-confirmed');
+      }}/>}
       {!!error && (
         <Card>
           <Text accessibilityRole="alert" style={s.error}>
