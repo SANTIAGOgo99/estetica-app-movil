@@ -38,7 +38,7 @@
     "test:unit": "node scripts/run-tests.mjs unit",
     "test:integration": "node scripts/run-tests.mjs integration",
     "test:regression": "node scripts/run-tests.mjs regression",
-    "test:acceptance": "playwright test acceptance.spec.ts october.spec.ts november.spec.ts account.spec.ts",
+    "test:acceptance": "playwright test acceptance.spec.ts october.spec.ts november.spec.ts account.spec.ts booking.spec.ts",
     "test:november": "playwright test november.spec.ts",
     "verify:backend": "node --experimental-strip-types scripts/verify-november-backend.mjs",
     "verify:android-config": "node scripts/verify-android-config.mjs",

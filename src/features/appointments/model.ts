@@ -50,25 +50,30 @@ export function decodeSlots(value: unknown): {
   message: string;
 } {
   const response = object(value);
-  if (!Array.isArray(response.all_slots))
+  const availableOnly = response.all_slots === undefined;
+  const slots = availableOnly ? response.available_slots : response.all_slots;
+  if (!Array.isArray(slots))
     throw Error("No pudimos interpretar los horarios disponibles.");
   return {
     message:
       typeof response.message === "string"
         ? response.message
         : "Selecciona un horario disponible.",
-    slots: response.all_slots.map((value) => {
+    slots: slots.map((value) => {
       const slot = object(value);
+      const available = availableOnly && slot.available === undefined
+        ? true
+        : slot.available;
       if (
         typeof slot.time !== "string" ||
         typeof slot.appointment_date !== "string" ||
-        typeof slot.available !== "boolean"
+        typeof available !== "boolean"
       )
         throw Error("Un horario contiene información incompleta.");
       return {
         time: slot.time,
         date: slot.appointment_date,
-        available: slot.available,
+        available,
         reason: typeof slot.reason === "string" ? slot.reason : "No disponible",
       };
     }),
